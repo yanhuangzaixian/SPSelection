@@ -1,0 +1,1 @@
+{"name":"clientTemplate","context":"VM-deployment","serviceDescription":{"VM1_volume":"10"},"creationConstraint":[["RP4","true","true",[["permit",{"Location":"Europe"},{"ID":"VM1"}],["permit",{"Location":"Europe"},{"ID":"VM1"}]]]],"gauranteeTerm":{"VM1_performance":"more_10_GB"}}
