@@ -1,0 +1,14 @@
+if (VM_ID=new)
+    Then   
+		   0. Find related HOST_ID
+	       1. Generate new abstract rule 
+		   2. Generate concrete rule (insert VM_ID and HOST_ID)
+		   
+if (VM_ID!=new)
+      find related concrete rule
+	  find related HOST_ID 
+      IF (HOST_ID has already in concrete rule)	  
+	       do nothing;
+	  ELSE
+	      insert HOST_ID;
+	      

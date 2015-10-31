@@ -26,6 +26,7 @@ import orbac.exception.COrbacException;
 import orbac.securityRules.CConcretePermission;
 import orbac.securityRules.CConcreteProhibition;
 import orbac.securityRules.CConcreteRule;
+import orbac.xmlImpl.XmlOrbacPolicy;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -622,47 +623,95 @@ public class method {
                                 
                                 HashMap.Entry entry = (HashMap.Entry) iter1.next();
                                 Object key = entry.getKey();
-                                float value = Float.parseFloat((String) entry.getValue());
                                 
                                 
-                                
-                                
-                                if (HOSTList.size()==0)
-                                {
+                                try{
+                                    float value = Float.parseFloat((String) entry.getValue());
+                                     if (HOSTList.size()==0)
+                                        {
                                      
-                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
-                                    newHOST.addServiceDescription((String) key,value);
-                                    HOSTList.add(newHOST);
+                                            HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                            newHOST.addServiceDescription((String) key,value);
+                                            HOSTList.add(newHOST);
                                     
-                                }
+                                        }
                                 
-                                boolean find=false;
-                                for (int i=0;i<HOSTList.size();i++)
-                                     {
-                                         HOST currentHOST=HOSTList.get(i);
+                                         boolean find=false;
+                                        for (int i=0;i<HOSTList.size();i++)
+                                            {
+                                                HOST currentHOST=HOSTList.get(i);
                                           
                                           
-                                         if (currentHOST.getID().equals(ID))
+                                                if (currentHOST.getID().equals(ID))
                                           
-                                         {
-                                         currentHOST.addServiceDescription((String) key, value);
+                                                {
+                                                    currentHOST.addServiceDescription((String) key, value);
                                          
-                                         find=true;
-                                         
-                                         
-                                         }
+                                                    find=true;
+
+                                                }
                                    
-                                     }
+                                                }
                                 
-                                if (find==false)
-                                {
+                                        if (find==false)
+                                        {
                                      
                                     
-                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
-                                    newHOST.addServiceDescription((String) key, value);
-                                    HOSTList.add(newHOST);
-                                }
+                                            HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                            newHOST.addServiceDescription((String) key, value);
+                                            HOSTList.add(newHOST);
+                                         }
                                 
+                                        // is an integer!
+                              } 
+                                    catch (NumberFormatException e) 
+                                    {
+                                       // not an integer!
+                                        String value=  (String) entry.getValue();
+                                        if (HOSTList.size()==0)
+                                    {
+                                     
+                                        HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                        newHOST.addServiceDescription((String) key,value);
+                                        HOSTList.add(newHOST);
+                                    
+                                    }
+                                
+                                         boolean find=false;
+                                        for (int i=0;i<HOSTList.size();i++)
+                                        {
+                                            HOST currentHOST=HOSTList.get(i);
+                                          
+                                          
+                                            if (currentHOST.getID().equals(ID))
+                                          
+                                            {
+                                                currentHOST.addServiceDescription((String) key, value);
+                                         
+                                                find=true;
+                                         
+                                         
+                                            }
+                                   
+                                        }
+                                
+                                         if (find==false)
+                                        {
+                                     
+                                   
+                                        HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                        newHOST.addServiceDescription((String) key, value);
+                                        HOSTList.add(newHOST);
+                                        }
+                                
+                                 }
+                                
+                                
+                                
+                                
+                                
+                                
+                               
                                 
                                 
                                 
@@ -782,8 +831,103 @@ public class method {
      
         
     }
+         
      
+         
+         
+         public static AbstractOrbacPolicy generateOrBACPolicyFromVMandHostPolicy(LinkedList VMPolicyList, LinkedList <VM> VMList, LinkedList HOSTPolicyList,  LinkedList <HOST> HOSTList) throws COrbacException
+         {
+         
+               COrbacCore core = COrbacCore.GetTheInstance();
+                    // create new policy using the Jena implementation
+              AbstractOrbacPolicy p = core.CreatePolicy ("policy1", XmlOrbacPolicy.class );
+   
+    // add some abstract entities to the policy
+    // add an organization
+                p.CreateOrganization ("superCloud");
+              
+                
+                
+                
+                
+                for (int i=0;i<VMPolicyList.size();i++)
+                {
+                
+                    ArrayList currentVMRule=(ArrayList) VMPolicyList.get(i);
+                    
+                    
+                    
+                    
+                    String policyType=(String) currentVMRule.get(0);
+                    HashMap HOSTProperty=(HashMap) currentVMRule.get(1);
+                    HashMap VMProperty=(HashMap) currentVMRule.get(2);
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                }
+                
+                
+                
+                
+                for (int j=0;j<HOSTPolicyList.size();j++)
+                {
+                    ArrayList currentHOSTRule=(ArrayList) HOSTPolicyList.get(j);
+                
+                }
+                
+                
+                
+                
+                
+                
+                
+            // add a role in the newly created organization
+            p.CreateRoleAndInsertIntoOrg ("H1_Permit", "superCloud");
+            p.CreateRoleAndInsertIntoOrg ("H2_Permit", "superCloud");
+            p.CreateRoleAndInsertIntoOrg ("H1_Deny", "superCloud");
+            p.CreateRoleAndInsertIntoOrg ("H2_Deny", "superCloud");
+            // add an activity in the newly created organization
      
+            p.CreateActivityAndInsertIntoOrg ("myActivity", "superCloud");
+    
+            // add a view in the newly created organization
+            p.CreateViewAndInsertIntoOrg ("V1_Permit", "superCloud");
+            p.CreateViewAndInsertIntoOrg ("V2_Permit", "superCloud");
+            p.CreateViewAndInsertIntoOrg ("V1_Deny", "superCloud");
+            p.CreateViewAndInsertIntoOrg ("V2_Deny", "superCloud");
+    
+    
+    
+    
+   
+
+
+            // create an abstract rule in the newly created organization
+            // the default_context context always exists in a XmlOrbacPolicy instance
+     
+            p.AbstractPermission ("superCloud","H1_Permit","myActivity","V1_Permit","default_context","R1_Permit");
+            p.AbstractPermission ("superCloud","H2_Permit","myActivity","V2_Permit","default_context","R2_Permit");
+            //p.AbstractProhibition("myOrganization","myRole3","myActivity3","myView3","default_context","R3");
+            p.AbstractProhibition ("superCloud","H1_Deny","myActivity","V1_Deny","default_context","R1_Deny");
+            p.AbstractProhibition ("superCloud","H2_Deny","myActivity","V2_Deny","default_context","R2_Deny");
+    
+            // p.AbstractProhibition("myOrganization","myRole","myActivity","myView","default_context","R2");
+ 
+             
+           return p;    
+         
+         }
+         
+         
+         
+         
+         
+         
     }
     
     
