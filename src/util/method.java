@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 
-package orbacapi.test1;
+package util;
 
+import cloudResource.HOST;
+import cloudResource.VM;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -323,12 +326,12 @@ public class method {
      }
      
      
-     public static LinkedList <VM> readClientFileAndGenerateVMList(String fileName)
+     public static LinkedList <VM> readClientFileAndGenerateVMList(String fileName) throws IOException, ParseException
      {
           JSONParser parser = new JSONParser();
           LinkedList <VM> VMList=new LinkedList <VM>();
           
-	try {
+	
                 
                 /*Read file and store in file related format*/
 		Object obj = parser.parse(new FileReader(fileName));
@@ -454,13 +457,7 @@ public class method {
                
                             }   
                 
-	} catch (FileNotFoundException e) {
-		e.printStackTrace();
-	} catch (IOException e) {
-		e.printStackTrace();
-	} catch (ParseException e) {
-		e.printStackTrace();
-	}
+	
         
        
          return VMList;
@@ -468,13 +465,13 @@ public class method {
      
      
      
-       public static LinkedList <ArrayList> readClientFileAndAbstractAbstractPolicy(String fileName)
+       public static LinkedList <ArrayList> readClientFileAndAbstractAbstractPolicy(String fileName) throws IOException, ParseException
        
        {
           JSONParser parser = new JSONParser();
           LinkedList <ArrayList> policyList=new LinkedList <ArrayList > ();
           
-	try {
+	
                 
                 /*Read file and store in file related format*/
 		Object obj = parser.parse(new FileReader(fileName));
@@ -506,16 +503,67 @@ public class method {
                         }
                     }       
 }
-                }
-        catch (FileNotFoundException e) {
-		e.printStackTrace();
-	} catch (IOException e) {
-		e.printStackTrace();
-	} catch (ParseException e) {
-		e.printStackTrace();
-	}
+                
        
         
+        return policyList;
+        
+       }
+       
+       
+       
+       
+        public static LinkedList <ArrayList> readSPFileAndAbstractAbstractPolicy(String fileName) throws IOException, ParseException
+       
+       {
+          JSONParser parser = new JSONParser();
+          
+          LinkedList <ArrayList> policyList=new LinkedList <ArrayList > ();
+          
+	  ArrayList fileNameList=readContractListFromFile(fileName);
+          
+          for (int k=0;k<fileNameList.size();k++)
+          
+            
+          {
+               
+                               
+                /*Read file and store in file related format*/
+       
+		Object obj = parser.parse(new FileReader((String) fileNameList.get(k)));
+
+		JSONObject jsonObject = (JSONObject) obj;
+
+                ArrayList <ArrayList> creationConstraint=(ArrayList) jsonObject.get("creationConstraint");
+ 
+                for (int i=0;i<creationConstraint.size();i++)
+                {
+                    
+                    ArrayList  currentSLA=creationConstraint.get(i);
+                    
+                    
+                    /*System.out.println("---------------erreur info--------------");
+                    System.out.println(currentSLA.get(2));*/
+                    
+                   if(currentSLA.size()!=0)
+                   {   
+                    if (currentSLA.get(2).equals("true"))
+                        {
+                    
+                        
+                        
+                        ArrayList <ArrayList> currentRuleList=(ArrayList <ArrayList>) currentSLA.get(3);
+                        for (int j=0;j<currentRuleList.size(); j++)
+                            {
+                         
+                             policyList.add(currentRuleList.get(j));
+                            }
+                        } 
+                   }
+                }
+                
+       
+       }
         return policyList;
         
        }
@@ -525,14 +573,154 @@ public class method {
      
      
      
-     /*
-       
-     public static LinkedList <HOST> readHostFileAndGenerateHOSTList()
-     {
      
+     
+     public static LinkedList <HOST> readHostFileAndGenerateHOSTList(String fileNames) throws IOException, ParseException
+     {
+         ArrayList fileNameList=readContractListFromFile(fileNames);
+          
+         JSONParser parser = new JSONParser();
+          
+         LinkedList <HOST> HOSTList=new LinkedList <HOST>();
+          
+         
+         
+          for (int k=0;k<fileNameList.size();k++)
+          {
+              
+              String fileName=(String) fileNameList.get(k);
+               /*Read file and store in file related format*/
+		Object obj = parser.parse(new FileReader(fileName));
+
+		JSONObject jsonObject = (JSONObject) obj;
+    
+                
+                String ID=(String) jsonObject.get("name");
+                
+                HashMap <String,Integer> serviceDescription=(HashMap) jsonObject.get("serviceDescription");
+                 
+                //method.printHashMap(serviceDescription);
+                
+                
+                HashMap gauranteeTerm=(HashMap) jsonObject.get("gauranteeTerm");
+                 
+               // method.printHashMap(gauranteeTerm);
+           
+                
+                //ArrayList creationConstraint=(ArrayList) jsonObject.get("creationConstraint");
+                
+                //method.printArrayList(creationConstraint);
+		
+
+                /*Extract information and put it into VMlist*/
+                /*1. Servcie Description*/
+                
+                Iterator iter1 = serviceDescription.entrySet().iterator();
+                    while (iter1.hasNext()) 
+                            {
+                                
+                                
+                                HashMap.Entry entry = (HashMap.Entry) iter1.next();
+                                Object key = entry.getKey();
+                                Object value = (String) entry.getValue();
+                                
+                                
+                                
+                                
+                                if (HOSTList.size()==0)
+                                {
+                                     
+                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                    newHOST.addServiceDescription((String) key, (String) value);
+                                    HOSTList.add(newHOST);
+                                    
+                                }
+                                
+                                boolean find=false;
+                                for (int i=0;i<HOSTList.size();i++)
+                                     {
+                                         HOST currentHOST=HOSTList.get(i);
+                                          
+                                          
+                                         if (currentHOST.getID().equals(ID))
+                                          
+                                         {
+                                         currentHOST.addServiceDescription((String) key, (String)value);
+                                         
+                                         find=true;
+                                         
+                                         
+                                         }
+                                   
+                                     }
+                                
+                                if (find==false)
+                                {
+                                     
+                                    
+                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                    newHOST.addServiceDescription((String) key, (String)value);
+                                    HOSTList.add(newHOST);
+                                }
+                                
+                                
+                                
+                                
+                             /*2 Gaurantee term*/
+                                
+                            Iterator iter2 = gauranteeTerm.entrySet().iterator();
+                                 
+                            while (iter2.hasNext()) 
+                            {
+                                HashMap.Entry entry2 = (HashMap.Entry) iter2.next();
+                                Object key2 = entry2.getKey();
+                                Object value2 = entry2.getValue();
+                                
+                                
+                               
+                                
+                                if (HOSTList.size()==0)
+                                {
+                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                    newHOST.addGauranteeTerm((String) key2,(String)value2);
+                                    
+                                }
+                                
+                                boolean find2=false;
+                                for (int i=0;i<HOSTList.size();i++)
+                                     {
+                                         HOST currentHOST=HOSTList.get(i);
+                                        
+                                         if (currentHOST.getID().equals(ID))
+                                            
+                                         currentHOST.addGauranteeTerm((String) key2, (String)value2);
+                                         
+                                         find2=true;
+                                   
+                                     }
+                                
+                                if (find2==false)
+                                {
+                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                    newHOST.addGauranteeTerm((String) key2,(String)value2);
+                                    
+                                }
+                            }
+                
+                
+               
+                            }   
+              
+              
+          }
+          
+          
+          return HOSTList;
+          
+          
      
      }
-     */
+     
      
      
      
@@ -564,6 +752,36 @@ public class method {
         
         return false;
      }
+     
+     
+  
+     
+         public static ArrayList readContractListFromFile(String fileName) throws IOException, ParseException
+    {
+    
+            
+              JSONParser parser = new JSONParser();
+
+	
+
+		Object obj2 = parser.parse(new FileReader("confSP\\contractFileList.json"));
+
+		JSONObject jsonObject = (JSONObject) obj2;
+    
+                
+                
+                
+                ArrayList fileList=(ArrayList) jsonObject.get("contract_list_of_SP");
+                
+               
+                return fileList;
+
+	
+        
+       
+     
+        
+    }
      
      
     }

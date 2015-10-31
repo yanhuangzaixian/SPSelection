@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-package orbacapi.test1;
+package cloudResource;
 
 import java.util.HashMap;
 
+import util.method;
 /**
  *
  * @author RDSG6431

@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 
-package orbacapi.test1;
+package cloudResource;
 
 import java.util.HashMap;
+import util.method;
 
 /**
  *
@@ -16,11 +17,25 @@ public class HOST {
     
     String ID;
     HashMap serviceDescription;
+    HashMap gauranteeTerm;
     HashMap denyForVM;
 
-    public HOST(String ID, HashMap serviceDescription, HashMap denyForVM) {
+     public void printInfo()
+    
+    {
+        System.out.println("-----------------HOST information-----------\n");
+        System.out.println("ID: "+ID);
+        System.out.println("serviceDescription:");
+        method.printHashMap(serviceDescription);
+        System.out.println("gauranteeTerm:");
+        method.printHashMap(gauranteeTerm);
+    }
+    
+    
+    public HOST(String ID, HashMap serviceDescription, HashMap gauranteeTerm, HashMap denyForVM) {
         this.ID = ID;
         this.serviceDescription = serviceDescription;
+        this.gauranteeTerm=gauranteeTerm;
         this.denyForVM = denyForVM;
     }
 
@@ -48,6 +63,29 @@ public class HOST {
         this.denyForVM = denyForVM;
     }
     
+    public HashMap getGauranteeTerm(){
+       return gauranteeTerm;
+    }
+    
+    public void setGauranteeTerm (HashMap gauranteeTerm)
+    {
+      this.gauranteeTerm=gauranteeTerm;
+    }
+    
+    
+    public void addServiceDescription(String key, String value)
+    {
+        this.serviceDescription.put(key,value);
+    
+    }
+    
+    
+    
+     public void addGauranteeTerm(String key, String value)
+    {
+        this.gauranteeTerm.put(key,value);
+    
+    }
     
     
     

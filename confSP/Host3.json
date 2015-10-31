@@ -1,0 +1,1 @@
+{"name":"HOST3","context":"VM-deployment","serviceDescription":{"volume":"70","price":"60","certificate":"true","location":"China"},"creationConstraint":[["other","true","true",[["prohibition",{"ID":"HOST3"},{"application":"_business"}]]]],"gauranteeTerm":{"availability":"more_97_percentage"}}
