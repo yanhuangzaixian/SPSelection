@@ -364,7 +364,7 @@ public class method {
                                 
                                 HashMap.Entry entry = (HashMap.Entry) iter1.next();
                                 Object key = entry.getKey();
-                                int value = Integer.parseInt((String)entry.getValue());
+                                float value = Float.parseFloat((String)entry.getValue());
                                 
                                 
                                 String [] keys=getIDandInfo ((String)key);
@@ -375,7 +375,7 @@ public class method {
                                 {
                                      
                                     VM newVM=new VM(ID,new HashMap(),new HashMap(),new HashMap());
-                                    newVM.addServiceDescription(term, (int)value);
+                                    newVM.addServiceDescription(term, value);
                                     VMList.add(newVM);
                                     
                                 }
@@ -389,7 +389,7 @@ public class method {
                                          if (currentVM.getID().equals(ID))
                                           
                                          {
-                                         currentVM.addServiceDescription(term, (int)value);
+                                         currentVM.addServiceDescription(term,value);
                                          
                                          find=true;
                                          
@@ -403,7 +403,7 @@ public class method {
                                      
                                     
                                     VM newVM=new VM(ID,new HashMap(),new HashMap(),new HashMap());
-                                    newVM.addServiceDescription(term, (int)value);
+                                    newVM.addServiceDescription(term,value);
                                     VMList.add(newVM);
                                 }
                                 
@@ -622,7 +622,7 @@ public class method {
                                 
                                 HashMap.Entry entry = (HashMap.Entry) iter1.next();
                                 Object key = entry.getKey();
-                                Object value = (String) entry.getValue();
+                                float value = Float.parseFloat((String) entry.getValue());
                                 
                                 
                                 
@@ -631,7 +631,7 @@ public class method {
                                 {
                                      
                                     HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
-                                    newHOST.addServiceDescription((String) key, (String) value);
+                                    newHOST.addServiceDescription((String) key,value);
                                     HOSTList.add(newHOST);
                                     
                                 }
@@ -645,7 +645,7 @@ public class method {
                                          if (currentHOST.getID().equals(ID))
                                           
                                          {
-                                         currentHOST.addServiceDescription((String) key, (String)value);
+                                         currentHOST.addServiceDescription((String) key, value);
                                          
                                          find=true;
                                          
@@ -659,7 +659,7 @@ public class method {
                                      
                                     
                                     HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
-                                    newHOST.addServiceDescription((String) key, (String)value);
+                                    newHOST.addServiceDescription((String) key, value);
                                     HOSTList.add(newHOST);
                                 }
                                 

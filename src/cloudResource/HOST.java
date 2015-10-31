@@ -73,7 +73,7 @@ public class HOST {
     }
     
     
-    public void addServiceDescription(String key, String value)
+    public void addServiceDescription(String key, float value)
     {
         this.serviceDescription.put(key,value);
     

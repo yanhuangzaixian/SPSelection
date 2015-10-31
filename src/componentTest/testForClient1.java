@@ -8,8 +8,10 @@ package componentTest;
 
 import util.method;
 import cloudResource.VM;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -20,7 +22,7 @@ public class testForClient1 {
     
     
     
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException, ParseException
     {
          System.out.println("**********************begin VM information****************\n");
          

@@ -78,7 +78,7 @@ public class VM {
     
     
     
-    public void addServiceDescription(String key, int value)
+    public void addServiceDescription(String key, float value)
     {
         this.serviceDescription.put(key,value);
     
