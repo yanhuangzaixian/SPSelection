@@ -842,9 +842,14 @@ public class method {
                     // create new policy using the Jena implementation
               AbstractOrbacPolicy p = core.CreatePolicy ("policy1", XmlOrbacPolicy.class );
    
-    // add some abstract entities to the policy
-    // add an organization
-                p.CreateOrganization ("superCloud");
+                 // add some abstract entities to the policy
+                 // add an organization
+                 p.CreateOrganization ("superCloud");
+                 String currentActivity="myActivity";
+                 String currentContext="default_context";
+                 p.CreateActivityAndInsertIntoOrg (currentActivity, "superCloud");
+                 p.Consider("superCloud","deploy",currentActivity);
+                 p.AddAction("deploy");
               
                 
                 
@@ -857,7 +862,10 @@ public class method {
                 
                 for (int i=0;i<VMPolicyList.size();i++)
                 {
-                
+                    String currentRole="Role"+i;
+                    String currentView="View"+i;
+                    String currentRuleID="Permit"+i;
+                    
                     ArrayList currentVMRule=(ArrayList) VMPolicyList.get(i);
                     
                     
@@ -882,7 +890,7 @@ public class method {
                            if (!VMIDMemoryList.contains(currentVMID))
                            {
                            
-                               
+                               p.AbstractPermission ("superCloud",currentRole,currentActivity,currentView,currentContext,currentRuleID);
                                
                                VMIDMemoryList.add(currentVMID);
                            }
@@ -929,7 +937,7 @@ public class method {
             p.CreateRoleAndInsertIntoOrg ("H2_Deny", "superCloud");
             // add an activity in the newly created organization
      
-            p.CreateActivityAndInsertIntoOrg ("myActivity", "superCloud");
+           
     
             // add a view in the newly created organization
             p.CreateViewAndInsertIntoOrg ("V1_Permit", "superCloud");
