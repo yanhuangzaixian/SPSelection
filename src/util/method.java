@@ -466,7 +466,7 @@ public class method {
      
      
      
-       public static LinkedList <ArrayList> readClientFileAndAbstractAbstractPolicy(String fileName) throws IOException, ParseException
+       public static LinkedList <ArrayList> readClientFileAndGenerateAbstractPolicy(String fileName) throws IOException, ParseException
        
        {
           JSONParser parser = new JSONParser();
@@ -514,7 +514,7 @@ public class method {
        
        
        
-        public static LinkedList <ArrayList> readSPFileAndAbstractAbstractPolicy(String fileName) throws IOException, ParseException
+        public static LinkedList <ArrayList> readSPFileAndGenerateAbstractPolicy(String fileName) throws IOException, ParseException
        
        {
           JSONParser parser = new JSONParser();
@@ -848,6 +848,11 @@ public class method {
               
                 
                 
+                LinkedList <String> VMIDMemeoryList = new LinkedList <String>();
+                LinkedList <String> HOSTIDMemeoryList = new LinkedList <String>();
+                
+                
+                
                 
                 
                 for (int i=0;i<VMPolicyList.size();i++)
@@ -863,7 +868,7 @@ public class method {
                     HashMap VMProperty=(HashMap) currentVMRule.get(2);
                     
                     
-                    
+                   
                     
                     
                     
@@ -925,7 +930,109 @@ public class method {
          
          
          
+         public static LinkedList <String> findRelatedVMID (HashMap VMProperty, LinkedList <VM> VMList)
+         {
+             
+             LinkedList <String> VMIDListFound=new LinkedList <String> ();
          
+             if(VMProperty.containsKey("ID"))   
+                 VMIDListFound.add((String) VMProperty.get("ID"));
+             
+             else
+             {
+                  Iterator iter = VMProperty.entrySet().iterator();
+                    while (iter.hasNext()) 
+                            {
+                                HashMap.Entry entry = (HashMap.Entry) iter.next();
+                                String keyInRule = (String) entry.getKey();
+                                String valueInRule = (String) entry.getValue();
+                                
+                      
+                                     for (int i=0;i<VMList.size();i++)
+                                     {
+                                        VM currentVM=VMList.get(i);
+                                        String currentVMID=currentVM.getID();
+                                        HashMap currentServiceDescription=currentVM.getServiceDescription();
+                                        
+                                        if (currentServiceDescription.containsKey(keyInRule))
+                                        {
+                                             if (currentServiceDescription.get(keyInRule).equals(valueInRule))
+                                             {
+                                                addUnRepeatedValueToList (currentVMID,VMIDListFound);
+                                             }
+                                        }
+                                        
+                                      }
+                                
+                                
+                            }
+             }
+         
+             
+             return VMIDListFound;
+             
+         }
+         
+         
+         public static LinkedList <String> findRelatedHOSTID (HashMap HOSTProperty, LinkedList <HOST> HOSTList)
+         {
+             
+             LinkedList <String> HOSTIDListFound=new LinkedList <String> ();
+         
+             if(HOSTProperty.containsKey("ID"))   
+                 HOSTIDListFound.add((String) HOSTProperty.get("ID"));
+             
+             else
+             {
+                  Iterator iter = HOSTProperty.entrySet().iterator();
+                    while (iter.hasNext()) 
+                            {
+                                HashMap.Entry entry = (HashMap.Entry) iter.next();
+                                String keyInRule = (String) entry.getKey();
+                                String valueInRule = (String) entry.getValue();
+                                
+                      
+                                     for (int i=0;i<HOSTList.size();i++)
+                                     {
+                                        HOST currentHOST=HOSTList.get(i);
+                                        String currentHOSTID=currentHOST.getID();
+                                        HashMap currentServiceDescription=currentHOST.getServiceDescription();
+                                        
+                                        if (currentServiceDescription.containsKey(keyInRule))
+                                        {
+                                             if (currentServiceDescription.get(keyInRule).equals(valueInRule))
+                                             {
+                                                addUnRepeatedValueToList (currentHOSTID,HOSTIDListFound);
+                                             }
+                                        }
+                                        
+                                      }
+                                
+                                
+                            }
+             }
+         
+             
+             return HOSTIDListFound;
+             
+         }
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         public static LinkedList <String> addUnRepeatedValueToList (String valueToAdd, LinkedList <String> listToAdd )
+         {
+             if (!listToAdd.contains(valueToAdd))
+                 listToAdd.add(valueToAdd);
+             
+             return listToAdd;
+     
+         }
          
          
     }

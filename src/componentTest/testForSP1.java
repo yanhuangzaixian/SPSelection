@@ -46,7 +46,7 @@ public class testForSP1 {
          
          System.out.println("**********************begin policyList information****************\n");
          
-    LinkedList <ArrayList> policyList=method.readSPFileAndAbstractAbstractPolicy("confSP\\contractFileList.json");
+    LinkedList <ArrayList> policyList=method.readSPFileAndGenerateAbstractPolicy("confSP\\contractFileList.json");
     
     for (int i=0;i<policyList.size();i++)
          {

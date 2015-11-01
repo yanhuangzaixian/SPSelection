@@ -42,7 +42,7 @@ public class testForClient1 {
          
          System.out.println("**********************begin policyList information****************\n");
          
-    LinkedList <ArrayList> policyList=method.readClientFileAndAbstractAbstractPolicy("confClient\\test3.json");
+    LinkedList <ArrayList> policyList=method.readClientFileAndGenerateAbstractPolicy("confClient\\test3.json");
     
     for (int i=0;i<policyList.size();i++)
          {
