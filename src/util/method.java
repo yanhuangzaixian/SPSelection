@@ -848,8 +848,8 @@ public class method {
               
                 
                 
-                LinkedList <String> VMIDMemeoryList = new LinkedList <String>();
-                LinkedList <String> HOSTIDMemeoryList = new LinkedList <String>();
+                LinkedList <String> VMIDMemoryList = new LinkedList <String>();
+                LinkedList <String> HOSTIDMemoryList = new LinkedList <String>();
                 
                 
                 
@@ -867,10 +867,41 @@ public class method {
                     HashMap HOSTProperty=(HashMap) currentVMRule.get(1);
                     HashMap VMProperty=(HashMap) currentVMRule.get(2);
                     
+                   if (policyType.equals ("permission"))
+                   {
+                        LinkedList <String> VMIDList=findRelatedVMID(VMProperty,VMList);
                     
+                        LinkedList <String> HOSTIDList=findRelatedHOSTID(HOSTProperty,HOSTList);
+                        
+                        
+                        for (int j=0;j<VMIDList.size();j++)
+                        {
+                            String currentVMID=VMIDList.get(j);
+                            
+                           
+                           if (!VMIDMemoryList.contains(currentVMID))
+                           {
+                           
+                               
+                               
+                               VMIDMemoryList.add(currentVMID);
+                           }
+                           
+                           else
+                           {
+                           
+                           }
+                            
+                            
+                            
+                        
+                        }
+                        
+                        
+                        
                    
-                    
-                    
+                   }
+                   
                     
                     
                     

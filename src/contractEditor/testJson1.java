@@ -61,7 +61,7 @@ public class testJson1 {
         VM_rule1.put("ID","VM1");
         
         ArrayList rule1=new ArrayList();
-        rule1.add("permit");
+        rule1.add("permission");
         rule1.add(host_rule1);
         rule1.add(VM_rule1);
         
@@ -73,7 +73,7 @@ public class testJson1 {
         VM_rule2.put("ID","VM2");
         
         ArrayList rule2=new ArrayList();
-        rule2.add("permit");
+        rule2.add("permission");
         rule2.add(host_rule1);
         rule2.add(VM_rule1);
         
