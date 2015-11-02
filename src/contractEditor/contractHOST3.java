@@ -59,7 +59,7 @@ public class contractHOST3 {
         HashMap host_rule1=new HashMap ();
         HashMap VM_rule1=new HashMap ();
         host_rule1.put("ID", "HOST3");
-        VM_rule1.put("application","_business");
+        VM_rule1.put("application","internal");
         
         ArrayList rule1=new ArrayList();
         rule1.add("prohibition");

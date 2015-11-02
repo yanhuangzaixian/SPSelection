@@ -43,7 +43,7 @@ public class contractHOST4 {
 
         HashMap serviceDescription=new HashMap();
         serviceDescription.put("location","France");
-        serviceDescription.put("certificate","true");
+        serviceDescription.put("certificate","false");
         serviceDescription.put("volume","100");
         serviceDescription.put("price","70");
         

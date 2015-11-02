@@ -57,7 +57,7 @@ public class testJson1 {
         
         HashMap host_rule1=new HashMap ();
         HashMap VM_rule1=new HashMap ();
-        host_rule1.put("Location", "Europe");
+        host_rule1.put("location", "France");
         VM_rule1.put("ID","VM1");
         
         ArrayList rule1=new ArrayList();

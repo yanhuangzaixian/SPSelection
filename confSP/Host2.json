@@ -1,1 +1,1 @@
-{"name":"HOST2","context":"VM-deployment","serviceDescription":{"volume":"200","price":"5","certificate":"no","location":"UK"},"creationConstraint":[["other","true","true",[["prohibition",{"ID":"HOST2"},{"data":"private"}]]]],"gauranteeTerm":{"availability":"more_99_percentage"}}
+{"name":"HOST2","context":"VM-deployment","serviceDescription":{"volume":"200","price":"5","certificate":"false","location":"UK"},"creationConstraint":[["other","true","true",[["prohibition",{"ID":"HOST2"},{"data":"private"}]]]],"gauranteeTerm":{"availability":"more_99_percentage"}}

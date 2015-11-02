@@ -101,7 +101,11 @@ public class OrBACAPITest1 {
     p.Empower("superCloud","Host2","H1_Permit");
     p.Use("superCloud","VM1","V1_Permit");
      
-     
+     /*Test repeated
+    p.Empower("superCloud","Host1","H2_Permit"); 
+    p.Use("superCloud","VM1","V2_Permit");
+    */
+    
     p.Empower("superCloud","Host3","H2_Permit"); 
     p.Use("superCloud","VM2","V2_Permit");
     
