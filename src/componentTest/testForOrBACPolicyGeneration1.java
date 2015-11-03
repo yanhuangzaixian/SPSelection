@@ -55,6 +55,9 @@ public class testForOrBACPolicyGeneration1 {
      method.printAllConcreteProhibition(p);
     }
     
+    
+    System.exit(0);
+    
     }
      
      

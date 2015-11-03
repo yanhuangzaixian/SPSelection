@@ -966,11 +966,12 @@ public class method {
                         for (int j=0;j<VMIDList.size();j++)
                         {
                             
-                             System.out.print("----------- hahaha This is J"+j);
-                            for (int k=0;k<HOSTList.size();k++)
+                             //System.out.print("----------- hahaha This is J"+j);
+                             //System.out.print("----------- HOSTLIST size"+HOSTList.size());
+                            for (int k=0;k<HOSTIDList.size();k++)
                             {
                              
-                              System.out.print("----------- hahaha This is K"+k);
+                             // System.out.print("----------- hahaha This is K"+k);
                               String currentVMID=VMIDList.get(j);
                               String currentHOSTID=HOSTIDList.get(k);
                               //System.out.println("---------------currentHOSTID"+currentHOSTID);
@@ -999,6 +1000,10 @@ public class method {
                     String currentRuleID="Prohibition_"+j1;
                     
                     
+                    p.CreateRoleAndInsertIntoOrg (currentRole, currentOrganization);
+                    p.CreateViewAndInsertIntoOrg (currentView, currentOrganization);
+                    
+                    
                     p.AbstractProhibition (currentOrganization,currentRole,currentActivity,currentView,currentContext,currentRuleID);
                     ArrayList currentHOSTRule=(ArrayList) HOSTPolicyList.get(j1);
                     
@@ -1012,9 +1017,9 @@ public class method {
                     
                         LinkedList <String> HOSTIDList=findRelatedHOSTID(HOSTProperty,HOSTList);
                         
-                        p.AbstractProhibition ("superCloud",currentRole,currentActivity,currentView,currentContext,currentRuleID);
+                       // p.AbstractProhibition ("superCloud",currentRole,currentActivity,currentView,currentContext,currentRuleID);
                         for (int j2=0;j2<VMIDList.size();j2++)
-                            for (int k2=0;k2<HOSTList.size();k2++)
+                            for (int k2=0;k2<HOSTIDList.size();k2++)
                             {
                               String currentHOSTID=HOSTIDList.get(k2);
                               String currentVMID=VMIDList.get(j2);
