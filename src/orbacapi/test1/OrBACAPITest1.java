@@ -89,7 +89,7 @@ public class OrBACAPITest1 {
     p.AddObject("VM2");
     
     p.AddObject("VM4");
-    
+     
     
     
     /*Permission rules*/

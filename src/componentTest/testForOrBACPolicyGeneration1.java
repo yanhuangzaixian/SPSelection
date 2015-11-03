@@ -43,10 +43,18 @@ public class testForOrBACPolicyGeneration1 {
     
     AbstractOrbacPolicy p=method.generateOrBACPolicyFromVMandHostPolicy(VMPolicyList, VMList, HOSTPolicyList, HOSTList);
     
-    
+    if (p==null)
+    {
+     System.out.println("\n ------------------null policy generated------------------");
+    }
+        
+   else
+    {
      method.printAllConcretePermission(p);
      
      method.printAllConcreteProhibition(p);
+    }
+    
     }
      
      

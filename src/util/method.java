@@ -376,6 +376,12 @@ public class method {
                                 
                                 HashMap.Entry entry = (HashMap.Entry) iter1.next();
                                 Object key = entry.getKey();
+                                
+                                
+                                
+                                
+                                
+                            try{
                                 float value = Float.parseFloat((String)entry.getValue());
                                 
                                 
@@ -419,7 +425,54 @@ public class method {
                                     VMList.add(newVM);
                                 }
                                 
+                            }
+                            
+                            catch (NumberFormatException e) 
+                            {
+                            
+                            
+                                String value= (String) entry.getValue();
+                                String [] keys=getIDandInfo ((String)key);
+                                String ID=keys[0];
+                                String term=keys[1];
                                 
+                                if (VMList.size()==0)
+                                {
+                                     
+                                    VM newVM=new VM(ID,new HashMap(),new HashMap(),new HashMap());
+                                    newVM.addServiceDescription(term, value);
+                                    VMList.add(newVM);
+                                    
+                                }
+                                
+                                boolean find=false;
+                                for (int i=0;i<VMList.size();i++)
+                                     {
+                                         VM currentVM=VMList.get(i);
+                                          
+                                          
+                                         if (currentVM.getID().equals(ID))
+                                          
+                                         {
+                                         currentVM.addServiceDescription(term,value);
+                                         
+                                         find=true;
+                                         
+                                         
+                                         }
+                                   
+                                     }
+                                
+                                if (find==false)
+                                {
+                                     
+                                    
+                                    VM newVM=new VM(ID,new HashMap(),new HashMap(),new HashMap());
+                                    newVM.addServiceDescription(term,value);
+                                    VMList.add(newVM);
+                                }
+                            
+                            }
                                 
                                 
                              /*2 Gaurantee term*/
@@ -848,6 +901,9 @@ public class method {
          
          public static AbstractOrbacPolicy generateOrBACPolicyFromVMandHostPolicy(LinkedList VMPolicyList, LinkedList <VM> VMList, LinkedList HOSTPolicyList,  LinkedList <HOST> HOSTList) throws COrbacException
          {
+             
+             
+             
          
                COrbacCore core = COrbacCore.GetTheInstance();
                     // create new policy using the Jena implementation
@@ -861,6 +917,8 @@ public class method {
                  String currentContext="default_context";
                  
                  p.CreateActivityAndInsertIntoOrg (currentActivity, "superCloud");
+                 
+                 
                  p.Consider("superCloud","deploy",currentActivity);
                  p.AddAction("deploy");
               
@@ -879,6 +937,9 @@ public class method {
                     String currentView="View_Permission_"+i;
                     String currentRuleID="Permission_"+i;
                     
+                    
+                    p.CreateRoleAndInsertIntoOrg (currentRole, currentOrganization);
+                    p.CreateViewAndInsertIntoOrg (currentView, currentOrganization);
                     //System.out.println("---------------currentRuleID"+currentRuleID);
                     
                     p.AbstractPermission ("superCloud",currentRole,currentActivity,currentView,currentContext,currentRuleID);
@@ -898,24 +959,30 @@ public class method {
                         LinkedList <String> HOSTIDList=findRelatedHOSTID(HOSTProperty,HOSTList);
                         
                         
+                        if ((VMIDList.size()==0) || (HOSTIDList.size()==0))
+                            return null;
                         
                         //p.AbstractPermission ("superCloud",currentRole,currentActivity,currentView,currentContext,currentRuleID);
                         for (int j=0;j<VMIDList.size();j++)
+                        {
+                            
+                             System.out.print("----------- hahaha This is J"+j);
                             for (int k=0;k<HOSTList.size();k++)
                             {
-                              String currentHOSTID=HOSTIDList.get(k);
+                             
+                              System.out.print("----------- hahaha This is K"+k);
                               String currentVMID=VMIDList.get(j);
-                              
+                              String currentHOSTID=HOSTIDList.get(k);
                               //System.out.println("---------------currentHOSTID"+currentHOSTID);
                               //System.out.println("\n---------------currentVMID"+currentVMID);
                               
-                              p.AddSubject(currentHOSTID);
-                              p.AddObject(currentVMID);
+                              //p.AddSubject(currentHOSTID);
+                              //p.AddObject(currentVMID);
                               
                               p.Empower(currentOrganization,currentHOSTID,currentRole); 
                               p.Use(currentOrganization,currentVMID,currentView);
                             }
-                        
+                        }
                         
                       
                         
@@ -953,8 +1020,8 @@ public class method {
                               String currentVMID=VMIDList.get(j2);
                               
                               
-                              p.AddSubject(currentHOSTID);
-                              p.AddObject(currentVMID);
+                              //p.AddSubject(currentHOSTID);
+                              //p.AddObject(currentVMID);
                               
                               p.Empower(currentOrganization,currentHOSTID,currentRole); 
                               p.Use(currentOrganization,currentVMID,currentView);
