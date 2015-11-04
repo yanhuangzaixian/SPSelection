@@ -154,7 +154,7 @@ public class OrBACAPITest1 {
      
      
      //method.resolveConflictSimply(p);
-     /*
+     
      method.resolveConflictAdvanced(p);
      
      
@@ -166,7 +166,7 @@ public class OrBACAPITest1 {
      //method.printAbstractConflict(p);
      method.printConcreteConflict(p);
      
-     
+     /*
       boolean r3 = p.IsPermited ("Host1", "deploy", "VM1");
     boolean r4 = p.IsPermited ("Host3", "deploy", "VM2");
     //boolean r3 = p.IsProhibited("Host1", "deploy", "VM1");

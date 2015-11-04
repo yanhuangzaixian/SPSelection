@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package componentTest;
+package orbacapi.test1;
 
 import cloudResource.HOST;
 import cloudResource.VM;
@@ -54,6 +54,37 @@ public class testForOrBACPolicyGeneration1 {
      
      method.printAllConcreteProhibition(p);
     }
+    
+    
+    method.printInfo("concreteConflict");
+    
+    method.printConcreteConflict(p);
+    
+    /*
+        method.printInfo("AbstractConflict");
+    
+    method.printAbstractConflict(p);
+    */
+    
+    
+      method.resolveConflictAdvanced(p);
+     
+     
+      method.printInfo("After resolved conclict");
+     
+      method.printAllConcretePermission(p);
+     
+     method.printAllConcreteProhibition(p);
+    
+    /*
+    boolean r1 = p.IsPermited ("HOST4", "deploy", "VM1");
+    boolean r2 = p.IsPermited ("HOST1", "deploy", "VM1");
+    //boolean r3 = p.IsProhibited("Host1", "deploy", "VM1");
+    
+    
+     System.out.println("r1:"+r1+"\n r2:"+r2+"\n");
+    */
+    
     
     
     System.exit(0);

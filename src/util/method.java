@@ -923,9 +923,9 @@ public class method {
                  p.AddAction("deploy");
               
                 
-                
-                //LinkedList <String> VMIDMemoryList = new LinkedList <String>();
-                //LinkedList <String> HOSTIDMemoryList = new LinkedList <String>();
+                 
+                LinkedList <String> VMIDMemoryList = new LinkedList <String>();
+                LinkedList <String> HOSTIDMemoryList = new LinkedList <String>();
                 
                 
                 
@@ -977,8 +977,21 @@ public class method {
                               //System.out.println("---------------currentHOSTID"+currentHOSTID);
                               //System.out.println("\n---------------currentVMID"+currentVMID);
                               
-                              //p.AddSubject(currentHOSTID);
-                              //p.AddObject(currentVMID);
+                              if (!HOSTIDMemoryList.contains(currentHOSTID))
+                              {
+                                  p.AddSubject(currentHOSTID);
+                                  HOSTIDMemoryList.add(currentHOSTID);
+                              
+                              }
+                              
+                              
+                               if (!VMIDMemoryList.contains(currentVMID))
+                              {
+                                  p.AddSubject(currentVMID);
+                                  VMIDMemoryList.add(currentVMID);
+                              
+                              }
+                              
                               
                               p.Empower(currentOrganization,currentHOSTID,currentRole); 
                               p.Use(currentOrganization,currentVMID,currentView);
@@ -1025,8 +1038,20 @@ public class method {
                               String currentVMID=VMIDList.get(j2);
                               
                               
-                              //p.AddSubject(currentHOSTID);
-                              //p.AddObject(currentVMID);
+                                  if (!HOSTIDMemoryList.contains(currentHOSTID))
+                              {
+                                  p.AddSubject(currentHOSTID);
+                                  HOSTIDMemoryList.add(currentHOSTID);
+                              
+                              }
+                              
+                              
+                               if (!VMIDMemoryList.contains(currentVMID))
+                              {
+                                  p.AddSubject(currentVMID);
+                                  VMIDMemoryList.add(currentVMID);
+                              
+                              }
                               
                               p.Empower(currentOrganization,currentHOSTID,currentRole); 
                               p.Use(currentOrganization,currentVMID,currentView);
