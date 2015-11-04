@@ -349,9 +349,10 @@ public class method {
 		Object obj = parser.parse(new FileReader(fileName));
 
 		JSONObject jsonObject = (JSONObject) obj;
-    
+              
+                HashMap serviceRequirement=(HashMap) jsonObject.get("serviceRequirement");
                 
-                HashMap <String,Integer> serviceDescription=(HashMap) jsonObject.get("serviceDescription");
+                HashMap serviceDescription=(HashMap) jsonObject.get("serviceDescription");
                  
                 //method.printHashMap(serviceDescription);
                 
@@ -367,6 +368,71 @@ public class method {
 		
 
                 /*Extract information and put it into VMlist*/
+                
+                 /*0. Servcie Requirement*/
+                
+                
+                Iterator iter0 = serviceRequirement.entrySet().iterator();
+                
+                while (iter0.hasNext()) 
+                            {
+                                
+                                
+                                HashMap.Entry entry = (HashMap.Entry) iter0.next();
+                                Object key = entry.getKey();
+                                
+                              
+                                String value= (String) entry.getValue();
+                                String [] keys=getIDandInfo ((String)key);
+                                String ID=keys[0];
+                                String term=keys[1];
+                                
+                                if (VMList.size()==0)
+                                {
+                                     
+                                    VM newVM=new VM(ID,new HashMap(),new HashMap(),new HashMap());
+                                    newVM.addServiceRequirement(term, value);
+                                    VMList.add(newVM);
+                                    
+                                }
+                                
+                                boolean find=false;
+                                for (int i=0;i<VMList.size();i++)
+                                     {
+                                         VM currentVM=VMList.get(i);
+                                          
+                                          
+                                         if (currentVM.getID().equals(ID))
+                                          
+                                         {
+                                         currentVM.addServiceRequirement(term,value);
+                                         
+                                         find=true;
+                                         
+                                         
+                                         }
+                                   
+                                     }
+                                
+                                if (find==false)
+                                {
+                                     
+                                    
+                                    VM newVM=new VM(ID,new HashMap(),new HashMap(),new HashMap());
+                                    newVM.addServiceRequirement(term,value);
+                                    VMList.add(newVM);
+                                }
+                            
+                            
+                            }   
+                
+                
+                
+                
+                
+                
+                
+                
                 /*1. Servcie Description*/
                 
                 Iterator iter1 = serviceDescription.entrySet().iterator();
@@ -473,7 +539,7 @@ public class method {
                                 }
                             
                             }
-                                
+                            }     
                                 
                              /*2 Gaurantee term*/
                                 
@@ -520,7 +586,7 @@ public class method {
                 
                 
                
-                            }   
+                             
                 
 	
         
@@ -694,7 +760,7 @@ public class method {
                                      if (HOSTList.size()==0)
                                         {
                                      
-                                            HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                            HOST newHOST=new HOST(ID,new HashMap(),new HashMap());
                                             newHOST.addServiceDescription((String) key,value);
                                             HOSTList.add(newHOST);
                                     
@@ -721,7 +787,7 @@ public class method {
                                         {
                                      
                                     
-                                            HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                            HOST newHOST=new HOST(ID,new HashMap(),new HashMap());
                                             newHOST.addServiceDescription((String) key, value);
                                             HOSTList.add(newHOST);
                                          }
@@ -735,7 +801,7 @@ public class method {
                                         if (HOSTList.size()==0)
                                     {
                                      
-                                        HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                        HOST newHOST=new HOST(ID,new HashMap(),new HashMap());
                                         newHOST.addServiceDescription((String) key,value);
                                         HOSTList.add(newHOST);
                                     
@@ -763,7 +829,7 @@ public class method {
                                         {
                                      
                                    
-                                        HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                        HOST newHOST=new HOST(ID,new HashMap(),new HashMap());
                                         newHOST.addServiceDescription((String) key, value);
                                         HOSTList.add(newHOST);
                                         }
@@ -794,7 +860,7 @@ public class method {
                                 
                                 if (HOSTList.size()==0)
                                 {
-                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap());
                                     newHOST.addGauranteeTerm((String) key2,(String)value2);
                                     
                                 }
@@ -814,7 +880,7 @@ public class method {
                                 
                                 if (find2==false)
                                 {
-                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap(),new HashMap());
+                                    HOST newHOST=new HOST(ID,new HashMap(),new HashMap());
                                     newHOST.addGauranteeTerm((String) key2,(String)value2);
                                     
                                 }

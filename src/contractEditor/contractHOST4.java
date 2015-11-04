@@ -44,8 +44,8 @@ public class contractHOST4 {
         HashMap serviceDescription=new HashMap();
         serviceDescription.put("location","France");
         serviceDescription.put("certificate","true");
-        serviceDescription.put("volume","100");
-        serviceDescription.put("price","70");
+        serviceDescription.put("volume","100_GB");
+        serviceDescription.put("price","70_euro");
         
         obj.put("serviceDescription", serviceDescription);
         

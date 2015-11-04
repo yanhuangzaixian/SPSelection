@@ -40,26 +40,30 @@ public class contractClients {
         obj.put("context", "VM-deployment");
 	//obj.put("Context", new Integer);
 
+        HashMap serviceRequirement=new HashMap();
+        
+        
         HashMap serviceDescription=new HashMap();
-        serviceDescription.put("VM1_volume","10");
+        serviceRequirement.put("VM1_volume","10_GB");
         serviceDescription.put("VM1_purpose","dev");
         serviceDescription.put("VM1_data","private");
         serviceDescription.put("VM1_application","internal");
         
         
         
-        serviceDescription.put("VM2_volume","20");
+        serviceRequirement.put("VM2_volume","20_GB");
         serviceDescription.put("VM2_purpose","prod");
         serviceDescription.put("VM2_data","public");
         serviceDescription.put("VM2_application","business");
         
         
-        serviceDescription.put("VM3_volume","30");
+        serviceRequirement.put("VM3_volume","30_GB");
         serviceDescription.put("VM3_purpose","test");
         serviceDescription.put("VM3_data","private");
         serviceDescription.put("VM3_application","internal");
         
         
+        obj.put("serviceRequirement", serviceRequirement);
         obj.put("serviceDescription", serviceDescription);
         
         HashMap gauranteeTerm=new HashMap();

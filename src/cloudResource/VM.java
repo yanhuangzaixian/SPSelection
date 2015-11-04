@@ -14,11 +14,12 @@ import util.method;
  * @author RDSG6431
  */
 public class VM {
-    
+
+   
     String ID;
+    HashMap serviceRequirement;
     HashMap serviceDescription ;
     HashMap requirement ;
-    HashMap permitForHost;
     
     
     public void printInfo()
@@ -26,6 +27,8 @@ public class VM {
     {
         System.out.println("-----------------VM information-----------\n");
         System.out.println("ID: "+ID);
+        System.out.println("serviceRequirement:");
+        method.printHashMap(serviceRequirement);
         System.out.println("serviceDescription:");
         method.printHashMap(serviceDescription);
         System.out.println("requirement:");
@@ -36,14 +39,19 @@ public class VM {
     
     
 
-    public VM(String ID, HashMap serviceDescription, HashMap requirement, HashMap permitForHost) {
+    public VM(String ID, HashMap serviceRequirement,HashMap serviceDescription,HashMap requirement) {
         this.ID = ID;
+        this.serviceRequirement=serviceRequirement;
         this.serviceDescription = serviceDescription;
-        this.requirement = requirement;
-        this.permitForHost = permitForHost;
+        this.requirement=requirement;
+        
     }
     
 
+    
+    
+    
+    
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -52,13 +60,7 @@ public class VM {
         this.serviceDescription = serviceDescription;
     }
 
-    public void setRequirement(HashMap requirement) {
-        this.requirement = requirement;
-    }
-
-    public void setPermitForHost(HashMap permitForHost) {
-        this.permitForHost = permitForHost;
-    }
+    
 
     public String getID() {
         return ID;
@@ -68,13 +70,16 @@ public class VM {
         return serviceDescription;
     }
 
-    public HashMap getRequirement() {
-        return requirement;
+   
+    
+     public HashMap getServiceRequirement() {
+        return serviceRequirement;
     }
 
-    public HashMap getPermitForHost() {
-        return permitForHost;
+    public void setServiceRequirement(HashMap serviceRequirement) {
+        this.serviceRequirement = serviceRequirement;
     }
+    
     
     
     
@@ -92,6 +97,12 @@ public class VM {
     
     }
     
+     
+     public void addServiceRequirement(String key, Object value)
+    {
+        this.serviceRequirement.put(key,value);
+    
+    }
     
     
     

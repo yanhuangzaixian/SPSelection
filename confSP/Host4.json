@@ -1,1 +1,1 @@
-{"name":"HOST4","context":"VM-deployment","serviceDescription":{"volume":"100","price":"70","certificate":"true","location":"France"},"creationConstraint":[[]],"gauranteeTerm":{"availability":"more_98_percentage"}}
+{"name":"HOST4","context":"VM-deployment","serviceDescription":{"volume":"100_GB","price":"70_euro","certificate":"true","location":"France"},"creationConstraint":[[]],"gauranteeTerm":{"availability":"more_98_percentage"}}

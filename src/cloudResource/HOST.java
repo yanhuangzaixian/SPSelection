@@ -18,7 +18,7 @@ public class HOST {
     String ID;
     HashMap serviceDescription;
     HashMap gauranteeTerm;
-    HashMap denyForVM;
+   
 
      public void printInfo()
     
@@ -32,11 +32,11 @@ public class HOST {
     }
     
     
-    public HOST(String ID, HashMap serviceDescription, HashMap gauranteeTerm, HashMap denyForVM) {
+    public HOST(String ID, HashMap serviceDescription, HashMap gauranteeTerm) {
         this.ID = ID;
         this.serviceDescription = serviceDescription;
         this.gauranteeTerm=gauranteeTerm;
-        this.denyForVM = denyForVM;
+        
     }
 
     public String getID() {
@@ -55,13 +55,6 @@ public class HOST {
         this.serviceDescription = serviceDescription;
     }
 
-    public HashMap getDenyForVM() {
-        return denyForVM;
-    }
-
-    public void setDenyForVM(HashMap denyForVM) {
-        this.denyForVM = denyForVM;
-    }
     
     public HashMap getGauranteeTerm(){
        return gauranteeTerm;
