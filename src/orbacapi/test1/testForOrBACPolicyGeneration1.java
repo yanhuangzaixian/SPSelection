@@ -56,17 +56,14 @@ public class testForOrBACPolicyGeneration1 {
     }
     
     
-    method.printInfo("concreteConflict");
-    
-    method.printConcreteConflict(p);
     
     /*
-        method.printInfo("AbstractConflict");
     
-    method.printAbstractConflict(p);
-    */
+      method.printInfo("concreteConflict");
     
-    
+      method.printConcreteConflict(p);
+   
+
       method.resolveConflictAdvanced(p);
      
      
@@ -75,6 +72,7 @@ public class testForOrBACPolicyGeneration1 {
       method.printAllConcretePermission(p);
      
      method.printAllConcreteProhibition(p);
+    */
     
     /*
     boolean r1 = p.IsPermited ("HOST4", "deploy", "VM1");

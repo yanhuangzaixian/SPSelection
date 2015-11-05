@@ -7,7 +7,7 @@
 package cloudResource;
 
 import java.util.HashMap;
-
+import java.util.LinkedList;
 import util.method;
 /**
  *
@@ -19,8 +19,8 @@ public class VM {
     String ID;
     HashMap serviceRequirement;
     HashMap serviceDescription ;
-    HashMap requirement ;
-    
+    HashMap gauranteeTerm ;
+    //LinkedList <String> HOSTMapList;
     
     public void printInfo()
     
@@ -31,20 +31,57 @@ public class VM {
         method.printHashMap(serviceRequirement);
         System.out.println("serviceDescription:");
         method.printHashMap(serviceDescription);
-        System.out.println("requirement:");
-        method.printHashMap(requirement);
+        System.out.println("gauranteeTerm:");
+        method.printHashMap(gauranteeTerm);
+    }
+    
+ 
+    
+    
+
+    public VM(String ID, HashMap serviceRequirement,HashMap serviceDescription,HashMap gauranteeTerm) {
+        this.ID = ID;
+        this.serviceRequirement=serviceRequirement;
+        this.serviceDescription = serviceDescription;
+        this.gauranteeTerm=gauranteeTerm;
+        //this.HOSTMapList=new LinkedList <String> ();
+        
+    }
+
+    
+    /*
+    public void addHOSTMapList_NoRepeated (String HOSTAdded)
+    {
+       if (!(HOSTMapList.contains (HOSTAdded)))
+       {
+         this.HOSTMapList.add (HOSTAdded);
+       }
+    }
+    
+    
+    public void deleteHOSTMapList(String HOSTDeleted)
+    {
+         HOSTMapList.remove(HOSTDeleted);
     }
     
     
     
-    
+    public void setHOSTMapList(LinkedList<String> HOSTMapList) {
+        this.HOSTMapList = HOSTMapList;
+    }
 
-    public VM(String ID, HashMap serviceRequirement,HashMap serviceDescription,HashMap requirement) {
-        this.ID = ID;
-        this.serviceRequirement=serviceRequirement;
-        this.serviceDescription = serviceDescription;
-        this.requirement=requirement;
-        
+    public LinkedList<String> getHOSTMapList() {
+        return HOSTMapList;
+    }
+    */
+    
+    
+    public void setGauranteeTerm(HashMap gauranteeTerm) {
+        this.gauranteeTerm = gauranteeTerm;
+    }
+
+    public HashMap getGauranteeTerm() {
+        return gauranteeTerm;
     }
     
 
@@ -91,9 +128,9 @@ public class VM {
     
     
     
-     public void addRequirement(String key, String value)
+     public void addGauranteeTerm(String key, String value)
     {
-        this.requirement.put(key,value);
+        this.gauranteeTerm.put(key,value);
     
     }
     

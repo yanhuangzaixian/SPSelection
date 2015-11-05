@@ -383,7 +383,7 @@ public class method {
                                 
                               
                                 String value= (String) entry.getValue();
-                                String [] keys=getIDandInfo ((String)key);
+                                String [] keys=getSplitResult ((String)key);
                                 String ID=keys[0];
                                 String term=keys[1];
                                 
@@ -451,7 +451,7 @@ public class method {
                                 float value = Float.parseFloat((String)entry.getValue());
                                 
                                 
-                                String [] keys=getIDandInfo ((String)key);
+                                String [] keys=getSplitResult ((String)key);
                                 String ID=keys[0];
                                 String term=keys[1];
                                 
@@ -498,7 +498,7 @@ public class method {
                             
                             
                                 String value= (String) entry.getValue();
-                                String [] keys=getIDandInfo ((String)key);
+                                String [] keys=getSplitResult ((String)key);
                                 String ID=keys[0];
                                 String term=keys[1];
                                 
@@ -552,14 +552,14 @@ public class method {
                                 Object value2 = entry2.getValue();
                                 
                                 
-                                String [] keys2=getIDandInfo ((String)key2);
+                                String [] keys2=getSplitResult((String)key2);
                                 String ID2=keys2[0];
                                 String term2=keys2[1];
                                 
                                 if (VMList.size()==0)
                                 {
                                     VM newVM=new VM(ID2,new HashMap(),new HashMap(),new HashMap());
-                                    newVM.addRequirement(term2,(String)value2);
+                                    newVM.addGauranteeTerm(term2,(String)value2);
                                     
                                 }
                                 
@@ -570,7 +570,7 @@ public class method {
                                         
                                          if (currentVM.getID().equals(ID2))
                                             
-                                         currentVM.addRequirement(term2, (String)value2);
+                                         currentVM.addGauranteeTerm(term2, (String)value2);
                                          
                                          find2=true;
                                    
@@ -579,7 +579,7 @@ public class method {
                                 if (find2==false)
                                 {
                                     VM newVM=new VM(ID2,new HashMap(),new HashMap(),new HashMap());
-                                    newVM.addRequirement(term2,(String)value2);
+                                    newVM.addGauranteeTerm(term2,(String)value2);
                                     
                                 }
                             }
@@ -908,7 +908,7 @@ public class method {
      
      
      
-     public static String [] getIDandInfo (String input)
+     public static String [] getSplitResult (String input)
              
      {
             return input.split("_");
@@ -1132,6 +1132,78 @@ public class method {
          
          
          
+         
+         
+          public static AbstractOrbacPolicy filterOrBACPolicy(AbstractOrbacPolicy p, LinkedList <VM> VMList, LinkedList <HOST> HOSTList) throws COrbacException
+         {
+         
+             
+             Set concretePermissionList=p.GetConcretePermissions();
+     
+                Iterator iter = concretePermissionList.iterator();
+                while (iter.hasNext()) 
+                
+                {
+         
+                 CConcretePermission Cpermission=(CConcretePermission)iter.next();
+                 
+                
+                
+                    String currentHOSTID=Cpermission.GetSubject();
+                    String currentVMID=Cpermission.GetObject();
+                    
+                    HOST currentHOST=findHOSTByIDFromHOSTList(HOSTList,currentHOSTID);
+                    VM currentVM=findVMByIDFromVMList(VMList,currentVMID);
+                    
+                    if (!(currentHOSTSatisfyCurrentVM(currentHOST,currentVM)))
+                            {
+                                Cpermission.SetState(false);
+                            }
+                    
+                   /*
+                    System.out.println(Cpermission.toString());
+                    System.out.println("Is active ?"+Cpermission.IsActive());
+                   */
+                
+                
+                
+                }
+     
+             
+             return p;
+         }
+         
+         
+         
+         
+         
+         
+        public static boolean currentHOSTSatisfyCurrentVM(HOST currentHOST,VM currentVM)
+        {
+        
+        
+            
+                /*1. Filter service requirement */
+            
+               HashMap <String,String> VMServiceRequirement=currentVM.getServiceRequirement();
+               /*String key_VMServiceRequirement=VMServiceRequirement.keySet().*/
+               
+               
+               
+               
+               
+            
+                return true;
+        
+        
+        }
+         
+         
+         
+         
+         
+         
+         
          public static LinkedList <String> findRelatedVMID (HashMap VMProperty, LinkedList <VM> VMList)
          {
              
@@ -1222,8 +1294,37 @@ public class method {
          
          
          
+         public static VM findVMByIDFromVMList (LinkedList <VM> VMList, String VMID)
+         {
+         
+             for (int i=0;i<VMList.size();i++)
+             {
+                VM currentVM=VMList.get(i);
+                if (currentVM.getID().equals(VMID))
+                    return  currentVM;
+             }
+             
+             
+             return null;
+             
+         }
          
          
+         
+            public static HOST findHOSTByIDFromHOSTList (LinkedList <HOST> HOSTList, String HOSTID)
+         {
+         
+             for (int i=0;i<HOSTList.size();i++)
+             {
+                HOST currentHOST=HOSTList.get(i);
+                if (currentHOST.getID().equals(HOSTID))
+                    return  currentHOST;
+             }
+             
+             
+             return null;
+             
+         }
          
          
          

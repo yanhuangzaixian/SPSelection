@@ -67,9 +67,9 @@ public class contractClients {
         obj.put("serviceDescription", serviceDescription);
         
         HashMap gauranteeTerm=new HashMap();
-        gauranteeTerm.put("VM1_performance","more_97_percentage");
-        gauranteeTerm.put("VM2_performance","more_99_percentage");
-        gauranteeTerm.put("VM3_performance","more_95_percentage");
+        gauranteeTerm.put("VM1_availability","more_97_percentage");
+        gauranteeTerm.put("VM2_availability","more_99_percentage");
+        gauranteeTerm.put("VM3_availability","more_95_percentage");
         obj.put("gauranteeTerm", gauranteeTerm);
         
         //Constraint1
