@@ -1155,7 +1155,7 @@ public class method {
                     HOST currentHOST=findHOSTByIDFromHOSTList(HOSTList,currentHOSTID);
                     VM currentVM=findVMByIDFromVMList(VMList,currentVMID);
                     
-                    if (!(currentHOSTSatisfyCurrentVM(currentHOST,currentVM)))
+                    if ( (!(currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM))) ||   (!(currentHOSTSatisfyCurrentVMForPerformance(currentHOST,currentVM)))     )
                             {
                                 Cpermission.SetState(false);
                             }
@@ -1178,7 +1178,7 @@ public class method {
          
          
          
-        public static boolean currentHOSTSatisfyCurrentVM(HOST currentHOST,VM currentVM)
+        public static boolean currentHOSTSatisfyCurrentVMForCapacity(HOST currentHOST,VM currentVM)
         {
         
         
@@ -1186,9 +1186,52 @@ public class method {
                 /*1. Filter service requirement */
             
                HashMap <String,String> VMServiceRequirement=currentVM.getServiceRequirement();
-               /*String key_VMServiceRequirement=VMServiceRequirement.keySet().*/
+               HashMap <String,String> HOSTServiceRequirement=currentHOST.getServiceDescription();
                
                
+               
+               Iterator iter = VMServiceRequirement.entrySet().iterator();
+                    while (iter.hasNext()) 
+                            {
+                                HashMap.Entry entry = (HashMap.Entry) iter.next();
+                                String key_VM_serviceRequirement = (String) entry.getKey();
+                                String value_unite_VM_serviceRequirement = (String) entry.getValue();
+                                
+                                
+                               String value_unite_HOST_serviceDescription= (String) HOSTServiceRequirement.get(key_VM_serviceRequirement);
+                               if (value_unite_HOST_serviceDescription==null)
+                               { 
+                                    {
+                                        return false;
+                                    }
+                               }
+                               
+                               else    
+                                {
+                                    String [] value_unite_VM_serviceRequirement_List=getSplitResult(value_unite_VM_serviceRequirement);
+                                    float value_VM_serviceRequirement=Float.parseFloat(value_unite_VM_serviceRequirement_List[0]);
+                                    String unite_VM_servcieRequirement=value_unite_VM_serviceRequirement_List[1];
+                                    
+                                    
+                                    String [] value_unite_HOST_serviceDescription_List=getSplitResult(value_unite_HOST_serviceDescription);
+                                    
+                                    float value_HOST_serviceDescription=Float.parseFloat(value_unite_HOST_serviceDescription_List[0]);
+                                    String unite_HOST_servcieRequirement=value_unite_HOST_serviceDescription_List[1];
+                                    
+                                    
+                                    if ((!(value_VM_serviceRequirement<=value_HOST_serviceDescription)) || (!(unite_VM_servcieRequirement.equals(unite_HOST_servcieRequirement))))
+                                    {
+                                        return false;
+                                    }
+                                    
+                                    
+                                }
+                                 
+                                
+                                
+                                
+                                
+                            }
                
                
                
@@ -1201,6 +1244,103 @@ public class method {
          
          
          
+        public static boolean currentHOSTSatisfyCurrentVMForPerformance(HOST currentHOST,VM currentVM)
+        {
+        
+        
+            
+                /*1. Filter service requirement */
+            
+               HashMap <String,String> VMServiceGurantee=currentVM.getGauranteeTerm();
+               HashMap <String,String> HOSTServiceGurantee=currentHOST.getGauranteeTerm();
+               
+               
+               
+               Iterator iter = VMServiceGurantee.entrySet().iterator();
+                    while (iter.hasNext()) 
+                            {
+                                HashMap.Entry entry = (HashMap.Entry) iter.next();
+                                String key_VM_serviceGurantee = (String) entry.getKey();
+                                String value_unite_VM_serviceGurantee = (String) entry.getValue();
+                                
+                                
+                               String value_unite_HOST_serviceGurantee= (String) HOSTServiceGurantee.get(key_VM_serviceGurantee);
+                               if (value_unite_HOST_serviceGurantee==null)
+                               { 
+                                    {
+                                        return false;
+                                    }
+                               }
+                               
+                               else    
+                                {
+                                    String [] value_unite_VM_serviceGurantee_List=getSplitResult(value_unite_VM_serviceGurantee);
+                                    
+                                    String operator_VM_serviceGuarantee=value_unite_VM_serviceGurantee_List[0];
+                                    float value_VM_serviceGurantee=Float.parseFloat(value_unite_VM_serviceGurantee_List[1]);
+                                    String unite_VM_serviceGurantee=value_unite_VM_serviceGurantee_List[2];
+                                    
+                                    
+                                    String [] value_unite_HOST_serviceGurantee_List=getSplitResult(value_unite_HOST_serviceGurantee);
+                                    
+                                    
+                                    String operator_HOST_serviceGuarantee=value_unite_HOST_serviceGurantee_List[0];
+                                    float value_HOST_serviceGurantee=Float.parseFloat(value_unite_HOST_serviceGurantee_List[1]);
+                                    String unite_HOST_serviceGurantee=value_unite_HOST_serviceGurantee_List[2];
+                                    
+                                    
+                                     if (!operator_VM_serviceGuarantee.equals(operator_HOST_serviceGuarantee))
+                                     {
+                                       return false;
+                                     }
+                                    
+                                    
+                                    if ((operator_VM_serviceGuarantee.equals("more")) && (operator_HOST_serviceGuarantee.equals("more")))
+                                     {
+                                        if ((!(value_VM_serviceGurantee<=value_HOST_serviceGurantee)) || (!(unite_VM_serviceGurantee.equals(unite_HOST_serviceGurantee))))
+                                            {
+                                                return false;
+                                            }
+                                    }
+                                    
+                                    
+                                    
+                                    if ((operator_VM_serviceGuarantee.equals("less")) && (operator_HOST_serviceGuarantee.equals("less")))
+                                     {
+                                        if ((!(value_VM_serviceGurantee>=value_HOST_serviceGurantee)) || (!(unite_VM_serviceGurantee.equals(unite_HOST_serviceGurantee))))
+                                            {
+                                                return false;
+                                            }
+                                    }
+                                    
+                                    
+                                }
+                                 
+                                
+                                
+                                
+                                
+                            }
+               
+               
+               
+            
+                return true;
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
          
          
          

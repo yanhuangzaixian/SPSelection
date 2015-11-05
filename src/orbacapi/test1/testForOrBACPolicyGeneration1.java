@@ -15,6 +15,8 @@ import orbac.AbstractOrbacPolicy;
 import orbac.exception.COrbacException;
 import org.json.simple.parser.ParseException;
 import util.method;
+import static util.method.filterOrBACPolicy;
+import static util.method.printInfo;
 
 /**
  *
@@ -54,6 +56,18 @@ public class testForOrBACPolicyGeneration1 {
      
      method.printAllConcreteProhibition(p);
     }
+    
+    
+    
+    
+    p=filterOrBACPolicy(p,VMList,HOSTList);
+    
+    printInfo("After SLA filter");
+    
+    
+    method.printAllConcretePermission(p);
+     
+    method.printAllConcreteProhibition(p);
     
     
     
