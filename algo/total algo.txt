@@ -2,10 +2,17 @@
 
 2. Filter Service and Requirement
 
-3. ResolveConflict
+3. Resolve reverse Conflict
+
+4. Resolve seperation Conflict
 
 
 
+
+5. Generate different deploy solution  
+
+
+/**/
 
 
 /*Filter Property requirement */

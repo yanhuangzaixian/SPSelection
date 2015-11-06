@@ -60,6 +60,9 @@ public class testForOrBACPolicyGeneration1 {
     
     
     
+    
+      /*************************SLA filter***********************************/
+    
     p=filterOrBACPolicy(p,VMList,HOSTList);
     
     printInfo("After SLA filter");
@@ -71,7 +74,7 @@ public class testForOrBACPolicyGeneration1 {
     
     
     
-    /*
+    /*************************Resolve concrete reverse conflict***********************************/
     
       method.printInfo("concreteConflict");
     
@@ -86,7 +89,7 @@ public class testForOrBACPolicyGeneration1 {
       method.printAllConcretePermission(p);
      
      method.printAllConcreteProhibition(p);
-    */
+    
     
     /*
     boolean r1 = p.IsPermited ("HOST4", "deploy", "VM1");

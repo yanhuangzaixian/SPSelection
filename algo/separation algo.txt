@@ -1,0 +1,8 @@
+current List
+
+
+
+seperationVMIDList, concretePolicyListAfterResolved
+
+[<VM1,VM2>  <VM3>,<VM4>],  [<VM2>, <VM5>]
+

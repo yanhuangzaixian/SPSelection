@@ -253,7 +253,14 @@ public class method {
      
      } 
      
-     
+  
+    
+    
+    
+    
+    
+    
+    
      public static Set getSeparationConflictFromPermissions(AbstractOrbacPolicy p, String object1NeedToSeparated, String object2NeedToSeparated)
      {
          
@@ -285,7 +292,17 @@ public class method {
      
      
      
-     public static void  printFromSet (Set <CConcretePermission> setRule)
+     public static AbstractOrbacPolicy resolveSeparationConflict(AbstractOrbacPolicy p) throws COrbacException
+             
+     {
+        
+     
+     }
+     
+     
+     
+     
+     public static void printFromSet (Set <CConcretePermission> setRule)
      {
      
      Iterator iter3 = setRule.iterator();
@@ -1129,6 +1146,66 @@ public class method {
   
             return p;    
          }
+         
+         
+         
+         public static LinkedList <LinkedList <LinkedList <String>>>  generateConcreteSeparationPolicyFromVMList(LinkedList <ArrayList> VMPolicyList, LinkedList <VM> VMList) throws COrbacException
+         {
+ 
+             LinkedList totalConcreteSeparationPolicyList=new LinkedList ();            
+             
+                
+                for (int i=0;i<VMPolicyList.size();i++)
+                {
+
+                    ArrayList currentVMRule=(ArrayList) VMPolicyList.get(i);
+
+                    String policyType=(String) currentVMRule.get(0);
+                    HashMap VM1Property=(HashMap) currentVMRule.get(1);
+                    HashMap VM2Property=(HashMap) currentVMRule.get(2);
+                    
+
+                   if (policyType.equals ("separation"))
+                   {
+                        LinkedList <String> VMID1List=findRelatedVMID(VM1Property,VMList);
+                    
+                        LinkedList <String> VMID2List=findRelatedVMID(VM2Property,VMList);
+                        
+                        
+                        if ((VMID1List.size()==0) || (VMID2List.size()==0))
+                            return null;
+                        
+                        LinkedList seperationConflictPairList=new LinkedList <LinkedList <String>> ();
+                        seperationConflictPairList.add(VMID1List);
+                        seperationConflictPairList.add(VMID2List);
+                        
+                        totalConcreteSeparationPolicyList.add(seperationConflictPairList);
+            
+                    }
+                }
+                
+                 return totalConcreteSeparationPolicyList;
+                
+                
+         }
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
          
          
          
