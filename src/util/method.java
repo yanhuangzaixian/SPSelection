@@ -291,15 +291,15 @@ public class method {
      }
      
      
-     
-     public static AbstractOrbacPolicy resolveSeparationConflict(AbstractOrbacPolicy p) throws COrbacException
+/*     
+     public static AbstractOrbacPolicy resolveSeparationConflict(AbstractOrbacPolicy p,) throws COrbacException
              
      {
         
      
      }
      
-     
+   */
      
      
      public static void printFromSet (Set <CConcretePermission> setRule)
