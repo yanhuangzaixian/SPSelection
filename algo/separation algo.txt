@@ -2,7 +2,91 @@ current List
 
 
 
-seperationVMIDList, concretePolicyListAfterResolved
+1.    seperationVMIDList,
 
-[<VM1,VM2>  <VM3>,<VM4>],  [<VM2>, <VM5>]
+[<VM1,VM2>  <VM3,VM4>],  [<VM2>, <VM5>]
 
+
+2.    OrBAC Policy permission
+
+
+3. VM List
+
+
+LinkedList <LinkedList <HashMap<String,String> >>
+
+for p_i in Policy permission
+    HOST_i=p_i.get(subject)
+	VM_i=p_i.get(object)
+	
+	if    ( (VM_i) not_in HOST_i.conflictSet  and   (HOST_i has space for VM_i)    )
+             	
+    	    HOST_i.add (VM_i)
+			
+    else
+	
+	
+
+	
+LinkedList <LinkedList <HashMap<String,String> >>
+
+for p_i in Policy permission
+
+
+	VM_i=p_i.get(object)
+    HOST_i=p_i.get(subject)
+	
+	
+	if    ( (VM_i) not_in conflictSet  and   (HOST_i has space for VM_i)    )
+             	
+    	    VM_i.add (HOST)
+			
+    
+	
+	
+	
+	
+	if all the VM has been located, then finish
+	
+	else
+	
+	
+	
+	
+	
+	
+	final solution
+	
+	HashMap <String, LinkedList <String>>
+	
+	
+	
+	
+	
+	
+	
+	for one VM_i in all policy 
+	
+	            get all host_solution
+	
+	
+				Ranking host from cheap to high   return LinkedList <HOST> host_solution  ?
+	
+
+			    for host_i in host_solution
+
+				if    ( (VM_i) not_in conflictSet  and   (HOST_i has space for VM_i)    )
+             	
+							HOST_i.add (VM_i)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

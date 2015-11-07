@@ -80,6 +80,23 @@ public class HOST {
     
     }
     
+     
+     
+     public float getPrice ()
+             
+     {
+        HashMap serviceDescription=getServiceDescription();
+        
+        
+        String priceItem=(String) serviceDescription.get("price");
+        
+        String price_unit[]=priceItem.split("_");
+        
+        float price=Float.parseFloat(price_unit[0]);
+        
+        return price;
+        
+     }
     
     
 }
