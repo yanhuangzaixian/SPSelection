@@ -45,7 +45,7 @@ public class contractHOST3 {
         serviceDescription.put("location","China");
         serviceDescription.put("certificate","false");
         serviceDescription.put("volume","70_GB");
-        serviceDescription.put("price","60_euro");
+        serviceDescription.put("price","4_euro");
         
         obj.put("serviceDescription", serviceDescription);
         

@@ -33,8 +33,14 @@ public class testForSP1 {
         
          LinkedList <HOST> HOSTList=method.readHostFileAndGenerateHOSTList("confSP\\contractFileList.json");
          
+        /* 
+         LinkedList <String> HOSTIDList=new LinkedList <String> ();
+         HOSTIDList.add("HOST1");
+         HOSTIDList.add("HOST2");
+         HOSTIDList.add("HOST3");
+         HOSTIDList.add("HOST4");
          
-         
+         HOSTList=util.allocation.rankingHostlistFromCheapToHigh(HOSTIDList, HOSTList);
          
          for (int i=0;i<HOSTList.size();i++)
          {
@@ -42,6 +48,9 @@ public class testForSP1 {
              HOSTList.get(i).printInfo();
          
          }
+         
+         */
+         
          
          
          System.out.println("**********************begin policyList information****************\n");

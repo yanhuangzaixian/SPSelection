@@ -7,13 +7,18 @@
 package util;
 
 import cloudResource.HOST;
+import cloudResource.VM;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 import orbac.AbstractOrbacPolicy;
 import orbac.exception.COrbacException;
 import orbac.securityRules.CConcretePermission;
+import static util.method.currentHOSTSatisfyCurrentVMForCapacity;
+import static util.method.getHOSTByID;
+import static util.method.getVMByID;
 
 /**
  *
@@ -73,7 +78,7 @@ public class allocation {
        int size=rankedList.size();
        for (int i = 0; i < size - 1; i++) {   
         for (int j = i + 1; j < size; j++) {   
-            if (rankedList.get(i).getPrice() < rankedList.get(j).getPrice()) { // 交换两数的位置   
+            if (rankedList.get(i).getPrice() > rankedList.get(j).getPrice()) { // 交换两数的位置   
                 Collections.swap(rankedList, i, j); 
             }   
         }   
@@ -84,6 +89,61 @@ public class allocation {
        
    }
 
+   
+   
+   
+   public static HashMap <String,LinkedList <String>> generateFinalDeploySolution
+        (AbstractOrbacPolicy p, LinkedList <VM> VMList, LinkedList <HOST> HOSTList, LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy ) throws COrbacException
+   {
+     
+       
+    HashMap <String,LinkedList <String> > FinalDeploySolution=new HashMap <String,LinkedList <String>>();   
+       
+     Set concretePermissionList=p.GetConcretePermissions();
+     
+     Iterator iter = concretePermissionList.iterator();
+     
+      while (iter.hasNext()) {
+         
+         CConcretePermission Cpermission=(CConcretePermission)iter.next();
+         
+         if (Cpermission.IsActive())
+            {
+                String currentVMID=Cpermission.GetObject();
+                VM currentVM=getVMByID(currentVMID,VMList);
+                
+                
+                LinkedList <String> HOSTIDListForCurrentVMID=getAllPermitHostIDInPolicy (currentVMID,p);
+                
+                for (String currentHOSTSolutionID : HOSTIDListForCurrentVMID )  
+                    
+                        {
+                            
+                            
+                              HOST currentHOST=getHOSTByID(currentHOSTSolutionID,HOSTList);
+                              if (  !VMIDInSeperationPolicy (currentVMID,concreteSeparationPolicy)   || currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM)  )
+                              {
+                                 
+                              
+                              }
+                
+                        }
+                
+                
+                
+                
+                
+             }
+         
+     }
+       
+       return FinalDeploySolution;
+       
+   
+   }
+   
+   
+   
    
    
 }

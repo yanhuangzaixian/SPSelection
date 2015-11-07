@@ -1555,6 +1555,38 @@ public class method {
          }
          
          
+         
+         public static VM getVMByID (String VMID, LinkedList <VM> VMList )
+         {
+              for (VM currentVM:VMList)
+              {
+                  if(currentVM.getID().equals(VMID))
+                      return currentVM;
+              }
+            
+              return null;
+         
+         }
+         
+         
+         
+            public static HOST getHOSTByID (String HOSTID, LinkedList <HOST> HOSTList )
+         {
+              for (HOST currentHOST:HOSTList)
+              {
+                  if(currentHOST.getID().equals(HOSTID))
+                      return currentHOST;
+              }
+            
+              return null;
+         
+         }
+         
+         
+         
+         
+         
+         
     }
     
     

@@ -65,9 +65,9 @@ for p_i in Policy permission
 	
 	
 	
-	for one VM_i in all policy 
+	for all policy 
 	
-	            get all host_solution
+	            for VM_i, get all host_solution
 	
 	
 				Ranking host from cheap to high   return LinkedList <HOST> host_solution  ?
@@ -78,6 +78,7 @@ for p_i in Policy permission
 				if    ( (VM_i) not_in conflictSet  and   (HOST_i has space for VM_i)    )
              	
 							HOST_i.add (VM_i)
+							HOST_i.volume=HOST_i.volume-VM_i.volume;
 	
 	
 	
