@@ -19,6 +19,7 @@ import orbac.securityRules.CConcretePermission;
 import static util.method.currentHOSTSatisfyCurrentVMForCapacity;
 import static util.method.getHOSTByID;
 import static util.method.getVMByID;
+import static util.method.twoLinkedListShareSameEntity;
 
 /**
  *
@@ -89,7 +90,49 @@ public class allocation {
        
    }
 
-   
+   public static LinkedList <String> rankingHostlistFromCheapToHighAndReturnHOSTIDList (LinkedList <String> HOSTIDList, LinkedList <HOST> HOSTList)
+
+   {
+       LinkedList <HOST> rankedList=new LinkedList <HOST> ();
+       
+       for (String currentHOSTID : HOSTIDList)
+            {
+                for (HOST currentHOST: HOSTList)
+                {
+                
+                    if(currentHOST.getID().equals(currentHOSTID))
+                    
+                    {
+                        rankedList.add(currentHOST);
+                    }
+                
+                }
+            }
+       
+       
+       
+       int size=rankedList.size();
+       for (int i = 0; i < size - 1; i++) {   
+        for (int j = i + 1; j < size; j++) {   
+            if (rankedList.get(i).getPrice() > rankedList.get(j).getPrice()) {    
+                Collections.swap(rankedList, i, j); 
+            }   
+        }   
+    }   
+       
+       
+       LinkedList <String> returnHOSTIDList=new LinkedList <String> ();
+       
+       for (HOST currentHOST:rankedList)
+       {
+         returnHOSTIDList.add(currentHOST.getID());
+       }
+       
+       
+       return returnHOSTIDList;
+       
+       
+   }
    
    
    public static HashMap <String,LinkedList <String>> generateFinalDeploySolution
@@ -97,8 +140,10 @@ public class allocation {
    {
      
        
-    HashMap <String,LinkedList <String> > FinalDeploySolution=new HashMap <String,LinkedList <String>>();   
-       
+    HashMap <String,LinkedList <String> > finalDeploySolution=new HashMap <String,LinkedList <String>>();   
+    LinkedList <String> VMAlreadyAllocateList=new LinkedList <String> ();   
+    
+    
      Set concretePermissionList=p.GetConcretePermissions();
      
      Iterator iter = concretePermissionList.iterator();
@@ -106,14 +151,18 @@ public class allocation {
       while (iter.hasNext()) {
          
          CConcretePermission Cpermission=(CConcretePermission)iter.next();
+         String currentVMID=Cpermission.GetObject();
          
-         if (Cpermission.IsActive())
+         if (Cpermission.IsActive() && !(VMAlreadyAllocateList.contains(currentVMID)))
             {
-                String currentVMID=Cpermission.GetObject();
+                
                 VM currentVM=getVMByID(currentVMID,VMList);
                 
                 
                 LinkedList <String> HOSTIDListForCurrentVMID=getAllPermitHostIDInPolicy (currentVMID,p);
+                HOSTIDListForCurrentVMID=rankingHostlistFromCheapToHighAndReturnHOSTIDList(HOSTIDListForCurrentVMID,HOSTList);
+                
+                
                 
                 for (String currentHOSTSolutionID : HOSTIDListForCurrentVMID )  
                     
@@ -121,16 +170,36 @@ public class allocation {
                             
                             
                               HOST currentHOST=getHOSTByID(currentHOSTSolutionID,HOSTList);
-                              if (  !VMIDInSeperationPolicy (currentVMID,concreteSeparationPolicy)   || currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM)  )
-                              {
-                                 
+                              if ( !VMIDInSeparationPolicy (finalDeploySolution,currentHOSTSolutionID,currentVMID,concreteSeparationPolicy) && currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM)  )
+                                {
+                                   
+                                     if (finalDeploySolution.containsKey(currentHOSTSolutionID))
+                                     {
+                                         
+                                        LinkedList <String> currentVMSolution=finalDeploySolution.get(currentHOSTSolutionID);
+                                        currentVMSolution.add(currentVMID);        
+                                        finalDeploySolution.replace(currentVMID, currentVMSolution);
+                                     }
+                                     
+                                     
+                                     else
+                                     {
+                                        LinkedList <String> currentVMSolution=new LinkedList <String> ();
+                                        currentVMSolution.add(currentVMID);
+                                        finalDeploySolution.put(currentHOSTSolutionID, currentVMSolution);
+                                        
+                                     }
+                                     
+                                     
+                                     HOSTList=recalculateSpace(HOSTList,currentHOSTSolutionID,currentVM);
+                                     
+                                  }
                               
-                              }
                 
                         }
                 
                 
-                
+                VMAlreadyAllocateList.add(currentVMID);
                 
                 
              }
@@ -141,6 +210,32 @@ public class allocation {
        
    
    }
+        
+        
+        
+   public static boolean VMIDInSeparationPolicy (HashMap <String,LinkedList <String> > finalDeploySolution,String currentHOSTSolutionID, String currentVMID, LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy)   
+   {
+            
+               LinkedList <String> VMDeployListForOneHost=finalDeploySolution.get("currentHOSTSolutionID");
+               
+               for (LinkedList item:concreteSeparationPolicy)
+               {
+                     LinkedList <String> conflictSet1=(LinkedList <String>) item.get(0);
+                     LinkedList <String> conflictSet2=(LinkedList <String>) item.get(1);
+                     
+                     if (twoLinkedListShareSameEntity(conflictSet1,VMDeployListForOneHost) && conflictSet2.contains(currentVMID))
+                         return true;
+                     
+                     if (twoLinkedListShareSameEntity(conflictSet2,VMDeployListForOneHost) && conflictSet1.contains(currentVMID))
+                         return true;
+               }
+               
+               
+             return false;  
+   
+   }
+        
+        
    
    
    

@@ -1584,7 +1584,20 @@ public class method {
          
          
          
-         
+         public static boolean twoLinkedListShareSameEntity (LinkedList <String> list1, LinkedList <String> list2)
+         {
+             for (String entity1: list1)
+             {
+                 for (String entity2: list2)
+                 {
+                    if (entity1.equals(entity2))
+                        return true;
+                 }
+             }
+             
+             return false;
+                     
+         }
          
          
     }
