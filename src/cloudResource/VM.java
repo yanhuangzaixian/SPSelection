@@ -7,6 +7,7 @@
 package cloudResource;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import util.method;
 /**
@@ -142,5 +143,32 @@ public class VM {
     }
     
     
+      public float getVolume ()
+             
+     {
+        HashMap serviceServiceRequirement=getServiceRequirement();
+        
+        
+        
+        Iterator iter = serviceServiceRequirement.entrySet().iterator();
+                    while (iter.hasNext()) 
+                            {
+                                HashMap.Entry entry = (HashMap.Entry) iter.next();
+                                String volumeItem = (String) entry.getValue();
+                                
+                                
+                                String volume_unit[]=volumeItem.split("_");
+        
+                                float volume=Float.parseFloat(volume_unit[0]);
+                                return volume;
+                                
+                            }
+        
+        
+        
+         return 0;
+     }
+     
+     
     
 }

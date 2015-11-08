@@ -191,7 +191,7 @@ public class allocation {
                                      }
                                      
                                      
-                                     HOSTList=recalculateSpace(HOSTList,currentHOSTSolutionID,currentVM);
+                                     HOSTList=recalculateSpaceForHOSTList(HOSTList,currentHOSTSolutionID,currentVM);
                                      
                                   }
                               
@@ -206,7 +206,7 @@ public class allocation {
          
      }
        
-       return FinalDeploySolution;
+       return finalDeploySolution;
        
    
    }
@@ -238,7 +238,25 @@ public class allocation {
         
    
    
-   
+   public static LinkedList <HOST> recalculateSpaceForHOSTList(LinkedList <HOST> HOSTList,String currentHOSTSolutionID,VM currentVM)
+   {
+      HOST currentHOST=getHOSTByID (currentHOSTSolutionID,HOSTList);
+      
+      float currentHOSTVolume=currentHOST.getVolume();
+      String currentHOStVolumeUnit=currentHOST.getVolumeUnit();
+              
+      float currentVMVolume=currentVM.getVolume();
+      float newVolume=currentHOSTVolume-currentVMVolume;
+      
+      String newItem=Float.toString(newVolume)+currentHOStVolumeUnit;
+      
+      
+      HOSTList.get(HOSTList.indexOf(currentHOST)).getServiceDescription().replace("volume",newItem);
+      
+      return HOSTList;
+      
+      
+   }
    
    
 }

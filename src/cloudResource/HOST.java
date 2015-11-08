@@ -97,6 +97,46 @@ public class HOST {
         return price;
         
      }
+     
+    
+       public float getVolume ()
+             
+     {
+        HashMap serviceDescription=getServiceDescription();
+        
+        
+        String volumeItem=(String) serviceDescription.get("volume");
+        
+        String volume_unit[]=volumeItem.split("_");
+        
+        float volume=Float.parseFloat(volume_unit[0]);
+        
+        return volume;
+        
+     
+     
+     }
+       
+       
+       
+        public String getVolumeUnit ()
+             
+     {
+        HashMap serviceDescription=getServiceDescription();
+        
+        
+        String volumeItem=(String) serviceDescription.get("volume");
+        
+        String volume_unit[]=volumeItem.split("_");
+        
+        String unit=volume_unit[1];
+        
+        return unit;
+        
+     
+     
+     }
+     
     
     
 }

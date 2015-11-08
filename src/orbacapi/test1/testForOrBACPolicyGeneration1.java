@@ -10,12 +10,15 @@ import cloudResource.HOST;
 import cloudResource.VM;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import orbac.AbstractOrbacPolicy;
 import orbac.exception.COrbacException;
 import org.json.simple.parser.ParseException;
+import static util.allocation.generateFinalDeploySolution;
 import util.method;
 import static util.method.filterOrBACPolicy;
+import static util.method.generateConcreteSeparationPolicyFromVMList;
 import static util.method.printInfo;
 
 /**
@@ -91,6 +94,19 @@ public class testForOrBACPolicyGeneration1 {
      method.printAllConcreteProhibition(p);
     
     
+     
+     
+     
+     
+     LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy =generateConcreteSeparationPolicyFromVMList(VMPolicyList, VMList);
+     HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy ) ;
+     
+     method.printHashMap(finalDeploySolution);
+     
+     
+     
+     
+     
     /*
     boolean r1 = p.IsPermited ("HOST4", "deploy", "VM1");
     boolean r2 = p.IsPermited ("HOST1", "deploy", "VM1");
