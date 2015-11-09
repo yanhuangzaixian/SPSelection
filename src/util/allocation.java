@@ -141,7 +141,7 @@ public class allocation {
      
        
     HashMap <String,LinkedList <String> > finalDeploySolution=new HashMap <String,LinkedList <String>>();   
-    LinkedList <String> VMAlreadyAllocateList=new LinkedList <String> ();   
+     LinkedList <String>  VMAlreadyAllocateList=new LinkedList <String> ();   
     
     
      Set concretePermissionList=p.GetConcretePermissions();
@@ -170,7 +170,7 @@ public class allocation {
                             
                             
                               HOST currentHOST=getHOSTByID(currentHOSTSolutionID,HOSTList);
-                              if ( !VMIDInSeparationPolicy (finalDeploySolution,currentHOSTSolutionID,currentVMID,concreteSeparationPolicy) && currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM)  )
+                              if ( !VMIDInSeparationPolicy (finalDeploySolution,currentHOSTSolutionID,currentVMID,concreteSeparationPolicy) && currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM) && !(VMAlreadyAllocateList.contains(currentVMID)) )
                                 {
                                    
                                      if (finalDeploySolution.containsKey(currentHOSTSolutionID))
@@ -192,14 +192,14 @@ public class allocation {
                                      
                                      
                                      HOSTList=recalculateSpaceForHOSTList(HOSTList,currentHOSTSolutionID,currentVM);
-                                     
+                                     VMAlreadyAllocateList.add(currentVMID);
                                   }
                               
-                
+                                 
                         }
                 
                 
-                VMAlreadyAllocateList.add(currentVMID);
+                
                 
                 
              }
@@ -248,7 +248,7 @@ public class allocation {
       float currentVMVolume=currentVM.getVolume();
       float newVolume=currentHOSTVolume-currentVMVolume;
       
-      String newItem=Float.toString(newVolume)+currentHOStVolumeUnit;
+      String newItem=Float.toString(newVolume)+"_"+currentHOStVolumeUnit;
       
       
       HOSTList.get(HOSTList.indexOf(currentHOST)).getServiceDescription().replace("volume",newItem);

@@ -44,7 +44,7 @@ public class contractClients {
         
         
         HashMap serviceDescription=new HashMap();
-        serviceRequirement.put("VM1_volume","10_GB");
+        serviceRequirement.put("VM1_volume","18_GB");
         serviceDescription.put("VM1_purpose","dev");
         serviceDescription.put("VM1_data","private");
         serviceDescription.put("VM1_application","internal");

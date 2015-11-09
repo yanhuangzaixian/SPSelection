@@ -1274,6 +1274,8 @@ public class method {
                                 String key_VM_serviceRequirement = (String) entry.getKey();
                                 String value_unite_VM_serviceRequirement = (String) entry.getValue();
                                 
+                                //System.out.println("_____________________ServiceRequirement: "+value_unite_VM_serviceRequirement);
+                                
                                 
                                String value_unite_HOST_serviceDescription= (String) HOSTServiceRequirement.get(key_VM_serviceRequirement);
                                if (value_unite_HOST_serviceDescription==null)
@@ -1291,6 +1293,9 @@ public class method {
                                     
                                     
                                     String [] value_unite_HOST_serviceDescription_List=getSplitResult(value_unite_HOST_serviceDescription);
+                                    
+                                    //System.out.println("_____________________ServiceDescription: "+value_unite_HOST_serviceDescription);
+                                    //System.out.println("_____________________Input: "+value_unite_HOST_serviceDescription_List[0]);
                                     
                                     float value_HOST_serviceDescription=Float.parseFloat(value_unite_HOST_serviceDescription_List[0]);
                                     String unite_HOST_servcieRequirement=value_unite_HOST_serviceDescription_List[1];
