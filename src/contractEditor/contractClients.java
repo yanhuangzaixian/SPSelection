@@ -162,6 +162,17 @@ public class contractClients {
         
         
         
+        HashMap VMSeperation_rule_1_1=new HashMap();
+        HashMap VMSeperation_rule_1_2=new HashMap();
+        
+        VMSeperation_rule_1_1.put("ID","VM1");
+        VMSeperation_rule_1_2.put("ID","VM2");
+        
+         ArrayList rule4=new ArrayList();
+         rule4.add("separation");
+         rule4.add(VMSeperation_rule_1_1);
+         rule4.add(VMSeperation_rule_1_2);
+        
         
          
         
@@ -177,6 +188,9 @@ public class contractClients {
          
           policyInConstraint1.add(rule3);
          policyInConstraint1.add(rule3_1);
+         
+         
+         policyInConstraint1.add(rule4);
          
          
         

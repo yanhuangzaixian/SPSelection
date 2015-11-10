@@ -101,6 +101,10 @@ public class testForOrBACPolicyGeneration1 {
      LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy =generateConcreteSeparationPolicyFromVMList(VMPolicyList, VMList);
      HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy ) ;
      
+     
+     
+     
+     method.printInfo("final deploy solution");
      method.printHashMap(finalDeploySolution);
      
      

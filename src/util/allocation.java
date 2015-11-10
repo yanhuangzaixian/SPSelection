@@ -19,6 +19,8 @@ import orbac.securityRules.CConcretePermission;
 import static util.method.currentHOSTSatisfyCurrentVMForCapacity;
 import static util.method.getHOSTByID;
 import static util.method.getVMByID;
+import static util.method.printInfo;
+import static util.method.printLinkedList;
 import static util.method.twoLinkedListShareSameEntity;
 
 /**
@@ -206,7 +208,21 @@ public class allocation {
          
      }
        
+      
+      printInfo("seperation policy");
+      printLinkedList(concreteSeparationPolicy);
+      
+      
+      printInfo("Host list after allocation");
+      for (HOST eachHOST: HOSTList)
+      {
+         eachHOST.printInfo();
+      }
+      
        return finalDeploySolution;
+       
+       
+       
        
    
    }
@@ -216,22 +232,40 @@ public class allocation {
    public static boolean VMIDInSeparationPolicy (HashMap <String,LinkedList <String> > finalDeploySolution,String currentHOSTSolutionID, String currentVMID, LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy)   
    {
             
-               LinkedList <String> VMDeployListForOneHost=finalDeploySolution.get("currentHOSTSolutionID");
+               LinkedList <String> VMDeployListForOneHost=finalDeploySolution.get(currentHOSTSolutionID);
                
-               for (LinkedList item:concreteSeparationPolicy)
-               {
+               if (VMDeployListForOneHost!=null)
+               {   
+               
+                for (LinkedList item:concreteSeparationPolicy)
+                    {
                      LinkedList <String> conflictSet1=(LinkedList <String>) item.get(0);
                      LinkedList <String> conflictSet2=(LinkedList <String>) item.get(1);
+                     
+                     printInfo("print Conflict set");
+                     
+                     printLinkedList(conflictSet1);
+                     printInfo("\n");
+                     printLinkedList(conflictSet2);
+                     printInfo("\n");
+                    printLinkedList(VMDeployListForOneHost);
+                     
                      
                      if (twoLinkedListShareSameEntity(conflictSet1,VMDeployListForOneHost) && conflictSet2.contains(currentVMID))
                          return true;
                      
                      if (twoLinkedListShareSameEntity(conflictSet2,VMDeployListForOneHost) && conflictSet1.contains(currentVMID))
                          return true;
+                    }
+               
+                    return false;
+               
                }
                
-               
-             return false;  
+               else
+               {
+                    return false;  
+               }
    
    }
         
