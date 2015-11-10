@@ -162,6 +162,11 @@ public class allocation {
                 
                 
                 LinkedList <String> HOSTIDListForCurrentVMID=getAllPermitHostIDInPolicy (currentVMID,p);
+                
+                
+               /* printInfo("HOSTIDListForCurrentVMID");
+                printLinkedList(HOSTIDListForCurrentVMID);*/
+                
                 HOSTIDListForCurrentVMID=rankingHostlistFromCheapToHighAndReturnHOSTIDList(HOSTIDListForCurrentVMID,HOSTList);
                 
                 
@@ -208,7 +213,7 @@ public class allocation {
          
      }
        
-      
+      /*
       printInfo("seperation policy");
       printLinkedList(concreteSeparationPolicy);
       
@@ -218,6 +223,7 @@ public class allocation {
       {
          eachHOST.printInfo();
       }
+      */
       
        return finalDeploySolution;
        
@@ -242,6 +248,8 @@ public class allocation {
                      LinkedList <String> conflictSet1=(LinkedList <String>) item.get(0);
                      LinkedList <String> conflictSet2=(LinkedList <String>) item.get(1);
                      
+                     
+                     /*
                      printInfo("print Conflict set");
                      
                      printLinkedList(conflictSet1);
@@ -249,7 +257,7 @@ public class allocation {
                      printLinkedList(conflictSet2);
                      printInfo("\n");
                     printLinkedList(VMDeployListForOneHost);
-                     
+                     */
                      
                      if (twoLinkedListShareSameEntity(conflictSet1,VMDeployListForOneHost) && conflictSet2.contains(currentVMID))
                          return true;

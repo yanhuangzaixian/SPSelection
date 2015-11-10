@@ -8,6 +8,7 @@ package contractEditor;
 
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -39,17 +40,17 @@ public class SPConfFileEditor {
         JSONObject obj = new JSONObject();
         ArrayList fileList=new ArrayList();
         
-        fileList.add("confSP\\HOST1.json");
-        fileList.add("confSP\\HOST2.json");
-        fileList.add("confSP\\HOST3.json");
-        fileList.add("confSP\\HOST4.json");
+        fileList.add("confSP"+File.separator+"HOST1.json");
+        fileList.add("confSP"+File.separator+"HOST2.json");
+        fileList.add("confSP"+File.separator+"HOST3.json");
+        fileList.add("confSP"+File.separator+"HOST4.json");
 	
         obj.put("contract_list_of_SP", fileList);
         
         
 	try {
 
-		FileWriter file = new FileWriter("confSP\\contractFileList.json");
+		FileWriter file = new FileWriter("confSP"+File.separator+"contractFileList.json");
 		file.write(obj.toJSONString());
 		file.flush();
 		file.close();

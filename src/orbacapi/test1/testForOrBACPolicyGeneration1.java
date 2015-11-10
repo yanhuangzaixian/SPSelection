@@ -8,6 +8,7 @@ package orbacapi.test1;
 
 import cloudResource.HOST;
 import cloudResource.VM;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,8 +34,8 @@ public class testForOrBACPolicyGeneration1 {
         
     System.out.println("**********************begin policyList information****************\n");
    
-    LinkedList <HOST> HOSTList=method.readHostFileAndGenerateHOSTList("confSP\\contractFileList.json");     
-    LinkedList <ArrayList> HOSTPolicyList=method.readSPFileAndGenerateAbstractPolicy("confSP\\contractFileList.json");
+    LinkedList <HOST> HOSTList=method.readHostFileAndGenerateHOSTList("confSP"+File.separator+"contractFileList.json");     
+    LinkedList <ArrayList> HOSTPolicyList=method.readSPFileAndGenerateAbstractPolicy("confSP"+File.separator+"contractFileList.json");
     /*
     for (int i=0;i<HOSTPolicyList.size();i++)
          {
@@ -43,8 +44,8 @@ public class testForOrBACPolicyGeneration1 {
              method.printArrayList(HOSTPolicyList.get(i));
          
          }*/
-    LinkedList <VM> VMList=method.readClientFileAndGenerateVMList("confClient\\test3.json");
-    LinkedList <ArrayList> VMPolicyList=method.readClientFileAndGenerateAbstractPolicy("confClient\\test3.json");
+    LinkedList <VM> VMList=method.readClientFileAndGenerateVMList("confClient"+File.separator+"test3.json");
+    LinkedList <ArrayList> VMPolicyList=method.readClientFileAndGenerateAbstractPolicy("confClient"+File.separator+"test3.json");
     
     AbstractOrbacPolicy p=method.generateOrBACPolicyFromVMandHostPolicy(VMPolicyList, VMList, HOSTPolicyList, HOSTList);
     
@@ -60,20 +61,22 @@ public class testForOrBACPolicyGeneration1 {
      method.printAllConcreteProhibition(p);
     }
     
-    
+     p.WritePolicyFile("policyGenerated"+File.separator+"policy_1_SecurityRequirement.xml",null);
     
     
     
       /*************************SLA filter***********************************/
     
-    p=filterOrBACPolicy(p,VMList,HOSTList);
+     p=filterOrBACPolicy(p,VMList,HOSTList);
     
-    printInfo("After SLA filter");
+     printInfo("After SLA filter");
     
-    
-    method.printAllConcretePermission(p);
+     p.WritePolicyFile("policyGenerated"+File.separator+"policy_2_AfterSLA.xml",null);
      
-    method.printAllConcreteProhibition(p);
+     
+     method.printAllConcretePermission(p);
+     
+     method.printAllConcreteProhibition(p);
     
     
     
@@ -87,11 +90,15 @@ public class testForOrBACPolicyGeneration1 {
       method.resolveConflictAdvanced(p);
      
      
+      p.WritePolicyFile("policyGenerated"+File.separator+"policy_3_AfterConflictResolution.xml",null);
+      
+      
+      
       method.printInfo("After resolved conclict");
      
       method.printAllConcretePermission(p);
      
-     method.printAllConcreteProhibition(p);
+      method.printAllConcreteProhibition(p);
     
     
      

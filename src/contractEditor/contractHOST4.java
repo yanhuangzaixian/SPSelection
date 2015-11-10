@@ -8,6 +8,7 @@ package contractEditor;
 
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -74,7 +75,7 @@ public class contractHOST4 {
         
 	try {
 
-		FileWriter file = new FileWriter("confSP\\Host4.json");
+		FileWriter file = new FileWriter("confSP"+File.separator+"Host4.json");
 		file.write(obj.toJSONString());
 		file.flush();
 		file.close();

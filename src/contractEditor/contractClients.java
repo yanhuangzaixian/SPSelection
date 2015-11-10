@@ -8,6 +8,7 @@ package contractEditor;
 
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -166,7 +167,7 @@ public class contractClients {
         HashMap VMSeperation_rule_1_2=new HashMap();
         
         VMSeperation_rule_1_1.put("ID","VM1");
-        VMSeperation_rule_1_2.put("ID","VM2");
+        VMSeperation_rule_1_2.put("ID","VM3");
         
          ArrayList rule4=new ArrayList();
          rule4.add("separation");
@@ -217,7 +218,7 @@ public class contractClients {
         
 	try {
 
-		FileWriter file = new FileWriter("confClient\\test3.json");
+		FileWriter file = new FileWriter("confClient"+File.separator+"test3.json");
 		file.write(obj.toJSONString());
 		file.flush();
 		file.close();
