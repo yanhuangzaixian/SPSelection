@@ -26,12 +26,12 @@ import static util.method.printInfo;
  *
  * @author RDSG6431
  */
-public class testForOrBACPolicyGeneration1 {
+public class timeMeasure1 {
     
      public static void main(String[] args) throws IOException, ParseException, COrbacException
     {
         
-    //long Time1 = System. currentTimeMillis();  
+    long Time1 = System. currentTimeMillis();  
     
     System.out.println("**********************begin policyList information****************\n");
    
@@ -50,6 +50,7 @@ public class testForOrBACPolicyGeneration1 {
     
     AbstractOrbacPolicy p=method.generateOrBACPolicyFromVMandHostPolicy(VMPolicyList, VMList, HOSTPolicyList, HOSTList);
     
+    
     if (p==null)
     {
      System.out.println("\n ------------------null policy generated------------------");
@@ -61,12 +62,16 @@ public class testForOrBACPolicyGeneration1 {
      
      method.printAllConcreteProhibition(p);
     }
+
     
-    //long Time2 = System. currentTimeMillis(); 
-    //long duration1=Time2-Time1;
-    //System.out.println("*****************Initial Security Policy generation: "+duration1+"ms");
+   
     
-     p.WritePolicyFile("policyGenerated"+File.separator+"policy_1_SecurityRequirement.xml",null);
+    
+    long Time2 = System. currentTimeMillis(); 
+    long duration1=Time2-Time1;
+   System.out.println("*****************Initial Security Policy generation: "+duration1+"ms");
+    
+    // p.WritePolicyFile("policyGenerated"+File.separator+"policy_1_SecurityRequirement.xml",null);
     
     
     
@@ -80,31 +85,31 @@ public class testForOrBACPolicyGeneration1 {
     
      p=filterOrBACPolicy(p,VMList,HOSTList);
     
-     printInfo("After SLA filter");
+     //printInfo("After SLA filter");
     
-     p.WritePolicyFile("policyGenerated"+File.separator+"policy_2_AfterSLA.xml",null);
+     //p.WritePolicyFile("policyGenerated"+File.separator+"policy_2_AfterSLA.xml",null);
      
      
-     method.printAllConcretePermission(p);
+    // method.printAllConcretePermission(p);
      
-     method.printAllConcreteProhibition(p);
+     //method.printAllConcreteProhibition(p);
     
     
     
     /*************************Resolve concrete reverse conflict***********************************/
-    
+    /*
       method.printInfo("concreteConflict");
     
       method.printConcreteConflict(p);
    
-
-      p=method.resolveConflictAdvanced(p);
+     */
+     p=method.resolveConflictAdvanced(p);
      
      
-      p.WritePolicyFile("policyGenerated"+File.separator+"policy_3_AfterConflictResolution.xml",null);
+     // p.WritePolicyFile("policyGenerated"+File.separator+"policy_3_AfterConflictResolution.xml",null);
       
       
-      
+      /*
       method.printInfo("After resolved conclict");
      
       method.printAllConcretePermission(p);
@@ -112,7 +117,7 @@ public class testForOrBACPolicyGeneration1 {
       method.printAllConcreteProhibition(p);
     
     
-     
+     */
      
      
      
@@ -137,6 +142,12 @@ public class testForOrBACPolicyGeneration1 {
     
      System.out.println("r1:"+r1+"\n r2:"+r2+"\n");
     */
+    long Time4 = System. currentTimeMillis(); 
+    
+    
+    
+   long duration2=Time4-Time3;
+   System.out.println("*****************final deployment solution generation: "+duration2+"ms");
     
     
     
@@ -148,5 +159,3 @@ public class testForOrBACPolicyGeneration1 {
      
      
     }
-    
-

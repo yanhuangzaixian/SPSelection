@@ -1232,8 +1232,9 @@ public class method {
                     HOST currentHOST=findHOSTByIDFromHOSTList(HOSTList,currentHOSTID);
                     VM currentVM=findVMByIDFromVMList(VMList,currentVMID);
                     
-                    if ( (!(currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM))) ||   (!(currentHOSTSatisfyCurrentVMForPerformance(currentHOST,currentVM)))     )
+                    if ( (!(currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM))) ||   (!(currentHOSTSatisfyCurrentVMForPerformance(currentHOST,currentVM))) )
                             {
+                                
                                 Cpermission.SetState(false);
                             }
                     
