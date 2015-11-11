@@ -2,8 +2,8 @@
 <XmlOrbacPolicy>
 <attributes>
 <name>policy1</name>
-<creationDate>2015.11.10 19:15:44</creationDate>
-<modificationDate>2015.11.10 19:15:44</modificationDate>
+<creationDate>2015.11.11 11:44:00</creationDate>
+<modificationDate>2015.11.11 11:44:00</modificationDate>
 <version>1.0</version>
 <information/>
 </attributes>
@@ -59,121 +59,124 @@
 <view name="View_Permission_1"/>
 </organization>
 <organization_hierarchy sub_organization="superCloud" super_organization="adOrBAC"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="organization_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="license_delegation_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="grant_option_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="grant_option_view" organization="adOrBAC" view="grant_option_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_hierarchy_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="aa_adOrBAC_delete_delete" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM1" organization="superCloud" view="View_Permission_0"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="myActivity" organization="superCloud" view="activity_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_view" organization="adOrBAC" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="license_view" organization="adOrBAC" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="delete" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Permission_0" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Permission_2" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Permission_1" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Permission_4" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="aa_adOrBAC_revoke_revoke" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Permission_3" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="license_delegation_view" organization="adOrBAC" view="license_delegation_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Permission_6" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Permission_5" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Permission_7" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM2" organization="superCloud" view="View_Permission_5"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM2" organization="superCloud" view="View_Permission_6"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM3" organization="superCloud" view="View_Permission_2"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM2" organization="superCloud" view="View_Permission_3"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM2" organization="superCloud" view="View_Permission_4"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM2" organization="superCloud" view="View_Permission_1"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="activity_assignment_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="aa_superCloud_deploy_myActivity" organization="superCloud" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_hierarchy_view" organization="adOrBAC" view="role_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_delegation_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="view_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="organization_hierarchy_view" organization="adOrBAC" view="organization_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="activity_assignment_view" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="vh_adOrBAC_grant_option_view_license_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="view_assignment_view" organization="adOrBAC" view="view_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="license_transfer_view" organization="adOrBAC" view="license_transfer_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_assignment_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST2_Role_Permission_4" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="license_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="activity_hierarchy_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST2_Role_Permission_6" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST3_Role_Prohibition_2" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST1_Role_Prohibition_0" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST2_Role_Prohibition_1" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="transfer" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="vh_adOrBAC_role_delegation_view_role_assignment_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="activity_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Permission_1" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="vh_adOrBAC_license_delegation_view_license_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Permission_2" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Permission_0" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="activity_view" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_transfer_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="activity_hierarchy_view" organization="adOrBAC" view="activity_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Permission_5" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Permission_6" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="aa_adOrBAC_delegate_delegate" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Permission_7" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Permission_1" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Permission_2" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Permission_3" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="delegate" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Permission_4" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="create" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Permission_0" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Prohibition_0" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Prohibition_2" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Prohibition_1" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="aa_adOrBAC_transfer_transfer" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST4_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="view_hierarchy_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST4_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST4_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST4_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_assignment_view" organization="adOrBAC" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST4_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="manage" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM3" organization="superCloud" view="View_Prohibition_2"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM3" organization="superCloud" view="View_Prohibition_1"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM3" organization="superCloud" view="View_Prohibition_0"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM1" organization="superCloud" view="View_Prohibition_2"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="VM1" organization="superCloud" view="View_Prohibition_1"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="vh_adOrBAC_license_transfer_view_license_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ah_adOrBAC_create_manage" organization="adOrBAC" view="activity_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="organization_view" organization="adOrBAC" view="organization_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="view_assignment_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="organization_hierarchy_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="aa_adOrBAC_create_create" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="license_transfer_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ah_adOrBAC_delete_manage" organization="adOrBAC" view="activity_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_delegation_view" organization="adOrBAC" view="role_delegation_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="view_hierarchy_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="revoke" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Prohibition_0" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Prohibition_1" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="View_Prohibition_2" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST1_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Prohibition_0" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST1_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST1_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Prohibition_2" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Role_Prohibition_1" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="role_transfer_view" organization="adOrBAC" view="role_transfer_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Permission_7" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="admin_manage_license_view" organization="adOrBAC" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Permission_5" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="vh_adOrBAC_role_transfer_view_role_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Permission_6" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST1_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Permission_3" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="aa_adOrBAC_manage_manage" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="ra_superCloud_HOST1_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.10 19:15:44" object="Permission_4" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="organization_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="license_delegation_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="grant_option_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="grant_option_view" organization="adOrBAC" view="grant_option_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_hierarchy_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="aa_adOrBAC_delete_delete" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM1" organization="superCloud" view="View_Permission_0"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="myActivity" organization="superCloud" view="activity_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_view" organization="adOrBAC" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="license_view" organization="adOrBAC" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="delete" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Permission_0" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Permission_2" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Permission_1" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Permission_4" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="aa_adOrBAC_revoke_revoke" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Permission_3" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="license_delegation_view" organization="adOrBAC" view="license_delegation_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Permission_6" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Permission_5" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM4" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM3" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM4" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Permission_7" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM2" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM3" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM2" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM4" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM3" organization="superCloud" view="View_Permission_2"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM2" organization="superCloud" view="View_Permission_3"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM2" organization="superCloud" view="View_Permission_4"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM2" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="activity_assignment_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="aa_superCloud_deploy_myActivity" organization="superCloud" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_hierarchy_view" organization="adOrBAC" view="role_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_delegation_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="view_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="organization_hierarchy_view" organization="adOrBAC" view="organization_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="activity_assignment_view" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="vh_adOrBAC_grant_option_view_license_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="view_assignment_view" organization="adOrBAC" view="view_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="license_transfer_view" organization="adOrBAC" view="license_transfer_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_assignment_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST2_Role_Permission_4" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="license_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="activity_hierarchy_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST2_Role_Permission_6" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST3_Role_Prohibition_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST1_Role_Prohibition_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST2_Role_Prohibition_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="transfer" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="vh_adOrBAC_role_delegation_view_role_assignment_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="activity_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Permission_1" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="vh_adOrBAC_license_delegation_view_license_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Permission_2" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Permission_0" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="activity_view" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_transfer_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="activity_hierarchy_view" organization="adOrBAC" view="activity_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Permission_5" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Permission_6" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="aa_adOrBAC_delegate_delegate" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Permission_7" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Permission_1" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Permission_2" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Permission_3" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="delegate" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Permission_4" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="create" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Permission_0" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Prohibition_0" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Prohibition_2" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Prohibition_1" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="aa_adOrBAC_transfer_transfer" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST4_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="view_hierarchy_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST4_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST4_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST4_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_assignment_view" organization="adOrBAC" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST4_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="manage" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM3" organization="superCloud" view="View_Prohibition_0"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM1" organization="superCloud" view="View_Prohibition_2"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="VM1" organization="superCloud" view="View_Prohibition_1"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="vh_adOrBAC_license_transfer_view_license_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ah_adOrBAC_create_manage" organization="adOrBAC" view="activity_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="organization_view" organization="adOrBAC" view="organization_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="view_assignment_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="organization_hierarchy_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="aa_adOrBAC_create_create" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="license_transfer_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ah_adOrBAC_delete_manage" organization="adOrBAC" view="activity_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_delegation_view" organization="adOrBAC" view="role_delegation_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="view_hierarchy_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="revoke" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Prohibition_0" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Prohibition_1" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="View_Prohibition_2" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST1_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Prohibition_0" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST1_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST1_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Prohibition_2" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Role_Prohibition_1" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="role_transfer_view" organization="adOrBAC" view="role_transfer_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Permission_7" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="admin_manage_license_view" organization="adOrBAC" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Permission_5" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="vh_adOrBAC_role_transfer_view_role_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Permission_6" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST1_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Permission_3" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="aa_adOrBAC_manage_manage" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="ra_superCloud_HOST1_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.11 11:44:00" object="Permission_4" organization="superCloud" view="license_view"/>
 </abstractPolicy>
 <classes>
 <class name="commitment_class">
@@ -260,6 +263,10 @@
 <attribute name="adorbacUserPasswordHash" value="null"/>
 </subject>
 <subject name="VM1">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="VM4">
 <instance_of name="user_password_class"/>
 <attribute name="adorbacUserPasswordHash" value="null"/>
 </subject>

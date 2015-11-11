@@ -60,8 +60,14 @@ public class contractClients {
         
         serviceRequirement.put("VM3_volume","30_GB");
         serviceDescription.put("VM3_purpose","test");
-        serviceDescription.put("VM3_data","private");
-        serviceDescription.put("VM3_application","internal");
+        serviceDescription.put("VM3_data","public");
+        serviceDescription.put("VM3_application","business");
+        
+        
+        serviceRequirement.put("VM4_volume","20_GB");
+        serviceDescription.put("VM4_purpose","prod");
+        serviceDescription.put("VM4_data","public");
+        serviceDescription.put("VM4_application","business");
         
         
         obj.put("serviceRequirement", serviceRequirement);
@@ -71,6 +77,7 @@ public class contractClients {
         gauranteeTerm.put("VM1_availability","more_97_percentage");
         gauranteeTerm.put("VM2_availability","more_99_percentage");
         gauranteeTerm.put("VM3_availability","more_95_percentage");
+        gauranteeTerm.put("VM4_availability","more_99_percentage");
         obj.put("gauranteeTerm", gauranteeTerm);
         
         //Constraint1
