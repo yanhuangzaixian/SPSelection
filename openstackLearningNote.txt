@@ -1,0 +1,28 @@
+
+keyboard setxkbmap fr
+
+
+
+page 16
+
+
+Trouble
+
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/3/html/Installation_and_Configuration_Guide/Keystone_Client_Reports_Unable_to_communicate_with_identity_service.html
+
+
+
+
+
+sudo losetup /dev/loop0 /opt/stack/data/stack-volumes-default-backing-file
+
+
+
+sudo losetup /dev/loop1 /opt/stack/data/stack-volumes-lvmdriver-1-backing-file
+
+
+
+
+cd devstack/
+
+source openrc admin admin
