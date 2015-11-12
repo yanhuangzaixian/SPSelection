@@ -33,7 +33,7 @@ public class contractMultiClients {
     public static void main(String[] args)
     {
         
-        int totalNumber=50;
+        int totalNumber=5;
         
     
         JSONObject obj = new JSONObject();

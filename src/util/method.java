@@ -1070,7 +1070,7 @@ public class method {
                               
                                if (!VMIDMemoryList.contains(currentVMID))
                               {
-                                  p.AddSubject(currentVMID);
+                                  p.AddObject(currentVMID);
                                   VMIDMemoryList.add(currentVMID);
                               
                               }
