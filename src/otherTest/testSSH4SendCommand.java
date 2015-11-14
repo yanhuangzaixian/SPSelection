@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package otherTest;
 
 /**
@@ -15,12 +14,19 @@ import java.awt.*;
 import javax.swing.*;
 import java.io.*;
 
-public class testSSH3{
+public class testSSH4SendCommand{
+    
+    
+    
+    
   public static void main(String[] arg){
     try{
       JSch jsch=new JSch();  
 
-      String host=null;
+      
+      
+      
+      /*
       if(arg.length>0){
         host=arg[0];
       }
@@ -28,25 +34,20 @@ public class testSSH3{
         host=JOptionPane.showInputDialog("Enter username@hostname",
                                          System.getProperty("user.name")+
                                          "@localhost"); 
-      }
-      String user=host.substring(0, host.indexOf('@'));
-      host=host.substring(host.indexOf('@')+1);
-
-      Session session=jsch.getSession(user, host, 2222);
+      }*/
       
-      /*
-      String xhost="127.0.0.1";
-      int xport=0;
-      String display=JOptionPane.showInputDialog("Enter display name", 
-                                                 xhost+":"+xport);
-      xhost=display.substring(0, display.indexOf(':'));
-      xport=Integer.parseInt(display.substring(display.indexOf(':')+1));
-      session.setX11Host(xhost);
-      session.setX11Port(xport+6000);
-      */
+      
+      
+      String user="yli03";
+      String host="127.0.0.1";
+      int port=2222;
+      String passWord="VJWWFDRA";
 
+      Session session=jsch.getSession(user, host, port);
+      
+     
       // username and password will be given via UserInfo interface.
-      UserInfo ui=new MyUserInfo();
+      UserInfo ui=new MyUserInfo(passWord);
       session.setUserInfo(ui);
       session.connect();
 
@@ -94,9 +95,31 @@ public class testSSH3{
     }
   }
 
+  
+  
   public static class MyUserInfo implements UserInfo, UIKeyboardInteractive{
+    
+ 
+      
+      
+      
+    String passwd;
+    JTextField passwordField=(JTextField)new JPasswordField(20);  
+      
+      
+         
+    MyUserInfo(String password)
+    {
+      this.passwd=password;
+    }
+    
+    
     public String getPassword(){ return passwd; }
+    
+    
     public boolean promptYesNo(String str){
+        
+      /*  
       Object[] options={ "yes", "no" };
       int foo=JOptionPane.showOptionDialog(null, 
              str,
@@ -105,14 +128,21 @@ public class testSSH3{
              JOptionPane.WARNING_MESSAGE,
              null, options, options[0]);
        return foo==0;
+       */
+        
+        
+       return true;
+       
     }
   
-    String passwd;
-    JTextField passwordField=(JTextField)new JPasswordField(20);
+    
 
     public String getPassphrase(){ return null; }
+    
     public boolean promptPassphrase(String message){ return true; }
+    
     public boolean promptPassword(String message){
+        /*
       Object[] ob={passwordField}; 
       int result=
         JOptionPane.showConfirmDialog(null, ob, message,
@@ -123,8 +153,13 @@ public class testSSH3{
       }
       else{ 
         return false; 
-      }
+      }*/
+        
+        
+        return true;
     }
+    
+    
     public void showMessage(String message){
       JOptionPane.showMessageDialog(null, message);
     }
