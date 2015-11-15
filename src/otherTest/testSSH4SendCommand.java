@@ -56,6 +56,8 @@ public class testSSH4SendCommand{
       
       session.connect();
 
+      
+      String command0="pwd";
       String command1="cd devstack";
       String command2="source openrc admin admin";
       String command3="nova boot --flavor 1  --image 443880f8-84bc-4077-86ca-d8dd8ae69289  outVM1";
@@ -66,6 +68,9 @@ public class testSSH4SendCommand{
       String command5=command1+" && "+command2+" && "+command3+" && "+command4;
 
       Channel channel=session.openChannel("exec");
+      
+      
+      
       ((ChannelExec)channel).setCommand(command5);
       
       
@@ -85,15 +90,7 @@ public class testSSH4SendCommand{
       channel.connect();
 
       
-      /*
-      byte[] tmp=new byte[1024];
-      while(true){
-        while(in.available()>0){
-          int i=in.read(tmp, 0, 1024);
-          if(i<0)break;
-          System.out.print(new String(tmp, 0, i));
-        }
-       */
+     
       
       
         StringWriter writer = new StringWriter();
@@ -114,15 +111,15 @@ public class testSSH4SendCommand{
      
       printInfo("flag1");
          
+        /*
+       channel.disconnect();
+        session.disconnect();
         
-       // channel.disconnect();
-        //session.disconnect();
-        
-        
-        
-        
+        */
         
         
+        
+        printInfo("flag1.2");
         
       JSch jsch2=new JSch();  
         
@@ -131,11 +128,15 @@ public class testSSH4SendCommand{
        session=jsch2.getSession(user, host, port);
       
      
-      // username and password will be given via UserInfo interface.
+      //username and password will be given via UserInfo interface.
       ui=new MyUserInfo(passWord);
       session.setUserInfo(ui);
       
+      printInfo("flag1.3");
+      
       session.connect();
+      
+        printInfo("flag1.4");
         
       String volumeId=allocation.getVolumeIdFromString(returnInfo);
         
@@ -143,9 +144,9 @@ public class testSSH4SendCommand{
         
         
        //String command7="pwd";
-      //String command7=command1+" && "+command2+" && "+command6;
+      String command7=command1+" && "+command2+" && "+command6;
       
-      printInfo(command6);
+      printInfo(command7);
         
          printInfo("flag2");
         
@@ -158,7 +159,7 @@ public class testSSH4SendCommand{
         
         
          channel=session.openChannel("exec");
-        ((ChannelExec)channel).setCommand(command6); 
+        ((ChannelExec)channel).setCommand(command7); 
         
         channel.setInputStream(null);
         ((ChannelExec)channel).setErrStream(System.err);
@@ -179,14 +180,7 @@ public class testSSH4SendCommand{
         System.out.println(returnInfo);
         
         // channel.connect();
-        
-        /*
-        if(channel.isClosed()){
-          if(in.available()>0) continue; 
-          System.out.println("exit-status: "+channel.getExitStatus());
-          break;
-        }
-        try{Thread.sleep(1000);}catch(Exception ee){}*/
+       
         channel.disconnect();
         session.disconnect();
         
