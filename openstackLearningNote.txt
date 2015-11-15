@@ -26,3 +26,21 @@ sudo losetup /dev/loop1 /opt/stack/data/stack-volumes-lvmdriver-1-backing-file
 cd devstack/
 
 source openrc admin admin
+
+
+
+
+nova boot --flavor 1  --image 2dc33303-8963-40bc-bfad-d50361f84196  jdoe_vm
+
+
+nova volume-create 6 --display_name jdoe_vol
+
+
+nova volume-attach jdoe_vm 872bc881-45f5-44a7-822f-dbdf9120f873
+
+
+
+
+
+
+http://docs.openstack.org/user-guide/common/cli_manage_volumes.html

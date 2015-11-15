@@ -11,16 +11,17 @@ package otherTest;
  */
 import com.jcraft.jsch.*;
 import java.awt.*;
-import javax.swing.*;
 import java.io.*;
+import javax.swing.*;
+import org.apache.commons.io.IOUtils;
 
 public class testSSH4SendCommand{
     
     
     
     
-  public static void main(String[] arg){
-    try{
+  public static void main(String[] arg) throws IOException, JSchException{
+    
       JSch jsch=new JSch();  
 
       
@@ -49,18 +50,49 @@ public class testSSH4SendCommand{
       // username and password will be given via UserInfo interface.
       UserInfo ui=new MyUserInfo(passWord);
       session.setUserInfo(ui);
+      
       session.connect();
 
-      String command=JOptionPane.showInputDialog("Enter command", 
-                                                 "set|grep SSH");
+      String command1="cd devstack";
+      String command2="source openrc admin admin";
+      String command3="nova boot --flavor 1  --image 443880f8-84bc-4077-86ca-d8dd8ae69289  outVM1";
+      
+      String command4="cd devstack && source openrc admin admin && nova boot --flavor 1  --image 443880f8-84bc-4077-86ca-d8dd8ae69289  outVM1 && nova volume-create 1 --display_name outVol1 ";
+              
 
       Channel channel=session.openChannel("exec");
-      ((ChannelExec)channel).setCommand(command);
+      ((ChannelExec)channel).setCommand(command4);
+      //((ChannelExec)channel).setCommand(command2);
+      //((ChannelExec)channel).setCommand(command3);
+      
+       //session.connect(30000); 
+      
+       //Channel channel=session.openChannel("shell");
+
+      // Enable agent-forwarding.
+      //((ChannelShell)channel).setAgentForwarding(true);
+     /*
+     InputStream in1 = IOUtils.toInputStream(command1, "UTF-8");  
+     InputStream in2 = IOUtils.toInputStream(command2, "UTF-8");  
+     InputStream in3 = IOUtils.toInputStream(command3, "UTF-8");  
+       
+      channel.setInputStream(in1);
+      channel.setInputStream(in2);
+      channel.setInputStream(in3);
+      */
+      
+      
+      
+      
+      
+      
 
       // X Forwarding
       // channel.setXForwarding(true);
 
       //channel.setInputStream(System.in);
+      
+      
       channel.setInputStream(null);
 
       //channel.setOutputStream(System.out);
@@ -73,6 +105,8 @@ public class testSSH4SendCommand{
 
       channel.connect();
 
+      
+      /*
       byte[] tmp=new byte[1024];
       while(true){
         while(in.available()>0){
@@ -80,20 +114,31 @@ public class testSSH4SendCommand{
           if(i<0)break;
           System.out.print(new String(tmp, 0, i));
         }
+       */
+      
+      
+        StringWriter writer = new StringWriter();
+        IOUtils.copy(in, writer, "UTF-8");
+        String theString = writer.toString();
+        
+        System.out.println("hahaha\n"+theString);
+        
+        
+        
+        /*
         if(channel.isClosed()){
           if(in.available()>0) continue; 
           System.out.println("exit-status: "+channel.getExitStatus());
           break;
         }
-        try{Thread.sleep(1000);}catch(Exception ee){}
+        try{Thread.sleep(1000);}catch(Exception ee){}*/
+        channel.disconnect();
+        session.disconnect();
+        
       }
-      channel.disconnect();
-      session.disconnect();
-    }
-    catch(Exception e){
-      System.out.println(e);
-    }
-  }
+      
+
+  
 
   
   
