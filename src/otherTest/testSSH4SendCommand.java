@@ -14,6 +14,9 @@ import java.awt.*;
 import java.io.*;
 import javax.swing.*;
 import org.apache.commons.io.IOUtils;
+import util.allocation;
+import util.method;
+import static util.method.printInfo;
 
 public class testSSH4SendCommand{
     
@@ -56,49 +59,25 @@ public class testSSH4SendCommand{
       String command1="cd devstack";
       String command2="source openrc admin admin";
       String command3="nova boot --flavor 1  --image 443880f8-84bc-4077-86ca-d8dd8ae69289  outVM1";
-      
-      String command4="cd devstack && source openrc admin admin && nova boot --flavor 1  --image 443880f8-84bc-4077-86ca-d8dd8ae69289  outVM1 && nova volume-create 1 --display_name outVol1 ";
-              
+      String command4="nova volume-create 1 --display_name outVol1";
+     
+      //String command5="cd devstack && source openrc admin admin && nova boot --flavor 1  --image 443880f8-84bc-4077-86ca-d8dd8ae69289  outVM1 && nova volume-create 1 --display_name outVol1 ";
+            
+      String command5=command1+" && "+command2+" && "+command3+" && "+command4;
 
       Channel channel=session.openChannel("exec");
-      ((ChannelExec)channel).setCommand(command4);
-      //((ChannelExec)channel).setCommand(command2);
-      //((ChannelExec)channel).setCommand(command3);
-      
-       //session.connect(30000); 
-      
-       //Channel channel=session.openChannel("shell");
-
-      // Enable agent-forwarding.
-      //((ChannelShell)channel).setAgentForwarding(true);
-     /*
-     InputStream in1 = IOUtils.toInputStream(command1, "UTF-8");  
-     InputStream in2 = IOUtils.toInputStream(command2, "UTF-8");  
-     InputStream in3 = IOUtils.toInputStream(command3, "UTF-8");  
-       
-      channel.setInputStream(in1);
-      channel.setInputStream(in2);
-      channel.setInputStream(in3);
-      */
+      ((ChannelExec)channel).setCommand(command5);
       
       
       
       
       
       
-
-      // X Forwarding
-      // channel.setXForwarding(true);
-
-      //channel.setInputStream(System.in);
-      
+     
       
       channel.setInputStream(null);
 
-      //channel.setOutputStream(System.out);
 
-      //FileOutputStream fos=new FileOutputStream("/tmp/stderr");
-      //((ChannelExec)channel).setErrStream(fos);
       ((ChannelExec)channel).setErrStream(System.err);
 
       InputStream in=channel.getInputStream();
@@ -119,11 +98,87 @@ public class testSSH4SendCommand{
       
         StringWriter writer = new StringWriter();
         IOUtils.copy(in, writer, "UTF-8");
-        String theString = writer.toString();
+        String returnInfo = writer.toString();
         
-        System.out.println("hahaha\n"+theString);
+        System.out.println(returnInfo);
+        
+          ((ChannelExec)channel).setErrStream(System.err);
+          
+        printInfo("flag0");
+         
+        channel.disconnect();
+        session.disconnect();
+        
+         
+
+     
+      printInfo("flag1");
+         
+        
+       // channel.disconnect();
+        //session.disconnect();
         
         
+        
+        
+        
+        
+        
+      JSch jsch2=new JSch();  
+        
+        
+        
+       session=jsch2.getSession(user, host, port);
+      
+     
+      // username and password will be given via UserInfo interface.
+      ui=new MyUserInfo(passWord);
+      session.setUserInfo(ui);
+      
+      session.connect();
+        
+      String volumeId=allocation.getVolumeIdFromString(returnInfo);
+        
+     String command6="nova volume-attach outVM1"+" "+volumeId;
+        
+        
+       //String command7="pwd";
+      //String command7=command1+" && "+command2+" && "+command6;
+      
+      printInfo(command6);
+        
+         printInfo("flag2");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         channel=session.openChannel("exec");
+        ((ChannelExec)channel).setCommand(command6); 
+        
+        channel.setInputStream(null);
+        ((ChannelExec)channel).setErrStream(System.err);
+        
+         printInfo("flag3");
+        
+        /*method.fromStringToFile(returnInfo, "returnInfo.txt");
+        
+        System.out.println("hahaha\n"+returnInfo);*/
+        
+        in=channel.getInputStream();
+         channel.connect(); 
+        
+        writer = new StringWriter();
+        IOUtils.copy(in, writer, "UTF-8");
+        returnInfo = writer.toString();
+        
+        System.out.println(returnInfo);
+        
+        // channel.connect();
         
         /*
         if(channel.isClosed()){

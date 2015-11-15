@@ -1,0 +1,66 @@
++--------------------------------------+----------------------------------------------------------------+
+| Property                             | Value                                                          |
++--------------------------------------+----------------------------------------------------------------+
+| OS-DCF:diskConfig                    | MANUAL                                                         |
+| OS-EXT-AZ:availability_zone          |                                                                |
+| OS-EXT-SRV-ATTR:host                 | -                                                              |
+| OS-EXT-SRV-ATTR:hostname             | outvm1                                                         |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | -                                                              |
+| OS-EXT-SRV-ATTR:instance_name        | instance-00000008                                              |
+| OS-EXT-SRV-ATTR:kernel_id            | dc085c73-254e-4a64-b188-c06470a11f66                           |
+| OS-EXT-SRV-ATTR:launch_index         | 0                                                              |
+| OS-EXT-SRV-ATTR:ramdisk_id           | 2ef63dde-289b-4f61-b239-716567d5282b                           |
+| OS-EXT-SRV-ATTR:reservation_id       | r-sf87tz6h                                                     |
+| OS-EXT-SRV-ATTR:root_device_name     | -                                                              |
+| OS-EXT-SRV-ATTR:user_data            | -                                                              |
+| OS-EXT-STS:power_state               | 0                                                              |
+| OS-EXT-STS:task_state                | scheduling                                                     |
+| OS-EXT-STS:vm_state                  | building                                                       |
+| OS-SRV-USG:launched_at               | -                                                              |
+| OS-SRV-USG:terminated_at             | -                                                              |
+| accessIPv4                           |                                                                |
+| accessIPv6                           |                                                                |
+| adminPass                            | 65waj2PHX24y                                                   |
+| config_drive                         |                                                                |
+| created                              | 2015-11-15T16:28:16Z                                           |
+| flavor                               | m1.tiny (1)                                                    |
+| hostId                               |                                                                |
+| id                                   | 9ffb96cb-b427-4da2-aa92-437efc1433da                           |
+| image                                | cirros-0.3.4-x86_64-uec (443880f8-84bc-4077-86ca-d8dd8ae69289) |
+| key_name                             | -                                                              |
+| metadata                             | {}                                                             |
+| name                                 | outVM1                                                         |
+| os-extended-volumes:volumes_attached | []                                                             |
+| progress                             | 0                                                              |
+| security_groups                      | default                                                        |
+| status                               | BUILD                                                          |
+| tenant_id                            | f6b2db484d274269aeb58e66dd12e1f5                               |
+| updated                              | 2015-11-15T16:28:16Z                                           |
+| user_id                              | 07db5a8eb45c4901baadb8c04f801c9a                               |
++--------------------------------------+----------------------------------------------------------------+
++---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Property            | Value                                                                                                                                                                                                                                                                   |
++---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| attachments         | []                                                                                                                                                                                                                                                                      |
+| availability_zone   | nova                                                                                                                                                                                                                                                                    |
+| bootable            | false                                                                                                                                                                                                                                                                   |
+| consistencygroup_id | -                                                                                                                                                                                                                                                                       |
+| created_at          | 2015-11-15T16:28:18.896854                                                                                                                                                                                                                                              |
+| description         | -                                                                                                                                                                                                                                                                       |
+| encrypted           | False                                                                                                                                                                                                                                                                   |
+| id                  | ce13c030-7e0d-4ee1-bf9f-d9175baee90b                                                                                                                                                                                                                                    |
+| links               | [{"href": "http://10.0.2.15:8776/v2/f6b2db484d274269aeb58e66dd12e1f5/volumes/ce13c030-7e0d-4ee1-bf9f-d9175baee90b", "rel": "self"}, {"href": "http://10.0.2.15:8776/f6b2db484d274269aeb58e66dd12e1f5/volumes/ce13c030-7e0d-4ee1-bf9f-d9175baee90b", "rel": "bookmark"}] |
+| metadata            | {}                                                                                                                                                                                                                                                                      |
+| migration_status    | -                                                                                                                                                                                                                                                                       |
+| multiattach         | False                                                                                                                                                                                                                                                                   |
+| name                | outVol1                                                                                                                                                                                                                                                                 |
+| replication_status  | disabled                                                                                                                                                                                                                                                                |
+| size                | 1                                                                                                                                                                                                                                                                       |
+| snapshot_id         | -                                                                                                                                                                                                                                                                       |
+| source_volid        | -                                                                                                                                                                                                                                                                       |
+| status              | creating                                                                                                                                                                                                                                                                |
+| updated_at          | -                                                                                                                                                                                                                                                                       |
+| user_id             | 07db5a8eb45c4901baadb8c04f801c9a                                                                                                                                                                                                                                        |
+| volume_type         | lvmdriver-1                                                                                                                                                                                                                                                             |
++---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+

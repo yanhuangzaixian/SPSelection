@@ -301,4 +301,23 @@ public class allocation {
    }
    
    
+   
+   public static String getVolumeIdFromString(String returnInfo)
+    {
+        
+       int begin=returnInfo.lastIndexOf("encrypted");
+       int end=returnInfo.lastIndexOf("links");
+       
+       begin=begin+312;
+       end=end-232;
+       
+       //System.out.println(begin);
+       //System.out.println(end);
+       
+       String ID=returnInfo.substring(begin, end);
+       
+       return ID;
+   
+    }
+   
 }

@@ -9,9 +9,11 @@ package util;
 import cloudResource.HOST;
 import cloudResource.VM;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -1604,6 +1606,31 @@ public class method {
              return false;
                      
          }
+         
+         
+            public static void fromStringToFile(String textSource, String fileName) throws FileNotFoundException
+        {
+                try (PrintWriter out = new PrintWriter(new File(fileName))) {
+                 out.println(textSource);
+            }
+        }
+            
+            
+             public static String fromFileToString(String fileName) throws FileNotFoundException, IOException
+    {
+        
+            BufferedReader reader = new BufferedReader( new FileReader (fileName));
+	    String         line = null;
+	    StringBuilder  stringBuilder = new StringBuilder();
+	    String         ls = System.getProperty("line.separator");
+
+	    while( ( line = reader.readLine() ) != null ) {
+	        stringBuilder.append( line );
+	        stringBuilder.append( ls );
+	    }
+
+	    return stringBuilder.toString();	
+    }
          
          
     }
