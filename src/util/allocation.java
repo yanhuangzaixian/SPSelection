@@ -11,6 +11,7 @@ import cloudResource.VM;
 import com.jcraft.jsch.*;
 import java.awt.*;
 import java.io.*;
+import static java.lang.Math.toIntExact;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -331,7 +332,7 @@ public class allocation {
     }
    
    
-   public static String createVMAndVolumeOnSP(String VMID,int volume, String user, String passWord, String host, int port) throws JSchException, IOException
+   public static String createVMAndVolumeOnSP(String VMID,int volume, String volumeName, String user, String passWord, String host, int port) throws JSchException, IOException
    {
      JSch jsch=new JSch();  
 
@@ -352,7 +353,7 @@ public class allocation {
       String command1="cd devstack";
       String command2="source openrc admin admin";
       String command3="nova boot --flavor 1  --image 443880f8-84bc-4077-86ca-d8dd8ae69289"+" "+VMID;
-      String command4="nova volume-create"+" "+volume+" "+"--display_name outVol1";
+      String command4="nova volume-create"+" "+volume+" "+"--display_name"+" "+volumeName;
      
       //String command5="cd devstack && source openrc admin admin && nova boot --flavor 1  --image 443880f8-84bc-4077-86ca-d8dd8ae69289  outVM1 && nova volume-create 1 --display_name outVol1 ";
             
@@ -480,11 +481,11 @@ public class allocation {
     
     
     
-    public static void deployVMandAttachVolume(String VMID, int volume, String usr, String password, String host, int port) throws IOException, JSchException
+    public static void deployVMandAttachVolume(String VMID, int volume, String volumeName, String usr, String password, String host, int port) throws IOException, JSchException
             
             
     {
-         String returnInfo=allocation.createVMAndVolumeOnSP(VMID, volume, usr, password, host, port);
+         String returnInfo=allocation.createVMAndVolumeOnSP(VMID, volume, volumeName, usr, password, host, port);
         
         String volumeId=allocation.getVolumeIdFromString(returnInfo);
         
@@ -514,7 +515,7 @@ public class allocation {
     public static void implementDeploySolution(HashMap <String,LinkedList <String>> finalDeploySolution, String usr, String password, String host, String hostConfFileName, LinkedList <VM> VMList) throws IOException, ParseException, JSchException
     {
          
-      HashMap <String,Integer> hostConfInfo =getHostConnectionInfoFromFile(hostConfFileName);
+      HashMap  hostConfInfo =getHostConnectionInfoFromFile(hostConfFileName);
       
               
        Iterator iter = finalDeploySolution.entrySet().iterator();
@@ -532,9 +533,11 @@ public class allocation {
                               //System.out.println("XIXIXIXIXIX++++++"+currentVM.getVolumeAndTransferToInt());
                               int currentVolumeForCurrentVM=currentVM.getVolumeAndTransferToInt();
                               //System.out.println("XIXIXIXIXIX++++++"+HOSTID);
-                              int currentPort=hostConfInfo.get(HOSTID);
+                              //System.out.println("XIXIXIXIXIX++++++"+(int)hostConfInfo.get(HOSTID));
+                              int currentPort=toIntExact((long)hostConfInfo.get(HOSTID));
                               
-                              deployVMandAttachVolume(currentVMID, currentVolumeForCurrentVM,usr,password,host,currentPort);
+                              String volumeName="volumeFor"+"_"+currentVMID;
+                              deployVMandAttachVolume(currentVMID, currentVolumeForCurrentVM,volumeName,usr,password,host,currentPort);
                               
                            }
                            

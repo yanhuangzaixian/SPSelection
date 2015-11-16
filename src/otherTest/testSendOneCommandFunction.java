@@ -19,7 +19,7 @@ public class testSendOneCommandFunction {
     
     public static void main(String[] arg) throws IOException, JSchException{
     
-        String returnInfo=allocation.createVMAndVolumeOnSP("outVM", 1, "yli03", "VJWWFDRA", "127.0.0.1", 2222);
+        String returnInfo=allocation.createVMAndVolumeOnSP("outVM", 1, "volumeName", "yli03", "VJWWFDRA", "127.0.0.1", 2222);
         
         String volumeId=allocation.getVolumeIdFromString(returnInfo);
         
