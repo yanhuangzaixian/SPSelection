@@ -1,0 +1,27 @@
+{
+	"name":"HOST1",
+	
+	"context":"VM-deployment",
+	
+	"serviceDescription":
+						{
+							"volume":"10_GB",
+							"price":"6_euro",
+							"certificate":"true",
+							"location":"France"
+						},
+						
+	"creationConstraint":
+						[
+							[
+								"other",
+								"true",
+								"true",
+									[
+										["prohibition",{"ID":"HOST1"},{"purpose":"test"}]
+									]
+							]
+						],
+						
+	"gauranteeTerm":{"availability":"more_98_percentage"}
+}

@@ -1,0 +1,36 @@
+1. generate OrBAC Policy
+
+2. Filter Service and Requirement
+
+3. Resolve reverse Conflict
+
+4. Resolve seperation Conflict
+
+
+
+
+5. Generate different deploy solution  
+
+
+/**/
+Seperation structure
+
+
+HashMap <LinkedList>  <LinkedList>
+
+/*Filter Property requirement */
+
+
+VMList.Service requirement:    volume 30_GB
+HOSTList.service Description   volume 100_GB
+
+
+deactive permission rule
+
+/*Filetr SLA*/
+
+VMList.guarantee Term    availability   more_97_percentage
+HOSTList.gaurantee Term   availability   more_98_percentage
+
+
+deactive permission

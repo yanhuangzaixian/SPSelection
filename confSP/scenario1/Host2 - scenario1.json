@@ -1,0 +1,24 @@
+{
+	"name":"HOST2",
+	
+	"context":"VM-deployment",
+	
+	"serviceDescription":
+						{
+							"volume":"10_GB",
+							"price":"5_euro",
+							"certificate":"false",
+							"location":"UK"
+						},
+						
+	"creationConstraint":[
+							["other",
+							 "true",
+							 "true",
+								[["prohibition",{"ID":"HOST2"},{"data":"private"}]]
+							]
+						 ],
+						 
+	"gauranteeTerm":{"availability":"more_99_percentage"}
+
+}

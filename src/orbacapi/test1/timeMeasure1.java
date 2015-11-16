@@ -71,7 +71,7 @@ public class timeMeasure1 {
     long duration1=Time2-Time1;
    System.out.println("*****************Initial Security Policy generation: "+duration1+"ms");
     
-    // p.WritePolicyFile("policyGenerated"+File.separator+"policy_1_SecurityRequirement.xml",null);
+    p.WritePolicyFile("policyGenerated"+File.separator+"policy_1_SecurityRequirement.xml",null);
     
     
     
@@ -85,31 +85,35 @@ public class timeMeasure1 {
     
      p=filterOrBACPolicy(p,VMList,HOSTList);
     
-     //printInfo("After SLA filter");
+     
+     
+     
+     
+     printInfo("After SLA filter");
     
-     //p.WritePolicyFile("policyGenerated"+File.separator+"policy_2_AfterSLA.xml",null);
+     p.WritePolicyFile("policyGenerated"+File.separator+"policy_2_AfterSLA.xml",null);
      
      
-    // method.printAllConcretePermission(p);
+     method.printAllConcretePermission(p);
      
-     //method.printAllConcreteProhibition(p);
+     method.printAllConcreteProhibition(p);
     
     
     
     /*************************Resolve concrete reverse conflict***********************************/
-    /*
+    
       method.printInfo("concreteConflict");
     
       method.printConcreteConflict(p);
    
-     */
+     
      p=method.resolveConflictAdvanced(p);
      
      
-     // p.WritePolicyFile("policyGenerated"+File.separator+"policy_3_AfterConflictResolution.xml",null);
+      p.WritePolicyFile("policyGenerated"+File.separator+"policy_3_AfterConflictResolution.xml",null);
       
       
-      /*
+      
       method.printInfo("After resolved conclict");
      
       method.printAllConcretePermission(p);
@@ -117,7 +121,7 @@ public class timeMeasure1 {
       method.printAllConcreteProhibition(p);
     
     
-     */
+     
      
      
      
