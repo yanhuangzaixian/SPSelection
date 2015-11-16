@@ -962,7 +962,8 @@ public class method {
 
 	
 
-		Object obj2 = parser.parse(new FileReader("confSP\\contractFileList.json"));
+		//Object obj2 = parser.parse(new FileReader("confSP"+File.separator+"contractFileList.json"));
+                Object obj2 = parser.parse(new FileReader(fileName));
 
 		JSONObject jsonObject = (JSONObject) obj2;
     

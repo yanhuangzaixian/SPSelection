@@ -169,6 +169,35 @@ public class VM {
          return 0;
      }
      
+      
+       public int getVolumeAndTransferToInt ()
+             
+     {
+        HashMap serviceServiceRequirement=getServiceRequirement();
+        
+        
+        
+        Iterator iter = serviceServiceRequirement.entrySet().iterator();
+                    while (iter.hasNext()) 
+                            {
+                                HashMap.Entry entry = (HashMap.Entry) iter.next();
+                                String volumeItem = (String) entry.getValue();
+                                
+                                
+                                String volume_unit[]=volumeItem.split("_");
+        
+                                float volume=Float.parseFloat(volume_unit[0]);
+                                
+                                int volumeTransforme=Math.round(volume);
+                                
+                                return volumeTransforme;
+                                
+                            }
+        
+        
+        
+         return 0;
+     }
      
     
 }

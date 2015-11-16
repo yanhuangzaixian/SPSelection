@@ -8,6 +8,7 @@ package orbacapi.test1;
 
 import cloudResource.HOST;
 import cloudResource.VM;
+import com.jcraft.jsch.JSchException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import java.util.LinkedList;
 import orbac.AbstractOrbacPolicy;
 import orbac.exception.COrbacException;
 import org.json.simple.parser.ParseException;
+import util.allocation;
 import static util.allocation.generateFinalDeploySolution;
 import util.method;
 import static util.method.filterOrBACPolicy;
@@ -28,7 +30,7 @@ import static util.method.printInfo;
  */
 public class testForOrBACPolicyGeneration1 {
     
-     public static void main(String[] args) throws IOException, ParseException, COrbacException
+     public static void main(String[] args) throws IOException, ParseException, COrbacException, JSchException
     {
         
     //long Time1 = System. currentTimeMillis();  
@@ -126,6 +128,8 @@ public class testForOrBACPolicyGeneration1 {
      method.printHashMap(finalDeploySolution);
      
      
+     
+     allocation.implementDeploySolution(finalDeploySolution,"yli03", "VJWWFDRA", "127.0.0.1", "confConnection"+File.separator+"portInfo.json", VMList);
      
      
      

@@ -32,13 +32,13 @@ public class SPMultiHOSTEditor {
         
         fileList.add("confSP"+File.separator+"HOST1.json");
         fileList.add("confSP"+File.separator+"HOST2.json");
-        fileList.add("confSP"+File.separator+"HOST3.json");
+        /*fileList.add("confSP"+File.separator+"HOST3.json");
         fileList.add("confSP"+File.separator+"HOST4.json");
         
         for(int i=5;i<totalNumber;i++)
         {
         fileList.add("confSP"+File.separator+"HOST"+i+".json");
-        }
+        }*/
         obj.put("contract_list_of_SP", fileList);
         
         
@@ -64,7 +64,7 @@ public class SPMultiHOSTEditor {
         HashMap serviceDescription=new HashMap();
         serviceDescription.put("location","France");
         serviceDescription.put("certificate","true");
-        serviceDescription.put("volume","100_GB");
+        serviceDescription.put("volume","10_GB");
         serviceDescription.put("price","6_euro");
         
         obj.put("serviceDescription", serviceDescription);
@@ -136,7 +136,7 @@ public class SPMultiHOSTEditor {
         serviceDescription=new HashMap();
         serviceDescription.put("location","UK");
         serviceDescription.put("certificate","false");
-        serviceDescription.put("volume","200_GB");
+        serviceDescription.put("volume","10_GB");
         serviceDescription.put("price","5_euro");
         
         obj.put("serviceDescription", serviceDescription);
@@ -209,7 +209,7 @@ public class SPMultiHOSTEditor {
         serviceDescription=new HashMap();
         serviceDescription.put("location","China");
         serviceDescription.put("certificate","false");
-        serviceDescription.put("volume","70_GB");
+        serviceDescription.put("volume","10_GB");
         serviceDescription.put("price","4_euro");
         
         obj.put("serviceDescription", serviceDescription);
@@ -282,7 +282,7 @@ public class SPMultiHOSTEditor {
         serviceDescription=new HashMap();
         serviceDescription.put("location","France");
         serviceDescription.put("certificate","true");
-        serviceDescription.put("volume","100_GB");
+        serviceDescription.put("volume","10_GB");
         serviceDescription.put("price","3_euro");
         
         obj.put("serviceDescription", serviceDescription);
@@ -335,7 +335,7 @@ public class SPMultiHOSTEditor {
         serviceDescription=new HashMap();
         serviceDescription.put("location","France");
         serviceDescription.put("certificate","true");
-        serviceDescription.put("volume","100_GB");
+        serviceDescription.put("volume","10_GB");
         serviceDescription.put("price","3_euro");
         
         obj.put("serviceDescription", serviceDescription);

@@ -8,28 +8,30 @@ package util;
 
 import cloudResource.HOST;
 import cloudResource.VM;
+import com.jcraft.jsch.*;
+import java.awt.*;
+import java.io.*;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
+import javax.swing.*;
 import orbac.AbstractOrbacPolicy;
 import orbac.exception.COrbacException;
 import orbac.securityRules.CConcretePermission;
+import org.apache.commons.io.IOUtils;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import util.allocation;
+import util.method;
 import static util.method.currentHOSTSatisfyCurrentVMForCapacity;
 import static util.method.getHOSTByID;
 import static util.method.getVMByID;
 import static util.method.printInfo;
 import static util.method.printLinkedList;
 import static util.method.twoLinkedListShareSameEntity;
-import com.jcraft.jsch.*;
-import java.awt.*;
-import java.io.*;
-import javax.swing.*;
-import org.apache.commons.io.IOUtils;
-import util.allocation;
-import util.method;
-import static util.method.printInfo;
 
 /**
  *
@@ -475,6 +477,81 @@ public class allocation {
    
    }
    
+    
+    
+    
+    public static void deployVMandAttachVolume(String VMID, int volume, String usr, String password, String host, int port) throws IOException, JSchException
+            
+            
+    {
+         String returnInfo=allocation.createVMAndVolumeOnSP(VMID, volume, usr, password, host, port);
+        
+        String volumeId=allocation.getVolumeIdFromString(returnInfo);
+        
+        allocation.attachVolumeToVM(VMID, volumeId, usr, password, host, port);
+    
+    
+    }
+    
+    
+    public static HashMap <String,Integer> getHostConnectionInfoFromFile(String fileName) throws IOException, ParseException
+    
+        {
+               JSONParser parser = new JSONParser();
+
+                Object obj2 = parser.parse(new FileReader(fileName));
+
+		JSONObject jsonObject = (JSONObject) obj2;
+    
+                HashMap <String, Integer> connectPort2=(HashMap<String,Integer>) jsonObject.get("connectPort");
+                 
+                //method.printHashMap(connectPort2);
+                
+                return connectPort2;
+        }
+    
+    
+    public static void implementDeploySolution(HashMap <String,LinkedList <String>> finalDeploySolution, String usr, String password, String host, String hostConfFileName, LinkedList <VM> VMList) throws IOException, ParseException, JSchException
+    {
+         
+      HashMap <String,Integer> hostConfInfo =getHostConnectionInfoFromFile(hostConfFileName);
+      
+              
+       Iterator iter = finalDeploySolution.entrySet().iterator();
+               while (iter.hasNext()) 
+                        {
+                           HashMap.Entry entry = (HashMap.Entry) iter.next();
+                           String HOSTID = (String) entry.getKey();
+                           
+                           LinkedList<String> VMIDList = (LinkedList<String>) entry.getValue();     
+                           
+                           for (String currentVMID: VMIDList)
+                           {
+                              VM currentVM=method.getVMByID(currentVMID, VMList);
+                              
+                              //System.out.println("XIXIXIXIXIX++++++"+currentVM.getVolumeAndTransferToInt());
+                              int currentVolumeForCurrentVM=currentVM.getVolumeAndTransferToInt();
+                              //System.out.println("XIXIXIXIXIX++++++"+HOSTID);
+                              int currentPort=hostConfInfo.get(HOSTID);
+                              
+                              deployVMandAttachVolume(currentVMID, currentVolumeForCurrentVM,usr,password,host,currentPort);
+                              
+                           }
+                           
+              
+                        }
+      
+      
+      
+      
+      printInfo("All the deployments have been finished !");
+        
+        
+        
+    }
+    
+    
+    
    
    
    

@@ -33,7 +33,7 @@ public class contractMultiClients {
     public static void main(String[] args)
     {
         
-        int totalNumber=5;
+        int totalNumber=4;
         
     
         JSONObject obj = new JSONObject();
@@ -45,31 +45,31 @@ public class contractMultiClients {
         
         
         HashMap serviceDescription=new HashMap();
-        serviceRequirement.put("VM1_volume","18_GB");
+        serviceRequirement.put("VM1_volume","1_GB");
         serviceDescription.put("VM1_purpose","dev");
         serviceDescription.put("VM1_data","private");
         serviceDescription.put("VM1_application","internal");
         
         
         
-        serviceRequirement.put("VM2_volume","20_GB");
+        serviceRequirement.put("VM2_volume","2_GB");
         serviceDescription.put("VM2_purpose","prod");
         serviceDescription.put("VM2_data","public");
         serviceDescription.put("VM2_application","business");
         
         
-        serviceRequirement.put("VM3_volume","30_GB");
+        serviceRequirement.put("VM3_volume","3_GB");
         serviceDescription.put("VM3_purpose","test");
         serviceDescription.put("VM3_data","public");
         serviceDescription.put("VM3_application","business");
         
         
-        serviceRequirement.put("VM4_volume","20_GB");
+        serviceRequirement.put("VM4_volume","4_GB");
         serviceDescription.put("VM4_purpose","prod");
         serviceDescription.put("VM4_data","public");
         serviceDescription.put("VM4_application","business");
         
-        
+        /*
         for (int i=5;i<totalNumber;i++)
             {
                 serviceRequirement.put("VM"+i+"_volume","20_GB");
@@ -77,7 +77,7 @@ public class contractMultiClients {
                 serviceDescription.put("VM"+i+"_data","public");
                 serviceDescription.put("VM"+i+"_application","business");
             }
-        
+        */
         
         
         
