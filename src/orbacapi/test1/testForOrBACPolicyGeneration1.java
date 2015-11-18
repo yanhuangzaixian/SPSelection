@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import orbac.AbstractOrbacPolicy;
 import orbac.exception.COrbacException;
+import orbac.securityRules.CConcreteRuleContainer;
 import org.json.simple.parser.ParseException;
 import util.allocation;
 import static util.allocation.generateFinalDeploySolution;
@@ -80,27 +81,36 @@ public class testForOrBACPolicyGeneration1 {
     
       /*************************SLA filter***********************************/
     
-     p=filterOrBACPolicy(p,VMList,HOSTList);
+     LinkedList <CConcreteRuleContainer> containerList=method.filterOrBACPolicyAndReturnContainerList(p,VMList,HOSTList);
     
      printInfo("After SLA filter");
+     
+     method.printRuleContainerlist(containerList);
     
      p.WritePolicyFile("policyGenerated"+File.separator+"policy_2_AfterSLA.xml",null);
      
-     
+     /*
      method.printAllConcretePermission(p);
      
      method.printAllConcreteProhibition(p);
     
-    
+    */
     
     /*************************Resolve concrete reverse conflict***********************************/
     
       method.printInfo("concreteConflict");
     
+      
+      
       method.printConcreteConflict(p);
    
-
-      p=method.resolveConflictAdvanced(p);
+      method.printConcreteConflict(p);
+   
+     
+     //p=method.resolveConflictAdvanced(p);
+     
+     containerList=method.resolveConflictAndAddRuleContainerList(p,containerList);
+     
      
      
       p.WritePolicyFile("policyGenerated"+File.separator+"policy_3_AfterConflictResolution.xml",null);
@@ -108,18 +118,22 @@ public class testForOrBACPolicyGeneration1 {
       
       
       method.printInfo("After resolved conclict");
+      
+      method.printRuleContainerlist(containerList);
+      
+      /*
      
       method.printAllConcretePermission(p);
      
       method.printAllConcreteProhibition(p);
     
-    
+    */
      
      
      
      
      LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy =generateConcreteSeparationPolicyFromVMList(VMPolicyList, VMList);
-     HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy ) ;
+     HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy, containerList ) ;
      
      
      
@@ -129,7 +143,7 @@ public class testForOrBACPolicyGeneration1 {
      
      
      
-     allocation.implementDeploySolution(finalDeploySolution,"yli03", "VJWWFDRA", "127.0.0.1", "confConnection"+File.separator+"portInfo.json", VMList);
+     //allocation.implementDeploySolution(finalDeploySolution,"yli03", "VJWWFDRA", "127.0.0.1", "confConnection"+File.separator+"portInfo.json", VMList);
      
      
      

@@ -21,6 +21,7 @@ import javax.swing.*;
 import orbac.AbstractOrbacPolicy;
 import orbac.exception.COrbacException;
 import orbac.securityRules.CConcretePermission;
+import orbac.securityRules.CConcreteRuleContainer;
 import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -149,7 +150,7 @@ public class allocation {
    
    
    public static HashMap <String,LinkedList <String>> generateFinalDeploySolution
-        (AbstractOrbacPolicy p, LinkedList <VM> VMList, LinkedList <HOST> HOSTList, LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy ) throws COrbacException
+        (AbstractOrbacPolicy p, LinkedList <VM> VMList, LinkedList <HOST> HOSTList, LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy, LinkedList <CConcreteRuleContainer> containerList) throws COrbacException
    {
      
        
@@ -166,7 +167,7 @@ public class allocation {
          CConcretePermission Cpermission=(CConcretePermission)iter.next();
          String currentVMID=Cpermission.GetObject();
          
-         if (Cpermission.IsActive() && !(VMAlreadyAllocateList.contains(currentVMID)))
+         if (!method.currentConcreteHasLessPriority(containerList, Cpermission) && !(VMAlreadyAllocateList.contains(currentVMID)))
             {
                 
                 VM currentVM=getVMByID(currentVMID,VMList);

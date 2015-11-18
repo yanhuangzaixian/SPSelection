@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import orbac.AbstractOrbacPolicy;
 import orbac.exception.COrbacException;
+import orbac.securityRules.CConcreteRuleContainer;
 import org.json.simple.parser.ParseException;
 import static util.allocation.generateFinalDeploySolution;
 import util.method;
@@ -83,22 +84,22 @@ public class timeMeasure1 {
     
       /*************************SLA filter***********************************/
     
-     p=filterOrBACPolicy(p,VMList,HOSTList);
+     LinkedList <CConcreteRuleContainer> containerList=method.filterOrBACPolicyAndReturnContainerList(p,VMList,HOSTList);
     
-     
-     
-     
-     
      printInfo("After SLA filter");
+     
+     method.printRuleContainerlist(containerList);
+     
+     
     
      p.WritePolicyFile("policyGenerated"+File.separator+"policy_2_AfterSLA.xml",null);
      
-     
+     /*
      method.printAllConcretePermission(p);
      
      method.printAllConcreteProhibition(p);
     
-    
+    */
     
     /*************************Resolve concrete reverse conflict***********************************/
     
@@ -107,7 +108,11 @@ public class timeMeasure1 {
       method.printConcreteConflict(p);
    
      
-     p=method.resolveConflictAdvanced(p);
+     //p=method.resolveConflictAdvanced(p);
+     
+     containerList=method.resolveConflictAndAddRuleContainerList(p,containerList);
+     
+     
      
      
       p.WritePolicyFile("policyGenerated"+File.separator+"policy_3_AfterConflictResolution.xml",null);
@@ -115,18 +120,21 @@ public class timeMeasure1 {
       
       
       method.printInfo("After resolved conclict");
+      
+      method.printRuleContainerlist(containerList);
      
+      /*
       method.printAllConcretePermission(p);
      
       method.printAllConcreteProhibition(p);
-    
+    */
     
      
      
      
      
      LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy =generateConcreteSeparationPolicyFromVMList(VMPolicyList, VMList);
-     HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy ) ;
+     HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy, containerList) ;
      
      
      

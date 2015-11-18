@@ -28,6 +28,8 @@ import orbac.exception.COrbacException;
 import orbac.securityRules.CConcretePermission;
 import orbac.securityRules.CConcreteProhibition;
 import orbac.securityRules.CConcreteRule;
+import orbac.securityRules.CConcreteRuleContainer;
+import orbac.securityRules.CRulePriority;
 import orbac.xmlImpl.XmlOrbacPolicy;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -76,6 +78,7 @@ public class method {
          CConcreteConflict eachConflict2=(CConcreteConflict)iter2.next();
          
     System.out.println(eachConflict2.GetFirstRule().toString());
+    System.out.println(eachConflict2.GetFirstRule().GetName());
     System.out.println(eachConflict2.GetSecondRule().toString());
     System.out.println("\n");
      }
@@ -108,6 +111,7 @@ public class method {
          
          
          System.out.println(Cpermission.toString());
+         System.out.println(Cpermission.GetName());
          System.out.println("Is active ?"+Cpermission.IsActive());
      }
      
@@ -129,13 +133,36 @@ public class method {
          CConcreteProhibition Cprohibition=(CConcreteProhibition)iter4.next();
          
          System.out.println(Cprohibition.toString());
-         
+         System.out.println(Cprohibition.GetName());
          System.out.println("Is active ?"+Cprohibition.IsActive());
      }
      
-     
-     
      }
+     
+     
+     
+     public static void printRuleContainerlist (LinkedList <CConcreteRuleContainer> containerList)
+             
+             
+   {
+     
+        
+         for (CConcreteRuleContainer currentContainer: containerList)
+         {
+             
+              CConcreteRule Cpermission=currentContainer.GetRule();
+              System.out.println(Cpermission.toString());
+              System.out.println(Cpermission.GetName());
+         
+         }
+         
+         
+    }
+     
+     
+     
+     
+     
      
      public static AbstractOrbacPolicy resolveConflictSimply(AbstractOrbacPolicy p) throws COrbacException
      {
@@ -223,6 +250,7 @@ public class method {
      
     
      
+     
     public static AbstractOrbacPolicy resolveConflictAdvanced(AbstractOrbacPolicy p) throws COrbacException
      {
      
@@ -248,12 +276,68 @@ public class method {
              
             
     
-     } 
+     }
+           
+           return p;
+     }
+           
+      
+      public static LinkedList <CConcreteRuleContainer> resolveConflictAndAddRuleContainerList(AbstractOrbacPolicy p, LinkedList <CConcreteRuleContainer> containerList ) throws COrbacException 
+     {
+      
+        
+        Set conflict2=p.GetConcreteConflicts();
+    //System.out.print(conflict2.size());
+
+       Iterator iter2 = conflict2.iterator();
+           while (iter2.hasNext()) {
          
+         CConcreteConflict eachConflict2=(CConcreteConflict)iter2.next();
          
-        return p;
+           
+            
+             CConcreteRule permissionInConflict=eachConflict2.GetFirstRule();
+             CConcreteRule prohibitionInConflict=eachConflict2.GetSecondRule();
+             
+             
+                     
+             if((method.searchConcreteViewInPermissionList(p,permissionInConflict.GetObject())>1) || method.IsProviderHasPrioprity())      
+                {
+                    if (!method.currentConcreteHasLessPriority(containerList, permissionInConflict))
+                    {
+                     CConcreteRuleContainer currentContainer=new CConcreteRuleContainer (permissionInConflict);
+                     currentContainer.AddPreemptingRule(prohibitionInConflict);
+                     containerList.add(currentContainer);
+                    }
+                    
+                }
+             
+             /*
+             else if (!(method.IsProviderHasPrioprity()))
+                 {
+                     prohibitionInConflict.SetState(false);
+                 }
+             */
+           }
+   
+        return  containerList;
      
      } 
+      
+      
+      public static boolean currentConcreteHasLessPriority (LinkedList <CConcreteRuleContainer> containerList, CConcreteRule currentRule)
+      {
+           for (CConcreteRuleContainer currentContainer: containerList)
+           {
+              if (currentContainer.GetRule()==currentRule)
+              {
+                 return true;
+              }
+           }
+           
+           return false;
+      
+      }
      
   
     
@@ -1252,6 +1336,49 @@ public class method {
      
              
              return p;
+         }
+          
+          
+          public static LinkedList <CConcreteRuleContainer> filterOrBACPolicyAndReturnContainerList(AbstractOrbacPolicy p, LinkedList <VM> VMList, LinkedList <HOST> HOSTList) throws COrbacException
+         {
+         
+             LinkedList <CConcreteRuleContainer> containerList=new LinkedList <CConcreteRuleContainer>();
+             
+             Set concretePermissionList=p.GetConcretePermissions();
+     
+                Iterator iter = concretePermissionList.iterator();
+                while (iter.hasNext()) 
+                
+                {
+         
+                 CConcretePermission Cpermission=(CConcretePermission)iter.next();
+                 
+                
+                
+                    String currentHOSTID=Cpermission.GetSubject();
+                    String currentVMID=Cpermission.GetObject();
+                    
+                    HOST currentHOST=findHOSTByIDFromHOSTList(HOSTList,currentHOSTID);
+                    VM currentVM=findVMByIDFromVMList(VMList,currentVMID);
+                    
+                    if ( (!(currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM))) ||   (!(currentHOSTSatisfyCurrentVMForPerformance(currentHOST,currentVM))) )
+                            {
+                                CConcreteRuleContainer currentContainer=new CConcreteRuleContainer(Cpermission);
+                                
+                                containerList.add(currentContainer);
+                            }
+                    
+                   /*
+                    System.out.println(Cpermission.toString());
+                    System.out.println("Is active ?"+Cpermission.IsActive());
+                   */
+                
+                
+                
+                }
+     
+             
+             return containerList;
          }
          
          

@@ -6,9 +6,9 @@
 
 package orbacapi.test1;
 
-import util.method;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Set;
 import orbac.*;
 import orbac.conflict.CAbstractConflict;
@@ -16,7 +16,11 @@ import orbac.conflict.CConcreteConflict;
 import orbac.exception.COrbacException;
 import orbac.securityRules.CConcretePermission;
 import orbac.securityRules.CConcreteProhibition;
+import orbac.securityRules.CConcreteRule;
+import orbac.securityRules.CConcreteRuleContainer;
 import orbac.xmlImpl.XmlOrbacPolicy;
+import util.method;
+import static util.method.printInfo;
 
 
 /**
@@ -155,7 +159,49 @@ public class OrBACAPITest1 {
      
      //method.resolveConflictSimply(p);
      
-     method.resolveConflictAdvanced(p);
+     //method.resolveConflictAdvanced(p);
+     
+     
+     
+     /*
+      LinkedList <CConcreteRuleContainer> containerList=method.resolveConflictAndGenerateRuleContainerList(p);
+      
+      
+      
+      
+      
+      
+      
+                Set conflict2=p.GetConcreteConflicts();
+    //System.out.print(conflict2.size());
+
+                Iterator iter2 = conflict2.iterator();
+            while (iter2.hasNext()) {
+         
+              CConcreteConflict eachConflict2=(CConcreteConflict)iter2.next();
+             printInfo("Conflict preempt?");
+         
+             CConcreteRule permissionInConflict=eachConflict2.GetFirstRule();
+            // CConcreteRule prohibitionInConflict=eachConflict2.GetSecondRule();
+             boolean pioprity=method.currentConcreteHasLessPriority(containerList, permissionInConflict);
+             
+             System.out.println(pioprity);
+             
+      
+      
+            }
+      
+      
+      */
+      
+      
+      
+      
+      
+      
+      
+      
+      
      
      
       method.printInfo("After resolved conclict");
