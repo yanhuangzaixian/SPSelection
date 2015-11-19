@@ -150,7 +150,7 @@ public class allocation {
    
    
    public static HashMap <String,LinkedList <String>> generateFinalDeploySolution
-        (AbstractOrbacPolicy p, LinkedList <VM> VMList, LinkedList <HOST> HOSTList, LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy, LinkedList <CConcreteRuleContainer> containerList) throws COrbacException
+        (AbstractOrbacPolicy p, LinkedList <VM> VMList, LinkedList <HOST> HOSTList, LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy) throws COrbacException
    {
      
        
@@ -167,7 +167,8 @@ public class allocation {
          CConcretePermission Cpermission=(CConcretePermission)iter.next();
          String currentVMID=Cpermission.GetObject();
          
-         if (!method.currentConcreteHasLessPriority(containerList, Cpermission) && !(VMAlreadyAllocateList.contains(currentVMID)))
+         
+         if ( (Cpermission.IsPreempted()==null) && !(VMAlreadyAllocateList.contains(currentVMID)))
             {
                 
                 VM currentVM=getVMByID(currentVMID,VMList);

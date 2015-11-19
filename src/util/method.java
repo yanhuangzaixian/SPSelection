@@ -282,6 +282,99 @@ public class method {
      }
            
       
+    
+    
+     public static AbstractOrbacPolicy resolveConflictAdvancedByAddAbstractRuleAndSetPrioprity(AbstractOrbacPolicy p) throws COrbacException
+     {
+     
+        int i=100;
+        
+        Set conflict2=p.GetConcreteConflicts();
+    //System.out.print(conflict2.size());
+
+       Iterator iter2 = conflict2.iterator();
+           while (iter2.hasNext()) {
+         
+         CConcreteConflict eachConflict2=(CConcreteConflict)iter2.next();
+         
+         
+             CConcreteRule permissionInConflict=eachConflict2.GetFirstRule();
+             CConcreteRule prohibitionInConflict=eachConflict2.GetSecondRule();
+             
+             
+             if((method.searchConcreteViewInPermissionList(p,permissionInConflict.GetObject())>1) || method.IsProviderHasPrioprity())      
+                {
+                    //permissionInConflict.SetState(false);
+                    
+                    String currentPermissionRuleName=permissionInConflict.GetName();
+                    
+                    String currentPermissionSubject=permissionInConflict.GetSubject();
+                    String currentPermissionAction=permissionInConflict.GetAction();
+                    String currentPermissionObject=permissionInConflict.GetObject();
+                    
+                    String newAbstractProhibitionName="priporityDenyRuleOf_"+currentPermissionRuleName+"_"+i;
+                    String newRole="roleOf_"+newAbstractProhibitionName+"_"+i;
+                    String newActivity="myActivity";
+                    String newView="objectOf_"+newAbstractProhibitionName+"_"+i;
+                    
+                    
+                    
+                    
+                    //p.CreateOrganization ("superCloud");
+   
+                    // add a role in the newly created organization
+                    p.CreateRoleAndInsertIntoOrg (newRole, "superCloud");
+    
+     
+                    //p.CreateActivityAndInsertIntoOrg ( newActivity, "superCloud");
+    
+                 // add a view in the newly created organization
+                    p.CreateViewAndInsertIntoOrg (newView, "superCloud");
+                    
+                    p.AbstractProhibition ("superCloud",newRole,newActivity,newView,"default_context",newAbstractProhibitionName);
+                    
+                    
+                    // p.Consider("superCloud","deploy","myActivity");
+
+   
+                    p.Empower("superCloud",currentPermissionSubject,newRole); 
+                
+                    p.Use("superCloud",currentPermissionObject,newView);
+                    
+                    
+                     printInfo("change conflict");
+                    System.out.println("HAHAAH"+newAbstractProhibitionName);
+                    
+                     System.out.println("\n+HAHAAH"+currentPermissionRuleName);
+                    
+                    p.SetRule1AboveRule2(newAbstractProhibitionName,currentPermissionRuleName,"superCloud","superCloud");
+                    
+                    
+                   
+                    
+                    
+                    
+                    
+                    
+                }
+             
+             
+             /*
+             else if (!(method.IsProviderHasPrioprity()))
+                 {prohibitionInConflict.SetState(false);}
+             */        
+             
+            
+            i++;
+     }
+           
+           return p;
+     }
+    
+    
+    
+    
+    
       public static LinkedList <CConcreteRuleContainer> resolveConflictAndAddRuleContainerList(AbstractOrbacPolicy p, LinkedList <CConcreteRuleContainer> containerList ) throws COrbacException 
      {
       
@@ -1337,6 +1430,99 @@ public class method {
              
              return p;
          }
+          
+          
+          
+            public static AbstractOrbacPolicy filterOrBACPolicyAndGeneratePriorityAbstractPolicy(AbstractOrbacPolicy p, LinkedList <VM> VMList, LinkedList <HOST> HOSTList) throws COrbacException
+         {
+         
+             int i=1;
+             
+             Set concretePermissionList=p.GetConcretePermissions();
+     
+                Iterator iter = concretePermissionList.iterator();
+                while (iter.hasNext()) 
+                
+                {
+         
+                 
+                 CConcretePermission Cpermission=(CConcretePermission)iter.next();
+                 
+                
+                
+                    String currentHOSTID=Cpermission.GetSubject();
+                    String currentVMID=Cpermission.GetObject();
+                    
+                    HOST currentHOST=findHOSTByIDFromHOSTList(HOSTList,currentHOSTID);
+                    VM currentVM=findVMByIDFromVMList(VMList,currentVMID);
+                    
+                    if ( (!(currentHOSTSatisfyCurrentVMForCapacity(currentHOST,currentVM))) ||   (!(currentHOSTSatisfyCurrentVMForPerformance(currentHOST,currentVM))) )
+                            {
+                                
+                                String currentPermissionRuleName= Cpermission.GetName();
+                    
+                                 String currentPermissionSubject= Cpermission.GetSubject();
+                                 String currentPermissionAction= Cpermission.GetAction();
+                                 String currentPermissionObject= Cpermission.GetObject();
+                    
+                    
+                    
+                                String newAbstractProhibitionName="priporityDenyRuleOf_"+currentPermissionRuleName+"_"+i;
+                                String newRole="roleOf_"+newAbstractProhibitionName+"_"+i;
+                                String newActivity="myActivity";
+                                String newView="objectOf_"+newAbstractProhibitionName+"_"+i;
+                                
+                                
+                                //printInfo("hahaha");
+                                //System.out.println(newAbstractProhibitionName);
+                                
+                    //p.CreateOrganization ("superCloud");
+   
+                    // add a role in the newly created organization
+                                    p.CreateRoleAndInsertIntoOrg (newRole, "superCloud");
+    
+     
+                                    //p.CreateActivityAndInsertIntoOrg ( newActivity, "superCloud");
+    
+                 // add a view in the newly created organization
+                                    p.CreateViewAndInsertIntoOrg (newView, "superCloud");
+                    
+                                    p.AbstractProhibition ("superCloud",newRole,newActivity,newView,"default_context",newAbstractProhibitionName);
+                    
+                    
+                    // p.Consider("superCloud","deploy","myActivity");
+
+   
+                                     p.Empower("superCloud",currentPermissionSubject,newRole); 
+                
+                                     p.Use("superCloud",currentPermissionObject,newView);
+                    
+                                    printInfo("change conflict SLA");
+                                    System.out.println("HAHAAH"+newAbstractProhibitionName);
+                    
+                                    System.out.println("\n+HAHAAH"+currentPermissionRuleName);
+                                     p.SetRule1AboveRule2(newAbstractProhibitionName,currentPermissionRuleName,"superCloud","superCloud");
+                    
+                    
+                    
+                              
+                            }
+                    
+                   /*
+                    System.out.println(Cpermission.toString());
+                    System.out.println("Is active ?"+Cpermission.IsActive());
+                   */
+                
+                i++;
+                
+                }
+     
+             
+             return p;
+         }
+          
+          
+          
           
           
           public static LinkedList <CConcreteRuleContainer> filterOrBACPolicyAndReturnContainerList(AbstractOrbacPolicy p, LinkedList <VM> VMList, LinkedList <HOST> HOSTList) throws COrbacException

@@ -64,7 +64,7 @@ public class contractMultiClients {
         serviceDescription.put("VM3_application","business");
         
         
-        serviceRequirement.put("VM4_volume","1_GB");
+        serviceRequirement.put("VM4_volume","12_GB");
         serviceDescription.put("VM4_purpose","prod");
         serviceDescription.put("VM4_data","public");
         serviceDescription.put("VM4_application","business");

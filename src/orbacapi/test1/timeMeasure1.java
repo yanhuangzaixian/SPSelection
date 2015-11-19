@@ -84,11 +84,11 @@ public class timeMeasure1 {
     
       /*************************SLA filter***********************************/
     
-     LinkedList <CConcreteRuleContainer> containerList=method.filterOrBACPolicyAndReturnContainerList(p,VMList,HOSTList);
-    
+     //LinkedList <CConcreteRuleContainer> containerList=method.filterOrBACPolicyAndReturnContainerList(p,VMList,HOSTList);
+     p=method.filterOrBACPolicyAndGeneratePriorityAbstractPolicy(p, VMList, HOSTList);
      printInfo("After SLA filter");
      
-     method.printRuleContainerlist(containerList);
+     //method.printRuleContainerlist(containerList);
      
      
     
@@ -108,9 +108,9 @@ public class timeMeasure1 {
       method.printConcreteConflict(p);
    
      
-     //p=method.resolveConflictAdvanced(p);
+     p=method.resolveConflictAdvancedByAddAbstractRuleAndSetPrioprity(p);
      
-     containerList=method.resolveConflictAndAddRuleContainerList(p,containerList);
+     //containerList=method.resolveConflictAndAddRuleContainerList(p,containerList);
      
      
      
@@ -121,7 +121,7 @@ public class timeMeasure1 {
       
       method.printInfo("After resolved conclict");
       
-      method.printRuleContainerlist(containerList);
+      //method.printRuleContainerlist(containerList);
      
       /*
       method.printAllConcretePermission(p);
@@ -134,7 +134,7 @@ public class timeMeasure1 {
      
      
      LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy =generateConcreteSeparationPolicyFromVMList(VMPolicyList, VMList);
-     HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy, containerList) ;
+     HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy) ;
      
      
      
