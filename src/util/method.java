@@ -287,7 +287,7 @@ public class method {
      public static AbstractOrbacPolicy resolveConflictAdvancedByAddAbstractRuleAndSetPrioprity(AbstractOrbacPolicy p) throws COrbacException
      {
      
-        int i=100;
+        //int i=100;
         
         Set conflict2=p.GetConcreteConflicts();
     //System.out.print(conflict2.size());
@@ -307,12 +307,15 @@ public class method {
                     //permissionInConflict.SetState(false);
                     
                     String currentPermissionRuleName=permissionInConflict.GetName();
+                    String currentProhibitionRuleName=prohibitionInConflict.GetName();
                     
+                    
+                    /*
                     String currentPermissionSubject=permissionInConflict.GetSubject();
                     String currentPermissionAction=permissionInConflict.GetAction();
                     String currentPermissionObject=permissionInConflict.GetObject();
                     
-                    String newAbstractProhibitionName="priporityDenyRuleOf_"+currentPermissionRuleName+"_"+i;
+                    String newAbstractProhibitionName="DenyOf_"+currentPermissionRuleName+"_"+i;
                     String newRole="roleOf_"+newAbstractProhibitionName+"_"+i;
                     String newActivity="myActivity";
                     String newView="objectOf_"+newAbstractProhibitionName+"_"+i;
@@ -346,8 +349,8 @@ public class method {
                     System.out.println("HAHAAH"+newAbstractProhibitionName);
                     
                      System.out.println("\n+HAHAAH"+currentPermissionRuleName);
-                    
-                    p.SetRule1AboveRule2(newAbstractProhibitionName,currentPermissionRuleName,"superCloud","superCloud");
+                    */
+                    p.SetRule1AboveRule2(currentProhibitionRuleName,currentPermissionRuleName,"superCloud","superCloud");
                     
                     
                    
@@ -365,7 +368,7 @@ public class method {
              */        
              
             
-            i++;
+           // i++;
      }
            
            return p;

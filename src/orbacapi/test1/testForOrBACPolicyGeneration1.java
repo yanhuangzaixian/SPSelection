@@ -93,12 +93,12 @@ public class testForOrBACPolicyGeneration1 {
     
      p.WritePolicyFile("policyGenerated"+File.separator+"policy_2_AfterSLA.xml",null);
      
-     /*
+     
      method.printAllConcretePermission(p);
      
      method.printAllConcreteProhibition(p);
     
-    */
+   
     
     /*************************Resolve concrete reverse conflict***********************************/
     
@@ -117,12 +117,22 @@ public class testForOrBACPolicyGeneration1 {
       
       
      p=method.resolveConflictAdvancedByAddAbstractRuleAndSetPrioprity(p);
+     /* p.CreateRoleAndInsertIntoOrg ("H1_Deny", "superCloud");
+      p.CreateViewAndInsertIntoOrg ("V1_Deny", "superCloud");
+      p.AbstractProhibition ("superCloud","H1_Deny","myActivity","V1_Deny","default_context","R1_Deny");
+       p.Empower("superCloud","HOST1","H1_Deny");
+        p.Use("superCloud","VM3","V1_Deny");
+        p.SetRule1AboveRule2("R1_Deny", "Permission_2", "superCloud", "superCloud");
+         p.SetRule1AboveRule2("R1_Deny", "Permission_0", "superCloud", "superCloud");
+          p.SetRule1AboveRule2("R1_Deny", "Permission_5", "superCloud", "superCloud");*/
+      //p=method.filterOrBACPolicyAndGeneratePriorityAbstractPolicy(p, VMList, HOSTList);
      
-      
-      
-     // p=method.filterOrBACPolicyAndGeneratePriorityAbstractPolicy(p, VMList, HOSTList);
      
-      
+     //p.SetRule1AboveRule2("Prohibition_0", "Permission_2", "superCloud", "superCloud");
+     
+       method.printAllConcretePermission(p);
+     
+      method.printAllConcreteProhibition(p);
       method.printInfo("After resolved conclict");
      
      
@@ -136,9 +146,7 @@ public class testForOrBACPolicyGeneration1 {
       
       /*
      
-      method.printAllConcretePermission(p);
      
-      method.printAllConcreteProhibition(p);
     
     */
      
