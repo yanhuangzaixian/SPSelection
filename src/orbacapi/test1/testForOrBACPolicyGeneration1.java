@@ -164,7 +164,7 @@ public class testForOrBACPolicyGeneration1 {
      
      
      
-     //allocation.implementDeploySolution(finalDeploySolution,"yli03", "VJWWFDRA", "127.0.0.1", "confConnection"+File.separator+"portInfo.json", VMList);
+    allocation.implementDeploySolution(finalDeploySolution,"yli03", "VJWWFDRA", "127.0.0.1", "confConnection"+File.separator+"portInfo.json", VMList);
      
      
      

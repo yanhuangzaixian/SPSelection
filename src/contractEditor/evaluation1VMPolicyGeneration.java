@@ -1,3 +1,9 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package contractEditor;
 
 /*
@@ -23,18 +29,22 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
 /**
  *
  * @author RDSG6431
  */
-public class contractMultiClients {
+public class evaluation1VMPolicyGeneration {
+    
+    
+    
     private static String s;
     //private static String s;
     public static void main(String[] args)
     {
         
-        int totalNumber=4;
-        
+        int VMNumber=5;
+        int attributeNumber=20;
     
         JSONObject obj = new JSONObject();
 	obj.put("name", "clientTemplate");
@@ -50,6 +60,11 @@ public class contractMultiClients {
         serviceDescription.put("VM1_data","private");
         serviceDescription.put("VM1_application","internal");
         
+         for (int j=5;j<attributeNumber;j++)
+         {
+            serviceDescription.put("VM1_other"+j,"other");
+         }
+            
         
         
         serviceRequirement.put("VM2_volume","2_GB");
@@ -57,11 +72,21 @@ public class contractMultiClients {
         serviceDescription.put("VM2_data","public");
         serviceDescription.put("VM2_application","business");
         
+         for (int j=5;j<attributeNumber;j++)
+         {
+            serviceDescription.put("VM2_other"+j,"other");
+         }
+        
         
         serviceRequirement.put("VM3_volume","1_GB");
         serviceDescription.put("VM3_purpose","test");
         serviceDescription.put("VM3_data","public");
         serviceDescription.put("VM3_application","business");
+        
+         for (int j=5;j<attributeNumber;j++)
+         {
+            serviceDescription.put("VM3_other"+j,"other");
+         }
         
         
         serviceRequirement.put("VM4_volume","12_GB");
@@ -69,15 +94,25 @@ public class contractMultiClients {
         serviceDescription.put("VM4_data","public");
         serviceDescription.put("VM4_application","business");
         
-        /*
-        for (int i=5;i<totalNumber;i++)
+         for (int j=5;j<attributeNumber;j++)
+         {
+            serviceDescription.put("VM4_other"+j,"other");
+         }
+        
+        
+        for (int i=5;i<VMNumber;i++)
             {
                 serviceRequirement.put("VM"+i+"_volume","20_GB");
                 serviceDescription.put("VM"+i+"_purpose","prod");
                 serviceDescription.put("VM"+i+"_data","public");
                 serviceDescription.put("VM"+i+"_application","business");
+                 for (int j=5;j<attributeNumber;j++)
+                {
+                     serviceDescription.put("VM"+i+"_other"+j,"other");
+                }
+                
             }
-        */
+        
         
         
         
@@ -296,6 +331,8 @@ public class contractMultiClients {
         
         
      }
-         
-                
-    }
+    
+    
+    
+    
+}

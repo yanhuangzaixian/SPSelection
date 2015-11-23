@@ -27,11 +27,13 @@ public class testForClient1 {
          System.out.println("**********************begin VM information****************\n");
          
           /*Test1  read Client File which contains only one VM*/
+         
+         
+         long Time1 = System. currentTimeMillis(); 
          LinkedList <VM> VMList=method.readClientFileAndGenerateVMList("confClient\\test3.json");
          
          
-         
-         
+         /*
          for (int i=0;i<VMList.size();i++)
          {
              
@@ -39,11 +41,17 @@ public class testForClient1 {
          
          }
          
+         */
+         //System.out.println("**********************begin policyList information****************\n");
          
-         System.out.println("**********************begin policyList information****************\n");
-         
-    LinkedList <ArrayList> policyList=method.readClientFileAndGenerateAbstractPolicy("confClient\\test3.json");
+        LinkedList <ArrayList> policyList=method.readClientFileAndGenerateAbstractPolicy("confClient\\test3.json");
     
+        long Time2 = System. currentTimeMillis(); 
+         
+         System.out.println("VM list generation duration="+(Time2-Time1)+"ms");
+         
+    
+    /*
     for (int i=0;i<policyList.size();i++)
          {
              
@@ -51,6 +59,8 @@ public class testForClient1 {
              method.printArrayList(policyList.get(i));
          
          }
+     */       
+            
     
     }
 }
