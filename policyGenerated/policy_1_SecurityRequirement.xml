@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <XmlOrbacPolicy>
 <attributes>
-<name>policy1</name>
-<creationDate>2015.11.20 16:17:57</creationDate>
-<modificationDate>2015.11.20 16:17:57</modificationDate>
+<name>policy5050</name>
+<creationDate>2015.11.24 16:46:29</creationDate>
+<modificationDate>2015.11.24 16:46:29</modificationDate>
 <version>1.0</version>
 <information/>
 </attributes>
@@ -11,21 +11,21 @@
 <organization name="adOrBAC">
 <activity name="delegate"/>
 <activity name="transfer"/>
-<activity name="create"/>
 <activity name="revoke"/>
+<activity name="create"/>
 <activity name="delete"/>
 <activity name="manage"/>
 <view name="view_view"/>
-<view name="view_assignment_view"/>
 <view name="organization_hierarchy_view"/>
-<view name="role_hierarchy_view"/>
+<view name="view_assignment_view"/>
 <view name="role_view"/>
+<view name="role_hierarchy_view"/>
 <view name="grant_option_view"/>
 <view name="license_transfer_view"/>
 <view name="activity_view"/>
 <view name="role_transfer_view"/>
-<view name="license_delegation_view"/>
 <view name="role_assignment_view"/>
+<view name="license_delegation_view"/>
 <view name="view_hierarchy_view"/>
 <view name="organization_view"/>
 <view name="activity_assignment_view"/>
@@ -40,6 +40,7 @@
 <role name="Role_Permission_1"/>
 <role name="Role_Prohibition_1"/>
 <role name="Role_Permission_2"/>
+<role name="Role_Prohibition_2"/>
 <role name="Role_Permission_3"/>
 <role name="Role_Permission_4"/>
 <role name="Role_Permission_5"/>
@@ -49,6 +50,7 @@
 <view name="View_Prohibition_0"/>
 <view name="View_Permission_7"/>
 <view name="View_Prohibition_1"/>
+<view name="View_Prohibition_2"/>
 <view name="View_Permission_2"/>
 <view name="View_Permission_3"/>
 <view name="View_Permission_4"/>
@@ -57,114 +59,484 @@
 <view name="View_Permission_1"/>
 </organization>
 <organization_hierarchy sub_organization="superCloud" super_organization="adOrBAC"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="organization_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="license_delegation_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="grant_option_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="grant_option_view" organization="adOrBAC" view="grant_option_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_hierarchy_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="aa_adOrBAC_delete_delete" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM1" organization="superCloud" view="View_Permission_0"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="myActivity" organization="superCloud" view="activity_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_view" organization="adOrBAC" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="license_view" organization="adOrBAC" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="delete" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Permission_0" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Permission_2" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Permission_1" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Permission_4" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="aa_adOrBAC_revoke_revoke" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Permission_3" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="license_delegation_view" organization="adOrBAC" view="license_delegation_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Permission_6" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Permission_5" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM4" organization="superCloud" view="View_Permission_5"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM3" organization="superCloud" view="View_Permission_6"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM4" organization="superCloud" view="View_Permission_6"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Permission_7" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM2" organization="superCloud" view="View_Permission_5"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM3" organization="superCloud" view="View_Permission_5"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM2" organization="superCloud" view="View_Permission_6"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM4" organization="superCloud" view="View_Permission_1"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM3" organization="superCloud" view="View_Permission_2"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM2" organization="superCloud" view="View_Permission_3"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM2" organization="superCloud" view="View_Permission_4"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM2" organization="superCloud" view="View_Permission_1"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="activity_assignment_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="aa_superCloud_deploy_myActivity" organization="superCloud" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_hierarchy_view" organization="adOrBAC" view="role_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_delegation_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="view_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="organization_hierarchy_view" organization="adOrBAC" view="organization_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="activity_assignment_view" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="vh_adOrBAC_grant_option_view_license_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="view_assignment_view" organization="adOrBAC" view="view_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="license_transfer_view" organization="adOrBAC" view="license_transfer_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_assignment_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ra_superCloud_HOST2_Role_Permission_4" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="license_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="activity_hierarchy_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ra_superCloud_HOST2_Role_Permission_6" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ra_superCloud_HOST1_Role_Prohibition_0" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ra_superCloud_HOST2_Role_Prohibition_1" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="transfer" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="vh_adOrBAC_role_delegation_view_role_assignment_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="activity_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Permission_1" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="vh_adOrBAC_license_delegation_view_license_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Permission_2" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Permission_0" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="activity_view" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_transfer_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="activity_hierarchy_view" organization="adOrBAC" view="activity_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Permission_5" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Permission_6" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="aa_adOrBAC_delegate_delegate" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Permission_7" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Permission_1" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Permission_2" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Permission_3" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="delegate" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Permission_4" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="create" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Permission_0" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Prohibition_0" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Prohibition_1" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="aa_adOrBAC_transfer_transfer" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="view_hierarchy_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_assignment_view" organization="adOrBAC" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="manage" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM3" organization="superCloud" view="View_Prohibition_0"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="VM1" organization="superCloud" view="View_Prohibition_1"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="vh_adOrBAC_license_transfer_view_license_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ah_adOrBAC_create_manage" organization="adOrBAC" view="activity_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="organization_view" organization="adOrBAC" view="organization_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="view_assignment_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="organization_hierarchy_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="aa_adOrBAC_create_create" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="license_transfer_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ah_adOrBAC_delete_manage" organization="adOrBAC" view="activity_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_delegation_view" organization="adOrBAC" view="role_delegation_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="view_hierarchy_view" organization="adOrBAC" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="revoke" organization="adOrBAC" view="activity_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Prohibition_0" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="View_Prohibition_1" organization="superCloud" view="view_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ra_superCloud_HOST1_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Prohibition_0" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ra_superCloud_HOST1_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ra_superCloud_HOST1_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Role_Prohibition_1" organization="superCloud" view="role_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="role_transfer_view" organization="adOrBAC" view="role_transfer_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Permission_7" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="admin_manage_license_view" organization="adOrBAC" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Permission_5" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="vh_adOrBAC_role_transfer_view_role_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Permission_6" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ra_superCloud_HOST1_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Permission_3" organization="superCloud" view="license_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="aa_adOrBAC_manage_manage" organization="adOrBAC" view="activity_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="ra_superCloud_HOST1_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
-<object_assignment creationDate="2015.11.20 16:17:57" object="Permission_4" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST15_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST43_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST43_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST15_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST15_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST15_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST42_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST15_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST42_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="grant_option_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST42_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST42_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST42_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST16_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST16_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST16_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST16_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST43_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST43_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST16_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST43_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST44_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST44_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_view" organization="adOrBAC" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST44_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST44_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="aa_adOrBAC_revoke_revoke" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="license_delegation_view" organization="adOrBAC" view="license_delegation_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST14_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST14_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST44_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST14_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST14_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST14_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="aa_superCloud_deploy_myActivity" organization="superCloud" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST40_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_hierarchy_view" organization="adOrBAC" view="role_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST40_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST40_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST40_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST12_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST12_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST12_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST12_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST45_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST45_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST12_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST45_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST45_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST45_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST19_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST19_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST19_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST40_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST19_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST19_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST47_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST47_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST47_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST47_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_assignment_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST47_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="license_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="activity_hierarchy_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST17_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST17_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="ra_superCloud_HOST2_Role_Prohibition_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST17_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="vh_adOrBAC_role_delegation_view_role_assignment_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST17_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST17_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="activity_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST10_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST10_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST49_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST49_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST49_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST49_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST10_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST10_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="aa_adOrBAC_delegate_delegate" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST10_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST49_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST13_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST13_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST13_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST13_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST13_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="license_transfer_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST46_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST46_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST46_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST46_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST46_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_delegation_view" organization="adOrBAC" view="role_delegation_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="admin_manage_license_view" organization="adOrBAC" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="aa_adOrBAC_manage_manage" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM38" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM37" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST28_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM37" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM36" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM39" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST28_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM39" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM38" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM38" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM34" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM33" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM37" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM33" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM32" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM36" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM35" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM39" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM35" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM34" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST28_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST28_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST28_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST29_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST29_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM34" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM30" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM33" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM36" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM32" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM31" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM35" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM31" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM30" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM30" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST29_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST29_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM32" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM31" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST29_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM27" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM26" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="myActivity" organization="superCloud" view="activity_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM26" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM25" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM29" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM28" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM28" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM27" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM27" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM23" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM22" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM26" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM22" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM21" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM29" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM25" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM24" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM28" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM24" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM23" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="delete" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM29" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM23" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM22" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM25" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM21" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM20" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM24" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM20" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM21" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM20" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM16" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM15" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM19" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM15" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM14" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM18" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM17" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM17" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM16" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_delegation_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM16" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM12" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM11" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM15" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM11" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM10" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM18" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM14" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM13" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM17" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM13" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM12" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM19" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM19" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM18" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="organization_hierarchy_view" organization="adOrBAC" view="organization_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM12" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM11" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="vh_adOrBAC_grant_option_view_license_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM14" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM10" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM13" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM10" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="license_transfer_view" organization="adOrBAC" view="license_transfer_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="ra_superCloud_HOST3_Role_Prohibition_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST27_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="ra_superCloud_HOST1_Role_Prohibition_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST27_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST27_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST27_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST27_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="Permission_1" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="Permission_2" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="Permission_0" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST48_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST48_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST35_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST48_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST35_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST48_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST35_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST48_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST35_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST35_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="View_Permission_5" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="View_Permission_6" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="View_Permission_7" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="View_Permission_1" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="View_Permission_2" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="View_Permission_3" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="delegate" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="View_Permission_4" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="View_Permission_0" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST34_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST34_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST34_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST34_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST34_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST5_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST5_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST5_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="aa_adOrBAC_transfer_transfer" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST5_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST5_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST4_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST4_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST4_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST4_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST4_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ah_adOrBAC_create_manage" organization="adOrBAC" view="activity_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="organization_view" organization="adOrBAC" view="organization_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST21_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST21_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST21_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="revoke" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST41_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="View_Prohibition_0" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="View_Prohibition_1" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="View_Prohibition_2" organization="superCloud" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_transfer_view" organization="adOrBAC" view="role_transfer_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST41_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST41_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST41_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Permission_7" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST41_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="Permission_5" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Permission_6" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST21_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="Permission_3" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST21_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="Permission_4" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="grant_option_view" organization="adOrBAC" view="grant_option_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM1" organization="superCloud" view="View_Permission_0"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="license_view" organization="adOrBAC" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="Role_Permission_0" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="Role_Permission_2" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM9" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="Role_Permission_1" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="Role_Permission_4" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM8" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM7" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="Role_Permission_3" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM9" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM8" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM6" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Role_Permission_6" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM5" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="Role_Permission_5" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM7" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM6" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM8" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM4" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM3" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM9" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM5" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM4" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Role_Permission_7" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM6" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM2" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM7" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM3" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM2" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM4" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM3" organization="superCloud" view="View_Permission_2"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM2" organization="superCloud" view="View_Permission_3"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM5" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM2" organization="superCloud" view="View_Permission_4"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM2" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST9_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST9_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST20_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST20_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST20_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="view_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST39_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST39_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST39_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST20_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST20_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST9_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST39_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST9_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST39_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="view_assignment_view" organization="adOrBAC" view="view_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST9_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST37_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST37_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST37_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST7_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST37_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST37_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST7_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST7_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST7_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST7_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST6_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="vh_adOrBAC_license_delegation_view_license_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST6_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST6_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="activity_view" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST6_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_transfer_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST22_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="activity_hierarchy_view" organization="adOrBAC" view="activity_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST22_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST22_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST22_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST23_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST36_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST36_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST36_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST22_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST36_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST23_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST23_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST36_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST23_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST23_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST6_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_assignment_view" organization="adOrBAC" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST33_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="vh_adOrBAC_license_transfer_view_license_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="organization_hierarchy_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST26_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST26_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST26_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST33_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST33_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST26_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST33_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST33_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST26_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM49" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM48" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM48" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM47" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM49" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM49" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM45" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM44" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM48" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM44" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM43" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM47" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM46" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM46" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM45" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM45" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM41" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM40" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM44" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM40" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="VM47" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM43" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM42" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM46" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM42" organization="superCloud" view="View_Permission_5"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM41" organization="superCloud" view="View_Permission_6"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM41" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM40" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM43" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="VM42" organization="superCloud" view="View_Permission_1"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="organization_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST30_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST30_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST30_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="license_delegation_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST30_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="role_hierarchy_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST30_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="aa_adOrBAC_delete_delete" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="activity_assignment_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST25_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST25_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST32_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST32_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST25_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST25_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST32_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST25_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="activity_assignment_view" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST32_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST32_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST2_Role_Permission_4" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="ra_superCloud_HOST2_Role_Permission_6" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="transfer" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="create" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST24_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST24_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Prohibition_0" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST24_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST24_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST24_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Prohibition_2" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Prohibition_1" organization="superCloud" view="license_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="view_hierarchy_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="manage" organization="adOrBAC" view="activity_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST18_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST18_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST38_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST18_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM3" organization="superCloud" view="View_Prohibition_0"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM1" organization="superCloud" view="View_Prohibition_2"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="VM1" organization="superCloud" view="View_Prohibition_1"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST38_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST38_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST18_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST38_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST38_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST18_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="view_assignment_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="aa_adOrBAC_create_create" organization="adOrBAC" view="activity_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ah_adOrBAC_delete_manage" organization="adOrBAC" view="activity_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST11_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="view_hierarchy_view" organization="adOrBAC" view="view_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST31_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST31_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST8_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST8_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST8_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST1_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST8_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Role_Prohibition_0" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST1_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST8_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST1_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Role_Prohibition_2" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:31" object="Role_Prohibition_1" organization="superCloud" view="role_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST11_Role_Permission_5" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST31_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="vh_adOrBAC_role_transfer_view_role_delegation_view" organization="adOrBAC" view="view_hierarchy_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST31_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST11_Role_Permission_3" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST31_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST1_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:30" object="ra_superCloud_HOST11_Role_Permission_2" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST1_Role_Permission_0" organization="superCloud" view="role_assignment_view"/>
+<object_assignment creationDate="2015.11.24 16:46:29" object="ra_superCloud_HOST11_Role_Permission_1" organization="superCloud" view="role_assignment_view"/>
 </abstractPolicy>
 <classes>
 <class name="commitment_class">
@@ -224,13 +596,119 @@
 </class>
 </classes>
 <subjects>
-<subject name="adOrBAC"/>
+<subject name="HOST9">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST8">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST19">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST16">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST3">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST15">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
 <subject name="HOST2">
 <instance_of name="user_password_class"/>
 <attribute name="adorbacUserPasswordHash" value="null"/>
 </subject>
-<subject name="superCloud"/>
 <subject name="HOST1">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST18">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST17">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST7">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST12">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST6">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST11">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST5">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST14">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST4">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST13">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST10">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST27">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST26">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST29">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST28">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST23">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST22">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST25">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST24">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST21">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST20">
 <instance_of name="user_password_class"/>
 <attribute name="adorbacUserPasswordHash" value="null"/>
 </subject>
@@ -238,20 +716,120 @@
 <instance_of name="user_password_class"/>
 <attribute name="adorbacUserPasswordHash" value="333547411228765445654476765417741474654083165475"/>
 </subject>
+<subject name="HOST38">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="adOrBAC"/>
+<subject name="HOST37">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST39">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST34">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST33">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST36">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST35">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST30">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST32">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST31">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST49">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST48">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="superCloud"/>
+<subject name="HOST45">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST44">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST47">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST46">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST41">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST40">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST43">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
+<subject name="HOST42">
+<instance_of name="user_password_class"/>
+<attribute name="adorbacUserPasswordHash" value="null"/>
+</subject>
 </subjects>
 <actions>
 <action name="deploy"/>
 </actions>
 <objects>
-<object name="admin_manage_license_view">
-<instance_of name="license_class"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="grantee" value="admin"/>
-<attribute name="context" value="default_context"/>
-<attribute name="parentLicense" value="null"/>
+<object name="ra_superCloud_HOST6_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST6"/>
 <attribute name="grantor" value="null"/>
-<attribute name="privilege" value="manage"/>
-<attribute name="target" value="license_view"/>
+</object>
+<object name="ra_superCloud_HOST6_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST6"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST6_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST6"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST6_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST6"/>
+<attribute name="grantor" value="null"/>
 </object>
 <object name="aa_adOrBAC_manage_manage">
 <instance_of name="activity_assignment_class"/>
@@ -259,11 +837,1493 @@
 <attribute name="authority" value="adOrBAC"/>
 <attribute name="assignee" value="manage"/>
 </object>
-<object name="vh_adOrBAC_grant_option_view_license_delegation_view">
+<object name="ra_superCloud_HOST6_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST6"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST5_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST5"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST35_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST35"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST5_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST5"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST35_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST35"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST5_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST5"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST35_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST35"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST35_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST35"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST5_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST5"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST5_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST5"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST35_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST35"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST34_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST34"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST34_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST34"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST34_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST34"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST34_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST34"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST34_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST34"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST4_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST4"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST4_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST4"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST4_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST4"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST4_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST4"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST4_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST4"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="vh_adOrBAC_license_transfer_view_license_delegation_view">
 <instance_of name="view_hierarchy_class"/>
 <attribute name="senior_view" value="license_delegation_view"/>
 <attribute name="authority" value="adOrBAC"/>
-<attribute name="junior_view" value="grant_option_view"/>
+<attribute name="junior_view" value="license_transfer_view"/>
+</object>
+<object name="ra_superCloud_HOST38_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST38"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST33_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST33"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST33_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST33"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST33_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST33"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST33_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST33"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST33_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST33"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST8_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST8"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST8_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST8"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM2"/>
+<object name="aa_adOrBAC_transfer_transfer">
+<instance_of name="activity_assignment_class"/>
+<attribute name="assignment" value="transfer"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="assignee" value="transfer"/>
+</object>
+<object name="VM1"/>
+<object name="ra_superCloud_HOST8_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST8"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM4"/>
+<object name="ra_superCloud_HOST38_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST38"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM3"/>
+<object name="ra_superCloud_HOST8_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST8"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST38_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST38"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST38_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST38"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM6"/>
+<object name="ra_superCloud_HOST8_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST8"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST38_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST38"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM5"/>
+<object name="ra_superCloud_HOST11_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST11"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM8"/>
+<object name="VM7"/>
+<object name="ra_superCloud_HOST31_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST31"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM9"/>
+<object name="ra_superCloud_HOST31_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST31"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST41_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST41"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST41_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST41"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST41_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST41"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST41_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST41"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST41_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST41"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST11_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST11"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST31_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST31"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST31_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST31"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST11_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST11"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST31_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST31"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST11_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST11"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST11_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST11"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST1_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST1"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST36_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST36"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST1_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST1"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST36_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST36"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST1_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST1"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST36_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST36"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST36_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST36"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST36_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST36"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST30_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST30"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST30_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST30"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST43_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST43"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST30_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST30"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST43_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST43"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST30_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST30"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST43_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST43"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST43_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST43"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST30_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST30"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST43_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST43"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="aa_adOrBAC_revoke_revoke">
+<instance_of name="activity_assignment_class"/>
+<attribute name="assignment" value="revoke"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="assignee" value="revoke"/>
+</object>
+<object name="ra_superCloud_HOST44_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST44"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST44_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST44"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST44_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST44"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST44_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST44"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST14_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST14"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST14_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST14"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST44_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST44"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST14_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST14"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST14_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST14"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="aa_adOrBAC_delete_delete">
+<instance_of name="activity_assignment_class"/>
+<attribute name="assignment" value="delete"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="assignee" value="delete"/>
+</object>
+<object name="ra_superCloud_HOST14_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST14"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST13_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST13"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST13_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST13"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="Prohibition_2">
+<instance_of name="inhibition_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Prohibition_2"/>
+<attribute name="context" value="default_context"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Prohibition_2"/>
+</object>
+<object name="Prohibition_0">
+<instance_of name="inhibition_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Prohibition_0"/>
+<attribute name="context" value="default_context"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Prohibition_0"/>
+</object>
+<object name="ra_superCloud_HOST13_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST13"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="Prohibition_1">
+<instance_of name="inhibition_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Prohibition_1"/>
+<attribute name="context" value="default_context"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Prohibition_1"/>
+</object>
+<object name="ra_superCloud_HOST13_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST13"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST13_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST13"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST40_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST40"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST40_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST40"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST40_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST40"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST40_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST40"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST40_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST40"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST47_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST47"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST47_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST47"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST37_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST37"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST37_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST37"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST47_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST47"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST37_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST37"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST47_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST47"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST7_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST7"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST47_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST47"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST37_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST37"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST17_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST17"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST7_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST7"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST27_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST27"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST7_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST7"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST27_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST27"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST7_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST7"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST27_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST27"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST17_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST17"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST7_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST7"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST27_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST27"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST17_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST17"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST10_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST10"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST10_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST10"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST17_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST17"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST20_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST20"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST10_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST10"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST27_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST27"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST20_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST20"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST17_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST17"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST20_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST20"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST20_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST20"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST37_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST37"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST20_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST20"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST10_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST10"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST10_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST10"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST48_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST48"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST49_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST49"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST49_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST49"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST49_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST49"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST49_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST49"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM23"/>
+<object name="VM24"/>
+<object name="ra_superCloud_HOST49_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST49"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM25"/>
+<object name="ra_superCloud_HOST3_Role_Prohibition_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Prohibition_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST3"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM26"/>
+<object name="ra_superCloud_HOST22_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST22"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM27"/>
+<object name="VM28"/>
+<object name="VM29"/>
+<object name="ra_superCloud_HOST48_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST48"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST48_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST48"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST22_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST22"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST22_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST22"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST22_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST22"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST48_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST48"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM20"/>
+<object name="ra_superCloud_HOST48_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST48"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM21"/>
+<object name="VM22"/>
+<object name="ra_superCloud_HOST22_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST22"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST24_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST24"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST24_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST24"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="aa_superCloud_deploy_myActivity">
+<instance_of name="activity_assignment_class"/>
+<attribute name="assignment" value="myActivity"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="deploy"/>
+</object>
+<object name="ra_superCloud_HOST24_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST24"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST24_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST24"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST24_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST24"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST19_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST19"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST19_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST19"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST19_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST19"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST19_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST19"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM12"/>
+<object name="VM13"/>
+<object name="aa_adOrBAC_create_create">
+<instance_of name="activity_assignment_class"/>
+<attribute name="assignment" value="create"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="assignee" value="create"/>
+</object>
+<object name="VM14"/>
+<object name="aa_adOrBAC_delegate_delegate">
+<instance_of name="activity_assignment_class"/>
+<attribute name="assignment" value="delegate"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="assignee" value="delegate"/>
+</object>
+<object name="VM15"/>
+<object name="ra_superCloud_HOST23_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST23"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM16"/>
+<object name="ra_superCloud_HOST23_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST23"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST19_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST19"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM17"/>
+<object name="ra_superCloud_HOST23_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST23"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST23_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST23"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM18"/>
+<object name="ra_superCloud_HOST23_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST23"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM19"/>
+<object name="vh_adOrBAC_license_delegation_view_license_view">
+<instance_of name="view_hierarchy_class"/>
+<attribute name="senior_view" value="license_view"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="junior_view" value="license_delegation_view"/>
+</object>
+<object name="VM10"/>
+<object name="VM11"/>
+<object name="ra_superCloud_HOST18_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST18"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST18_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST18"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST18_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST18"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST46_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST46"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST46_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST46"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST46_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST46"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST46_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST46"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST46_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST46"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM45"/>
+<object name="VM46"/>
+<object name="VM47"/>
+<object name="VM48"/>
+<object name="VM49"/>
+<object name="VM40"/>
+<object name="VM41"/>
+<object name="VM42"/>
+<object name="ra_superCloud_HOST18_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST18"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM43"/>
+<object name="ra_superCloud_HOST18_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST18"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM44"/>
+<object name="ra_superCloud_HOST21_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST21"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST21_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST21"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ah_adOrBAC_create_manage">
+<instance_of name="activity_hierarchy_class"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="senior_activity" value="manage"/>
+<attribute name="junior_activity" value="create"/>
+</object>
+<object name="ra_superCloud_HOST21_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST21"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST16_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST16"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST26_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST26"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST21_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST21"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST21_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST21"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM34"/>
+<object name="ra_superCloud_HOST26_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST26"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="Permission_6">
+<instance_of name="license_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Permission_6"/>
+<attribute name="context" value="default_context"/>
+<attribute name="parentLicense" value="null"/>
+<attribute name="grantor" value="null"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Permission_6"/>
+</object>
+<object name="ra_superCloud_HOST26_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST26"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM35"/>
+<object name="Permission_7">
+<instance_of name="license_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Permission_7"/>
+<attribute name="context" value="default_context"/>
+<attribute name="parentLicense" value="null"/>
+<attribute name="grantor" value="null"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Permission_7"/>
+</object>
+<object name="VM36"/>
+<object name="Permission_4">
+<instance_of name="license_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Permission_4"/>
+<attribute name="context" value="default_context"/>
+<attribute name="parentLicense" value="null"/>
+<attribute name="grantor" value="null"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Permission_4"/>
+</object>
+<object name="VM37"/>
+<object name="ra_superCloud_HOST26_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST26"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="Permission_5">
+<instance_of name="license_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Permission_5"/>
+<attribute name="context" value="default_context"/>
+<attribute name="parentLicense" value="null"/>
+<attribute name="grantor" value="null"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Permission_5"/>
+</object>
+<object name="VM38"/>
+<object name="Permission_2">
+<instance_of name="license_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Permission_2"/>
+<attribute name="context" value="default_context"/>
+<attribute name="parentLicense" value="null"/>
+<attribute name="grantor" value="null"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Permission_2"/>
+</object>
+<object name="ra_superCloud_HOST16_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST16"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="VM39"/>
+<object name="ra_superCloud_HOST16_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST16"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="Permission_3">
+<instance_of name="license_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Permission_3"/>
+<attribute name="context" value="default_context"/>
+<attribute name="parentLicense" value="null"/>
+<attribute name="grantor" value="null"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Permission_3"/>
+</object>
+<object name="Permission_0">
+<instance_of name="license_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Permission_0"/>
+<attribute name="context" value="default_context"/>
+<attribute name="parentLicense" value="null"/>
+<attribute name="grantor" value="null"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Permission_0"/>
+</object>
+<object name="ra_superCloud_HOST26_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST26"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST16_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST16"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST16_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST16"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="Permission_1">
+<instance_of name="license_class"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="grantee" value="Role_Permission_1"/>
+<attribute name="context" value="default_context"/>
+<attribute name="parentLicense" value="null"/>
+<attribute name="grantor" value="null"/>
+<attribute name="privilege" value="myActivity"/>
+<attribute name="target" value="View_Permission_1"/>
+</object>
+<object name="VM30"/>
+<object name="VM31"/>
+<object name="VM32"/>
+<object name="VM33"/>
+<object name="ra_superCloud_HOST28_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST28"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST15_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST15"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST28_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST28"/>
+<attribute name="grantor" value="null"/>
 </object>
 <object name="vh_adOrBAC_role_delegation_view_role_assignment_view">
 <instance_of name="view_hierarchy_class"/>
@@ -285,11 +2345,11 @@
 <attribute name="assignee" value="HOST1"/>
 <attribute name="grantor" value="null"/>
 </object>
-<object name="ra_superCloud_HOST2_Role_Prohibition_1">
+<object name="ra_superCloud_HOST42_Role_Permission_2">
 <instance_of name="role_assignment_class"/>
-<attribute name="assignment" value="Role_Prohibition_1"/>
+<attribute name="assignment" value="Role_Permission_2"/>
 <attribute name="authority" value="superCloud"/>
-<attribute name="assignee" value="HOST2"/>
+<attribute name="assignee" value="HOST42"/>
 <attribute name="grantor" value="null"/>
 </object>
 <object name="ah_adOrBAC_delete_manage">
@@ -298,17 +2358,264 @@
 <attribute name="senior_activity" value="manage"/>
 <attribute name="junior_activity" value="delete"/>
 </object>
-<object name="aa_adOrBAC_revoke_revoke">
-<instance_of name="activity_assignment_class"/>
-<attribute name="assignment" value="revoke"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="assignee" value="revoke"/>
+<object name="ra_superCloud_HOST42_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST42"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST42_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST42"/>
+<attribute name="grantor" value="null"/>
 </object>
 <object name="ra_superCloud_HOST1_Role_Prohibition_0">
 <instance_of name="role_assignment_class"/>
 <attribute name="assignment" value="Role_Prohibition_0"/>
 <attribute name="authority" value="superCloud"/>
 <attribute name="assignee" value="HOST1"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST15_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST15"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST28_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST28"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST15_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST15"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST15_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST15"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST28_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST28"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST42_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST42"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST28_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST28"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST15_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST15"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST42_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST42"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="vh_adOrBAC_role_transfer_view_role_delegation_view">
+<instance_of name="view_hierarchy_class"/>
+<attribute name="senior_view" value="role_delegation_view"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="junior_view" value="role_transfer_view"/>
+</object>
+<object name="ra_superCloud_HOST29_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST29"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST39_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST39"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST29_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST29"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST39_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST39"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST29_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST29"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST39_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST39"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST39_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST39"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST29_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST29"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST39_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST39"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST29_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST29"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST9_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST9"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST9_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST9"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="admin_manage_license_view">
+<instance_of name="license_class"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="grantee" value="admin"/>
+<attribute name="context" value="default_context"/>
+<attribute name="parentLicense" value="null"/>
+<attribute name="grantor" value="null"/>
+<attribute name="privilege" value="manage"/>
+<attribute name="target" value="license_view"/>
+</object>
+<object name="vh_adOrBAC_grant_option_view_license_delegation_view">
+<instance_of name="view_hierarchy_class"/>
+<attribute name="senior_view" value="license_delegation_view"/>
+<attribute name="authority" value="adOrBAC"/>
+<attribute name="junior_view" value="grant_option_view"/>
+</object>
+<object name="ra_superCloud_HOST9_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST9"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST9_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST9"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST9_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST9"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST2_Role_Prohibition_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Prohibition_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST2"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST32_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST32"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST32_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST32"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST25_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST25"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST12_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST12"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST25_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST25"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST12_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST12"/>
 <attribute name="grantor" value="null"/>
 </object>
 <object name="ra_superCloud_HOST2_Role_Permission_6">
@@ -318,16 +2625,97 @@
 <attribute name="assignee" value="HOST2"/>
 <attribute name="grantor" value="null"/>
 </object>
-<object name="VM2"/>
-<object name="aa_adOrBAC_transfer_transfer">
-<instance_of name="activity_assignment_class"/>
-<attribute name="assignment" value="transfer"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="assignee" value="transfer"/>
+<object name="ra_superCloud_HOST12_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST12"/>
+<attribute name="grantor" value="null"/>
 </object>
-<object name="VM1"/>
-<object name="VM4"/>
-<object name="VM3"/>
+<object name="ra_superCloud_HOST12_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST12"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST45_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST45"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST45_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST45"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST32_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST32"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST25_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST25"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST32_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST32"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST45_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST45"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST45_Role_Permission_0">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_0"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST45"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST25_Role_Permission_3">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_3"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST25"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST32_Role_Permission_5">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_5"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST32"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST45_Role_Permission_1">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_1"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST45"/>
+<attribute name="grantor" value="null"/>
+</object>
+<object name="ra_superCloud_HOST25_Role_Permission_2">
+<instance_of name="role_assignment_class"/>
+<attribute name="assignment" value="Role_Permission_2"/>
+<attribute name="authority" value="superCloud"/>
+<attribute name="assignee" value="HOST25"/>
+<attribute name="grantor" value="null"/>
+</object>
 <object name="ra_superCloud_HOST2_Role_Permission_4">
 <instance_of name="role_assignment_class"/>
 <attribute name="assignment" value="Role_Permission_4"/>
@@ -335,170 +2723,12 @@
 <attribute name="assignee" value="HOST2"/>
 <attribute name="grantor" value="null"/>
 </object>
-<object name="ah_adOrBAC_create_manage">
-<instance_of name="activity_hierarchy_class"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="senior_activity" value="manage"/>
-<attribute name="junior_activity" value="create"/>
-</object>
-<object name="aa_superCloud_deploy_myActivity">
-<instance_of name="activity_assignment_class"/>
-<attribute name="assignment" value="myActivity"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="assignee" value="deploy"/>
-</object>
-<object name="vh_adOrBAC_role_transfer_view_role_delegation_view">
-<instance_of name="view_hierarchy_class"/>
-<attribute name="senior_view" value="role_delegation_view"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="junior_view" value="role_transfer_view"/>
-</object>
-<object name="aa_adOrBAC_delete_delete">
-<instance_of name="activity_assignment_class"/>
-<attribute name="assignment" value="delete"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="assignee" value="delete"/>
-</object>
-<object name="ra_superCloud_HOST1_Role_Permission_3">
-<instance_of name="role_assignment_class"/>
-<attribute name="assignment" value="Role_Permission_3"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="assignee" value="HOST1"/>
-<attribute name="grantor" value="null"/>
-</object>
-<object name="Permission_6">
-<instance_of name="license_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Permission_6"/>
-<attribute name="context" value="default_context"/>
-<attribute name="parentLicense" value="null"/>
-<attribute name="grantor" value="null"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Permission_6"/>
-</object>
-<object name="ra_superCloud_HOST1_Role_Permission_2">
-<instance_of name="role_assignment_class"/>
-<attribute name="assignment" value="Role_Permission_2"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="assignee" value="HOST1"/>
-<attribute name="grantor" value="null"/>
-</object>
-<object name="Permission_7">
-<instance_of name="license_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Permission_7"/>
-<attribute name="context" value="default_context"/>
-<attribute name="parentLicense" value="null"/>
-<attribute name="grantor" value="null"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Permission_7"/>
-</object>
-<object name="aa_adOrBAC_create_create">
-<instance_of name="activity_assignment_class"/>
-<attribute name="assignment" value="create"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="assignee" value="create"/>
-</object>
-<object name="Permission_4">
-<instance_of name="license_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Permission_4"/>
-<attribute name="context" value="default_context"/>
-<attribute name="parentLicense" value="null"/>
-<attribute name="grantor" value="null"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Permission_4"/>
-</object>
-<object name="ra_superCloud_HOST1_Role_Permission_5">
+<object name="ra_superCloud_HOST12_Role_Permission_5">
 <instance_of name="role_assignment_class"/>
 <attribute name="assignment" value="Role_Permission_5"/>
 <attribute name="authority" value="superCloud"/>
-<attribute name="assignee" value="HOST1"/>
+<attribute name="assignee" value="HOST12"/>
 <attribute name="grantor" value="null"/>
-</object>
-<object name="aa_adOrBAC_delegate_delegate">
-<instance_of name="activity_assignment_class"/>
-<attribute name="assignment" value="delegate"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="assignee" value="delegate"/>
-</object>
-<object name="Permission_5">
-<instance_of name="license_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Permission_5"/>
-<attribute name="context" value="default_context"/>
-<attribute name="parentLicense" value="null"/>
-<attribute name="grantor" value="null"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Permission_5"/>
-</object>
-<object name="Permission_2">
-<instance_of name="license_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Permission_2"/>
-<attribute name="context" value="default_context"/>
-<attribute name="parentLicense" value="null"/>
-<attribute name="grantor" value="null"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Permission_2"/>
-</object>
-<object name="Prohibition_0">
-<instance_of name="inhibition_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Prohibition_0"/>
-<attribute name="context" value="default_context"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Prohibition_0"/>
-</object>
-<object name="Permission_3">
-<instance_of name="license_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Permission_3"/>
-<attribute name="context" value="default_context"/>
-<attribute name="parentLicense" value="null"/>
-<attribute name="grantor" value="null"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Permission_3"/>
-</object>
-<object name="Prohibition_1">
-<instance_of name="inhibition_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Prohibition_1"/>
-<attribute name="context" value="default_context"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Prohibition_1"/>
-</object>
-<object name="Permission_0">
-<instance_of name="license_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Permission_0"/>
-<attribute name="context" value="default_context"/>
-<attribute name="parentLicense" value="null"/>
-<attribute name="grantor" value="null"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Permission_0"/>
-</object>
-<object name="Permission_1">
-<instance_of name="license_class"/>
-<attribute name="authority" value="superCloud"/>
-<attribute name="grantee" value="Role_Permission_1"/>
-<attribute name="context" value="default_context"/>
-<attribute name="parentLicense" value="null"/>
-<attribute name="grantor" value="null"/>
-<attribute name="privilege" value="myActivity"/>
-<attribute name="target" value="View_Permission_1"/>
-</object>
-<object name="vh_adOrBAC_license_transfer_view_license_delegation_view">
-<instance_of name="view_hierarchy_class"/>
-<attribute name="senior_view" value="license_delegation_view"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="junior_view" value="license_transfer_view"/>
-</object>
-<object name="vh_adOrBAC_license_delegation_view_license_view">
-<instance_of name="view_hierarchy_class"/>
-<attribute name="senior_view" value="license_view"/>
-<attribute name="authority" value="adOrBAC"/>
-<attribute name="junior_view" value="license_delegation_view"/>
 </object>
 </objects>
 <comments>

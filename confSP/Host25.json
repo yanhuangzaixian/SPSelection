@@ -1,0 +1,1 @@
+{"name":"HOST25","context":"VM-deployment","serviceDescription":{"volume":"10_GB","price":"3_euro","certificate":"true","location":"France"},"creationConstraint":[[]],"gauranteeTerm":{"availability":"more_95_percentage"}}

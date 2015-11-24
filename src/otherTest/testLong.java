@@ -27,12 +27,16 @@ public class testLong {
     
     public static void main(String[] arg) throws IOException, ParseException{
     
+                            /*
                          HashMap  hostConfInfo =getHostConnectionInfoFromFile("confConnection"+File.separator+"portInfo.json");
       
               
        
                          //int currentPort=toIntExact((long)hostConfInfo.get("HOST1"));
-                         int currentPort=(int)hostConfInfo.get("HOST1");
+                         int currentPort=(int)hostConfInfo.get("HOST1");*/
+        
+                     long number=20000;
+                     System.out.println(number/6);
                               
                               
                            

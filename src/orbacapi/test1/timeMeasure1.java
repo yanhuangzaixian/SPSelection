@@ -32,7 +32,7 @@ public class timeMeasure1 {
      public static void main(String[] args) throws IOException, ParseException, COrbacException
     {
         
-    long Time1 = System. currentTimeMillis();  
+    
     
     System.out.println("**********************begin policyList information****************\n");
    
@@ -49,7 +49,13 @@ public class timeMeasure1 {
     LinkedList <VM> VMList=method.readClientFileAndGenerateVMList("confClient"+File.separator+"test3.json");
     LinkedList <ArrayList> VMPolicyList=method.readClientFileAndGenerateAbstractPolicy("confClient"+File.separator+"test3.json");
     
+    
+    
+     long Time1 = System. currentTimeMillis();  
     AbstractOrbacPolicy p=method.generateOrBACPolicyFromVMandHostPolicy(VMPolicyList, VMList, HOSTPolicyList, HOSTList);
+    long Time2 = System. currentTimeMillis(); 
+    long duration1=Time2-Time1;
+     
     
     
     if (p==null)
@@ -68,9 +74,7 @@ public class timeMeasure1 {
    
     
     
-    long Time2 = System. currentTimeMillis(); 
-    long duration1=Time2-Time1;
-   System.out.println("*****************Initial Security Policy generation: "+duration1+"ms");
+    
     
     p.WritePolicyFile("policyGenerated"+File.separator+"policy_1_SecurityRequirement.xml",null);
     
@@ -80,7 +84,7 @@ public class timeMeasure1 {
     
     
     
-    long Time3 = System. currentTimeMillis(); 
+   
     
       /*************************SLA filter***********************************/
     
@@ -134,8 +138,19 @@ public class timeMeasure1 {
      
      
      LinkedList <LinkedList <LinkedList <String>>> concreteSeparationPolicy =generateConcreteSeparationPolicyFromVMList(VMPolicyList, VMList);
-     HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy) ;
      
+     
+     
+      long Time3 = System. currentTimeMillis(); 
+     HashMap <String,LinkedList <String>> finalDeploySolution= generateFinalDeploySolution(p, VMList, HOSTList, concreteSeparationPolicy) ;
+      long Time4 = System. currentTimeMillis(); 
+       long duration2=Time4-Time3;
+       
+       
+       
+       
+       System.out.println("*****************Initial Security Policy generation: "+duration1+"ms");
+      System.out.println("*****************final deployment solution generation: "+duration2+"ms");
      
      
      
@@ -154,12 +169,11 @@ public class timeMeasure1 {
     
      System.out.println("r1:"+r1+"\n r2:"+r2+"\n");
     */
-    long Time4 = System. currentTimeMillis(); 
+   
     
     
     
-   long duration2=Time4-Time3;
-   System.out.println("*****************final deployment solution generation: "+duration2+"ms");
+  
     
     
     

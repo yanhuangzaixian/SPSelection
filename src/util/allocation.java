@@ -167,7 +167,7 @@ public class allocation {
          CConcretePermission Cpermission=(CConcretePermission)iter.next();
          String currentVMID=Cpermission.GetObject();
          
-         System.out.println("Preempted"+Cpermission.GetName());
+         //System.out.println("Preempted"+Cpermission.GetName());
          
          if ( (Cpermission.IsPreempted()==null) && !(VMAlreadyAllocateList.contains(currentVMID)))
             {

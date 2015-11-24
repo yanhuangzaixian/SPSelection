@@ -1332,6 +1332,185 @@ public class method {
          
          
          
+         
+         
+         
+         
+         
+         
+         
+         
+          public static AbstractOrbacPolicy generateOrBACPolicyFromVMandHostPolicy(LinkedList VMPolicyList, LinkedList <VM> VMList, LinkedList HOSTPolicyList,  LinkedList <HOST> HOSTList,int VMNumber, int HOSTNumber) throws COrbacException
+         {
+             
+             
+             
+         
+               COrbacCore core = COrbacCore.GetTheInstance();
+                    // create new policy using the Jena implementation
+              AbstractOrbacPolicy p = core.CreatePolicy ("policy"+VMNumber+HOSTNumber, XmlOrbacPolicy.class );
+              
+                 // add some abstract entities to the policy
+                 // add an organization
+                 p.CreateOrganization ("superCloud");
+                 String currentOrganization="superCloud";
+                 String currentActivity="myActivity";
+                 String currentContext="default_context";
+                 
+                 p.CreateActivityAndInsertIntoOrg (currentActivity, "superCloud");
+                 
+                 
+                 p.Consider("superCloud","deploy",currentActivity);
+                 p.AddAction("deploy");
+              
+                
+                 
+                LinkedList <String> VMIDMemoryList = new LinkedList <String>();
+                LinkedList <String> HOSTIDMemoryList = new LinkedList <String>();
+                
+                
+                
+                /*Generate OrBAC policy from VM List */
+                
+                for (int i=0;i<VMPolicyList.size();i++)
+                {
+                    String currentRole="Role_Permission_"+i;
+                    String currentView="View_Permission_"+i;
+                    String currentRuleID="Permission_"+i;
+                    
+                    
+                    p.CreateRoleAndInsertIntoOrg (currentRole, currentOrganization);
+                    p.CreateViewAndInsertIntoOrg (currentView, currentOrganization);
+                    //System.out.println("---------------currentRuleID"+currentRuleID);
+                    
+                    p.AbstractPermission ("superCloud",currentRole,currentActivity,currentView,currentContext,currentRuleID);
+                    ArrayList currentVMRule=(ArrayList) VMPolicyList.get(i);
+                    
+                    
+                    
+                    
+                    String policyType=(String) currentVMRule.get(0);
+                    HashMap HOSTProperty=(HashMap) currentVMRule.get(1);
+                    HashMap VMProperty=(HashMap) currentVMRule.get(2);
+                    
+                   if (policyType.equals ("permission"))
+                   {
+                        LinkedList <String> VMIDList=findRelatedVMID(VMProperty,VMList);
+                    
+                        LinkedList <String> HOSTIDList=findRelatedHOSTID(HOSTProperty,HOSTList);
+                        
+                        
+                        if ((VMIDList.size()==0) || (HOSTIDList.size()==0))
+                            return null;
+                        
+                        //p.AbstractPermission ("superCloud",currentRole,currentActivity,currentView,currentContext,currentRuleID);
+                        for (int j=0;j<VMIDList.size();j++)
+                        {
+                            
+                             //System.out.print("----------- hahaha This is J"+j);
+                             //System.out.print("----------- HOSTLIST size"+HOSTList.size());
+                            for (int k=0;k<HOSTIDList.size();k++)
+                            {
+                             
+                             // System.out.print("----------- hahaha This is K"+k);
+                              String currentVMID=VMIDList.get(j);
+                              String currentHOSTID=HOSTIDList.get(k);
+                              //System.out.println("---------------currentHOSTID"+currentHOSTID);
+                              //System.out.println("\n---------------currentVMID"+currentVMID);
+                              
+                              if (!HOSTIDMemoryList.contains(currentHOSTID))
+                              {
+                                  p.AddSubject(currentHOSTID);
+                                  HOSTIDMemoryList.add(currentHOSTID);
+                              
+                              }
+                              
+                              
+                               if (!VMIDMemoryList.contains(currentVMID))
+                              {
+                                  p.AddObject(currentVMID);
+                                  VMIDMemoryList.add(currentVMID);
+                              
+                              }
+                              
+                              
+                              p.Empower(currentOrganization,currentHOSTID,currentRole); 
+                              p.Use(currentOrganization,currentVMID,currentView);
+                            }
+                        }
+                        
+                      
+                        
+                   
+                 }
+                }
+                 /*Generate OrBAC policy from HOST List */
+                
+                for (int j1=0;j1<HOSTPolicyList.size();j1++)
+                {
+                    
+                    String currentRole="Role_Prohibition_"+j1;
+                    String currentView="View_Prohibition_"+j1;
+                    String currentRuleID="Prohibition_"+j1;
+                    
+                    
+                    p.CreateRoleAndInsertIntoOrg (currentRole, currentOrganization);
+                    p.CreateViewAndInsertIntoOrg (currentView, currentOrganization);
+                    
+                    
+                    p.AbstractProhibition (currentOrganization,currentRole,currentActivity,currentView,currentContext,currentRuleID);
+                    ArrayList currentHOSTRule=(ArrayList) HOSTPolicyList.get(j1);
+                    
+                    String policyType=(String) currentHOSTRule.get(0);
+                    HashMap HOSTProperty=(HashMap) currentHOSTRule.get(1);
+                    HashMap VMProperty=(HashMap) currentHOSTRule.get(2);
+                    
+                    if (policyType.equals ("prohibition"))
+                   {
+                        LinkedList <String> VMIDList=findRelatedVMID(VMProperty,VMList);
+                    
+                        LinkedList <String> HOSTIDList=findRelatedHOSTID(HOSTProperty,HOSTList);
+                        
+                       // p.AbstractProhibition ("superCloud",currentRole,currentActivity,currentView,currentContext,currentRuleID);
+                        for (int j2=0;j2<VMIDList.size();j2++)
+                            for (int k2=0;k2<HOSTIDList.size();k2++)
+                            {
+                              String currentHOSTID=HOSTIDList.get(k2);
+                              String currentVMID=VMIDList.get(j2);
+                              
+                              
+                                  if (!HOSTIDMemoryList.contains(currentHOSTID))
+                              {
+                                  p.AddSubject(currentHOSTID);
+                                  HOSTIDMemoryList.add(currentHOSTID);
+                              
+                              }
+                              
+                              
+                               if (!VMIDMemoryList.contains(currentVMID))
+                              {
+                                  p.AddSubject(currentVMID);
+                                  VMIDMemoryList.add(currentVMID);
+                              
+                              }
+                              
+                              p.Empower(currentOrganization,currentHOSTID,currentRole); 
+                              p.Use(currentOrganization,currentVMID,currentView);
+                            }
+
+                    }
+  
+                }
+  
+            return p;    
+         }
+         
+         
+         
+         
+         
+         
+         
          public static LinkedList <LinkedList <LinkedList <String>>>  generateConcreteSeparationPolicyFromVMList(LinkedList <ArrayList> VMPolicyList, LinkedList <VM> VMList) throws COrbacException
          {
  
@@ -1500,10 +1679,10 @@ public class method {
                 
                                      p.Use("superCloud",currentPermissionObject,newView);
                     
-                                    printInfo("change conflict SLA");
-                                    System.out.println("HAHAAH"+newAbstractProhibitionName);
+                                    //printInfo("change conflict SLA");
+                                    //System.out.println("HAHAAH"+newAbstractProhibitionName);
                     
-                                    System.out.println("\n+HAHAAH"+currentPermissionRuleName);
+                                    //System.out.println("\n+HAHAAH"+currentPermissionRuleName);
                                      p.SetRule1AboveRule2(newAbstractProhibitionName,currentPermissionRuleName,"superCloud","superCloud");
                     
                     
