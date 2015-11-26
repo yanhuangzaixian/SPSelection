@@ -1,0 +1,181 @@
+null-----------------------------------
+VM: 10
+HOST: 10
+Policy generation time: 6
+allocation  time: 26
+-----------------------------------
+VM: 10
+HOST: 20
+Policy generation time: 16
+allocation  time: 40
+-----------------------------------
+VM: 10
+HOST: 30
+Policy generation time: 19
+allocation  time: 65
+-----------------------------------
+VM: 10
+HOST: 40
+Policy generation time: 29
+allocation  time: 75
+-----------------------------------
+VM: 10
+HOST: 50
+Policy generation time: 44
+allocation  time: 136
+-----------------------------------
+VM: 10
+HOST: 60
+Policy generation time: 44
+allocation  time: 111
+-----------------------------------
+VM: 20
+HOST: 10
+Policy generation time: 16
+allocation  time: 42
+-----------------------------------
+VM: 20
+HOST: 20
+Policy generation time: 24
+allocation  time: 79
+-----------------------------------
+VM: 20
+HOST: 30
+Policy generation time: 54
+allocation  time: 118
+-----------------------------------
+VM: 20
+HOST: 40
+Policy generation time: 74
+allocation  time: 152
+-----------------------------------
+VM: 20
+HOST: 50
+Policy generation time: 133
+allocation  time: 178
+-----------------------------------
+VM: 20
+HOST: 60
+Policy generation time: 131
+allocation  time: 222
+-----------------------------------
+VM: 30
+HOST: 10
+Policy generation time: 16
+allocation  time: 88
+-----------------------------------
+VM: 30
+HOST: 20
+Policy generation time: 60
+allocation  time: 112
+-----------------------------------
+VM: 30
+HOST: 30
+Policy generation time: 74
+allocation  time: 172
+-----------------------------------
+VM: 30
+HOST: 40
+Policy generation time: 97
+allocation  time: 266
+-----------------------------------
+VM: 30
+HOST: 50
+Policy generation time: 144
+allocation  time: 285
+-----------------------------------
+VM: 30
+HOST: 60
+Policy generation time: 815
+allocation  time: 395
+-----------------------------------
+VM: 40
+HOST: 10
+Policy generation time: 37
+allocation  time: 84
+-----------------------------------
+VM: 40
+HOST: 20
+Policy generation time: 71
+allocation  time: 137
+-----------------------------------
+VM: 40
+HOST: 30
+Policy generation time: 160
+allocation  time: 278
+-----------------------------------
+VM: 40
+HOST: 40
+Policy generation time: 163
+allocation  time: 302
+-----------------------------------
+VM: 40
+HOST: 50
+Policy generation time: 228
+allocation  time: 503
+-----------------------------------
+VM: 40
+HOST: 60
+Policy generation time: 251
+allocation  time: 531
+-----------------------------------
+VM: 50
+HOST: 10
+Policy generation time: 27
+allocation  time: 78
+-----------------------------------
+VM: 50
+HOST: 20
+Policy generation time: 82
+allocation  time: 199
+-----------------------------------
+VM: 50
+HOST: 30
+Policy generation time: 168
+allocation  time: 287
+-----------------------------------
+VM: 50
+HOST: 40
+Policy generation time: 228
+allocation  time: 451
+-----------------------------------
+VM: 50
+HOST: 50
+Policy generation time: 288
+allocation  time: 577
+-----------------------------------
+VM: 50
+HOST: 60
+Policy generation time: 958
+allocation  time: 907
+-----------------------------------
+VM: 60
+HOST: 10
+Policy generation time: 30
+allocation  time: 101
+-----------------------------------
+VM: 60
+HOST: 20
+Policy generation time: 95
+allocation  time: 218
+-----------------------------------
+VM: 60
+HOST: 30
+Policy generation time: 180
+allocation  time: 389
+-----------------------------------
+VM: 60
+HOST: 40
+Policy generation time: 251
+allocation  time: 563
+-----------------------------------
+VM: 60
+HOST: 50
+Policy generation time: 309
+allocation  time: 778
+-----------------------------------
+VM: 60
+HOST: 60
+Policy generation time: 407
+allocation  time: 1088
+
